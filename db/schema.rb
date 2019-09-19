@@ -10,7 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_19_033603) do
+ActiveRecord::Schema.define(version: 2019_09_19_034357) do
+
+  create_table "groups", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.string "address"
+    t.string "phone"
+    t.boolean "is_active"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.boolean "is_public"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_groups_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
