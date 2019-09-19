@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_19_040643) do
+ActiveRecord::Schema.define(version: 2019_09_19_041035) do
 
   create_table "groups", force: :cascade do |t|
     t.string "title"
@@ -25,6 +25,16 @@ ActiveRecord::Schema.define(version: 2019_09_19_040643) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_groups_on_user_id"
+  end
+
+  create_table "option_order_item_logs", force: :cascade do |t|
+    t.integer "option_id"
+    t.integer "order_item_id"
+    t.boolean "is_chosen"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["option_id"], name: "index_option_order_item_logs_on_option_id"
+    t.index ["order_item_id"], name: "index_option_order_item_logs_on_order_item_id"
   end
 
   create_table "options", force: :cascade do |t|
