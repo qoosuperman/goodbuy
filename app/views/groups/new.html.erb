@@ -1,17 +1,30 @@
 
-<div id="tab-demo">
-    <ul class="tab-title">
-        <li><a href="#tab01">tab01</a></li>
-        <li><a href="#tab02">tab02</a></li>
-        <li><a href="#tab03">tab03</a></li>
-    </ul>
-    <div id="tab01" class="tab-inner">
-        <p>tab01的內容</p>
+
+<h1 class="mt-5 text-center">
+來開團囉！ <br>
+<%= link_to "回到團購紀錄", my_groups_path, class: "btn btn-success" %>
+</h1>
+
+<div class="container mt-5">
+    <div id="tab-demo" class="m-auto">
+        <ul class="tab-title">
+            <li><a href="#tab01">店家資訊</a></li>
+            <li><a href="#tab02">菜單</a></li>
+            <li><a href="#tab03">選項</a></li>
+        </ul>
+        <div id="tab01" class="tab-inner">
+            <p>tab01的內容</p>
+        </div>
+        <div id="tab02" class="tab-inner">
+            <p>tab02的內容</p>
+        </div>
+        <div id="tab03" class="tab-inner">
+            <p>tab03的內容</p>
+        </div>
     </div>
-    <div id="tab02" class="tab-inner">
-        <p>tab02的內容</p>
-    </div>
-    <div id="tab03" class="tab-inner">
-        <p>tab03的內容</p>
+</div>
+<div class="container mt-5">
+    <div class="row">
+    <%= link_to "確定開團","#", class:"btn btn-danger mt-5 m-auto" %>
     </div>
 </div>
