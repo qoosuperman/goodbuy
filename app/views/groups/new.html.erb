@@ -14,16 +14,29 @@
         </ul>
         <div id="tab01" class="tab-inner">
             <%= simple_form_for(@group) do |form| %>
+                <%= form.input :shop_photo, label: '照片' %>
                 <%= form.input :title, label: "團名" %> 
                 <%= form.input :address, label: "店家地址" %> 
                 <%= form.input :phone, label: "店家電話" %> 
                 <%= form.input :description, label: "描述" %>
         </div>
         <div id="tab02" class="tab-inner">
-            <p>tab02的內容</p>
+            <div id="products">
+                <%= form.simple_fields_for :products do |product| %>
+                <%= render 'product_fields', f: product %>
+                <% end %>
+                <div class="links">
+                <%= link_to_add_association '新增菜單', form, :products, class: "btn, btn-success btn-sm" %>
+                </div>
+            </div>
         </div>
         <div id="tab03" class="tab-inner">
-            <p>tab03的內容</p>
+            <%= form.simple_fields_for :options do |option| %>
+            <%= render 'option_fields', f: option %>
+            <% end %>
+            <div class="links">
+            <%= link_to_add_association '新增選項', form, :options, class: "btn, btn-success btn-sm"  %>
+            </div>
         </div>
     </div>
 </div>
