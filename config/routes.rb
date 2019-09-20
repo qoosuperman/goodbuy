@@ -4,5 +4,12 @@ Rails.application.routes.draw do
   
   root to: 'groups#index'
 
-  resources :groups
+  resources :groups do
+    collection do
+      get :my
+      get :attend
+      get :public
+    end
+  end
+
 end
