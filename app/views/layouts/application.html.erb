@@ -8,12 +8,12 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-    <% if params[:controller] == 'groups' %>
-      <%= stylesheet_link_tag    'groups', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <% if (params[:controller]) == 'groups' && (params[:action] == 'attend'||'my'||'public') %>
+      <%= stylesheet_link_tag    'groups', media: 'all'%>
     <% end %>
 
     <% if (params[:controller] == 'groups') && (params[:action] == 'new') %>
-      <%= stylesheet_link_tag    'groups_new', media: 'all', 'data-turbolinks-track': 'reload' %>
+      <%= stylesheet_link_tag    'groups_new', media: 'all'%>
     <% end %>
 
   </head>
@@ -21,7 +21,7 @@
   <body>
     <%= yield %>
     <% if (params[:controller] == 'groups') && (params[:action] == 'new') %>
-      <%= javascript_include_tag  'groups_new', 'data-turbolinks-track': 'reload' %>
+      <%= javascript_include_tag  'groups_new'%>
     <% end %>
   </body>
 </html>
