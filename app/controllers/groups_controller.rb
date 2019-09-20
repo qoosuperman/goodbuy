@@ -6,4 +6,8 @@ class GroupsController < ApplicationController
 
   def my
   end
+
+  def new
+    @group = Group.new
+  end
 end

@@ -13,7 +13,11 @@
             <li><a href="#tab03">選項</a></li>
         </ul>
         <div id="tab01" class="tab-inner">
-            <p>tab01的內容</p>
+            <%= simple_form_for(@group) do |form| %>
+                <%= form.input :title, label: "團名" %> 
+                <%= form.input :address, label: "店家地址" %> 
+                <%= form.input :phone, label: "店家電話" %> 
+                <%= form.input :description, label: "描述" %>
         </div>
         <div id="tab02" class="tab-inner">
             <p>tab02的內容</p>
@@ -25,6 +29,7 @@
 </div>
 <div class="container mt-5">
     <div class="row">
-    <%= link_to "確定開團","#", class:"btn btn-danger mt-5 m-auto" %>
+    <%= form.button :submit, value: "確定開團",class:"btn btn-danger mt-5 m-auto btn-lg"  %>
     </div>
+    <% end %>
 </div>
