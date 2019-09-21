@@ -47,30 +47,16 @@
                     </tr>
                   </tfoot>
                   <tbody></tbody>
+                  <% @groups.each do |group| %>
                     <tr>
-                      <td>Shad Decker</td>
-                      <td>Regional Director</td>
-                      <td>Edinburgh</td>
-                      <td>51</td>
-                      <td>2008/11/13</td>
-                      <td>$183,000</td>
+                      <td> empty </td>
+                      <td><%= group.title  %></td>
+                      <td> <%= group.is_active %> </td>
+                      <td> <%= group.created_at %> </td>
+                      <td> <%= group.updated_at %> </td>
+                      <td> <%= group.description %> </td>
                     </tr>
-                    <tr>
-                      <td>Michael Bruce</td>
-                      <td>Javascript Developer</td>
-                      <td>Singapore</td>
-                      <td>29</td>
-                      <td>2011/06/27</td>
-                      <td>$183,000</td>
-                    </tr>
-                    <tr>
-                      <td>Donna Snider</td>
-                      <td>Customer Support</td>
-                      <td>New York</td>
-                      <td>27</td>
-                      <td>2011/01/25</td>
-                      <td>$112,000</td>
-                    </tr>
+                  <% end %>
                   </tbody>
                 </table>
               </div>
