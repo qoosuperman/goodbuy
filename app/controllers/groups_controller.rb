@@ -1,6 +1,6 @@
 class GroupsController < ApplicationController
   before_action :authenticate_user!, only: [:index]
-  before_action :find_group, only: [:edit]
+  before_action :find_group, only: [:edit, :update]
 
   def index
   end
@@ -29,10 +29,17 @@ class GroupsController < ApplicationController
   def edit 
   end
 
+  def update
+    if @group.update(group_params)
+      redirect_to my_groups_path
+    else
+      render :edit
+    end
+  end
+
   def create
-    clean_params = params.require(:group).permit(:title, :description, :address, :phone, :is_active, :start_time, :end_time, :is_public, products_attributes:[:name, :price, :_destroy], options_attributes:[:name, :price, :_destroy])
      #這裏之後要改掉 User.first
-    @group = User.first.groups.new(clean_params)
+    @group = User.first.groups.new(group_params)
     if @group.save
       redirect_to my_groups_path
     else
@@ -43,5 +50,9 @@ class GroupsController < ApplicationController
   private
   def find_group
     @group = Group.find_by(id: params[:id])
+  end
+
+  def group_params
+    clean_params = params.require(:group).permit(:title, :description, :address, :phone, :is_active, :start_time, :end_time, :is_public, :shop_photo, products_attributes:[:name, :price, :_destroy], options_attributes:[:name, :price, :_destroy])
   end
 end
