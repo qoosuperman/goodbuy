@@ -49,9 +49,15 @@
                   <tbody></tbody>
                   <% @groups.each do |group| %>
                     <tr>
-                      <td> empty </td>
+                      <td> <%= link_to "編輯", edit_group_path(group.id) %> </td>
                       <td><%= group.title  %></td>
-                      <td> <%= group.is_active %> </td>
+                      <td> 
+                      <% if group.is_active == true %>
+                        <%= link_to "結單", close_group_path(group.id), class: "btn btn-danger" %>
+                      <% else%>
+                        已結單
+                      <% end %>
+                      </td>
                       <td> <%= group.created_at %> </td>
                       <td> <%= group.updated_at %> </td>
                       <td> <%= group.description %> </td>
