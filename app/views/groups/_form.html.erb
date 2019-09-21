@@ -6,6 +6,11 @@
             <li><a href="#tab03">選項</a></li>
         </ul>
         <div id="tab01" class="tab-inner">
+        <% if group.shop_photo.attached? %>
+        <div class="row justify-content-center">
+        <%= image_tag group.shop_photo.variant(resize: "300x300"), class: "group-img " %>
+        </div>
+        <% end %>
             <%= simple_form_for(group) do |f| %>
                 <%= f.input :shop_photo, label: '照片' %>
                 <%= f.input :title, label: "團名" %> 

@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.3'
 
+gem 'mini_magick', '~> 4.9', '>= 4.9.5'
 gem 'cocoon', '~> 1.2', '>= 1.2.14'
 gem 'simple_form', '~> 4.1'
 gem 'jquery-rails'
