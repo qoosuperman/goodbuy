@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   root to: 'groups#index'
 
   resources :groups do
+    member do
+      put :close
+    end
     collection do
       get :my
       get :attend
