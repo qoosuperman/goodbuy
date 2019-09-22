@@ -55,6 +55,8 @@ class GroupsController < ApplicationController
 
 
   def buy
+    @products = @group.products
+    @options = @group.options
   end
 
 
