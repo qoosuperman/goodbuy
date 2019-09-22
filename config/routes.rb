@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :groups do
     member do
       put :close
+      get :link
     end
     collection do
       get :my

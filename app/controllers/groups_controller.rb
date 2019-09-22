@@ -1,6 +1,8 @@
 class GroupsController < ApplicationController
   before_action :authenticate_user!
-  before_action :find_group, only: [:edit, :update, :close]
+  before_action :find_group, only: [:edit, :update, :close, :link]
+
+  require 'rqrcode'
 
   def index
   end
@@ -45,6 +47,27 @@ class GroupsController < ApplicationController
   def close
     @group.update(is_active: false)
     redirect_to my_groups_path
+  end
+
+  def link
+    @link = edit_group_url
+    qrcode = RQRCode::QRCode.new(@link)
+    
+    # NOTE: showing with default options specified explicitly
+    png = qrcode.as_png(
+      bit_depth: 1,
+      border_modules: 4,
+      color_mode: ChunkyPNG::COLOR_GRAYSCALE,
+      color: 'black',
+      file: nil,
+      fill: 'white',
+      module_px_size: 6,
+      resize_exactly_to: false,
+      resize_gte_to: false,
+      size: 120
+    )
+    
+    IO.write("/tmp/github-qrcode.png", png.to_s)
   end
 
   private
