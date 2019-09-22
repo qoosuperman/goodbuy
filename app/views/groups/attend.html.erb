@@ -46,30 +46,22 @@
                     </tr>
                   </tfoot>
                   <tbody></tbody>
+                  <% @groups.each do |group| %>
                     <tr>
-                      <td>Shad Decker</td>
-                      <td>Regional Director</td>
-                      <td>Edinburgh</td>
-                      <td>51</td>
-                      <td>2008/11/13</td>
-                      <td>$183,000</td>
+                      <td> <%= link_to "編輯", edit_group_path(group.id) %> </td>
+                      <td><%= group.title  %></td>
+                      <td> 
+                      <% if group.is_active == true %>
+                        <%= link_to "結單", close_group_path(group.id), class: "btn btn-danger", method: "put", data: {confirm: "確定要結單？不能重新開啟喔！"} %>
+                      <% else%>
+                        已結單
+                      <% end %>
+                      </td>
+                      <td> <%= group.created_at %> </td>
+                      <td> <%= group.updated_at %> </td>
+                      <td> <%= group.description %> </td>
                     </tr>
-                    <tr>
-                      <td>Michael Bruce</td>
-                      <td>Javascript Developer</td>
-                      <td>Singapore</td>
-                      <td>29</td>
-                      <td>2011/06/27</td>
-                      <td>$183,000</td>
-                    </tr>
-                    <tr>
-                      <td>Donna Snider</td>
-                      <td>Customer Support</td>
-                      <td>New York</td>
-                      <td>27</td>
-                      <td>2011/01/25</td>
-                      <td>$112,000</td>
-                    </tr>
+                  <% end %>
                   </tbody>
                 </table>
               </div>
