@@ -1,26 +1,48 @@
-#tab-demo{ width: 80%;}
-#tab-demo > ul{
-  margin:0;list-style:none;
+#tab-demo {
+  width: 80%;
 }
-.tab-title{
-  list-style:none; display: flex;padding-inline-start: 0px;
+#tab-demo > ul {
+  margin: 0;
+  list-style: none;
 }
-#tab-demo > ul > li{ 
-  display:inline-block; vertical-align:top;font-family:'微軟正黑體'; border:1px solid #BCBCBC; height:50px; line-height:50px; background:#cdcdcd;padding:0 15px;list-style:none; box-sizing:border-box;border-radius: 5px;margin: auto;width: 33.33%;
+.tab-title {
+  list-style: none;
+  display: flex;
+  padding-inline-start: 0px;
 }
-#tab-demo >  ul > li a{
-  color:#000; text-decoration:none;
+#tab-demo > ul > li {
+  display: inline-block;
+  vertical-align: top;
+  font-family: "微軟正黑體";
+  border: 1px solid #c4edfd;
+  height: 50px;
+  line-height: 50px;
+  background: #c4edfd;
+  padding: 0 15px;
+  list-style: none;
+  box-sizing: border-box;
+  border-radius: 5px;
+  margin: auto;
+  width: 33.33%;
 }
-#tab-demo > ul > li.active{ 
-  border-bottom:1px solid #fff; background:#fff;
+#tab-demo > ul > li a {
+  color: #000;
+  text-decoration: none;
 }
-#tab-demo > .tab-inner{
-  color:#000; border:1px #BCBCBC solid; border-radius: 10px;
+#tab-demo > ul > li.active {
+  border-bottom: 1px solid #fff;
+  background: #fff;
 }
-.tab-inner{ 
-  padding:15px;
+#tab-demo > .tab-inner {
+  color: #000;
+  border: 1px #c4edfd solid;
+  border-top: 1px solid #fff;
+  border-radius: 5px;
+}
+.tab-inner {
+  padding: 15px;
   background-color: #fff;
 }
-body{
+body {
   background-color: #fdb6c3;
 }

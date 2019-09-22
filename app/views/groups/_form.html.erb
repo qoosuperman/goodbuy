@@ -40,7 +40,7 @@
 </div>
 <div class="container mt-5">
     <div class="row">
-    <%= f.button :submit, value: "確定開團",class:"btn btn-danger mt-5 m-auto btn-lg"  %>
+    <%= link_to "確定開團", buy_group_path(f), class:"btn btn-danger mt-5 m-auto btn-lg", method:'post' %>
     </div>
     <% end %>
 </div>

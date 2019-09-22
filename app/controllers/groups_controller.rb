@@ -1,6 +1,6 @@
 class GroupsController < ApplicationController
   before_action :authenticate_user!, only: [:index]
-  before_action :find_group, only: [:edit, :update, :close]
+  before_action :find_group, only: [:edit, :update, :close, :buy]
 
   def index
   end
@@ -53,6 +53,13 @@ class GroupsController < ApplicationController
     redirect_to my_groups_path
   end
 
+
+  def buy
+
+  end
+
+
+  
   private
   def find_group
     @group = Group.find_by(id: params[:id])

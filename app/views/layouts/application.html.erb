@@ -12,7 +12,7 @@
       <%= stylesheet_link_tag    'groups', media: 'all'%>
     <% end %>
 
-    <% if (params[:controller] == 'groups') && (params[:action] == 'new'|| 'edit') %>
+    <% if (params[:controller] == 'groups') && (params[:action] == 'new'|| 'edit' ) %>
       <%= stylesheet_link_tag    'groups_new', media: 'all'%>
     <% end %>
 
@@ -24,7 +24,7 @@
 
   <body>
     <%= yield %>
-    <% if (params[:controller] == 'groups') && (params[:action] == 'new' || 'edit') %>
+    <% if (params[:controller] == 'groups') && (params[:action] == 'new' || 'edit' ) %>
       <%= javascript_include_tag  'groups_new'%>
     <% end %>
   </body>
