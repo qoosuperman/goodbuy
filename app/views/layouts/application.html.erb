@@ -20,11 +20,15 @@
       <%= stylesheet_link_tag    'devise', media: 'all'%>
     <% end %>
 
+    <% if (params[:controller] == 'groups') && (params[:action] == 'buy' ) %>
+      <%= stylesheet_link_tag    'buy', media: 'all'%>
+    <% end %>
+
   </head>
 
   <body>
     <%= yield %>
-    <% if (params[:controller] == 'groups') && (params[:action] == 'new' || 'edit' ) %>
+    <% if (params[:controller] == 'groups') && (params[:action] == 'new' || 'edit' || 'buy' ) %>
       <%= javascript_include_tag  'groups_new'%>
     <% end %>
   </body>

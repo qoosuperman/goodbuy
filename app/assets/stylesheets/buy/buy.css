@@ -1,5 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.menu-pic {
+  max-width: 100%;
+}
+
 #tab-demo {
-  width: 80%;
+  width: 100%;
 }
 #tab-demo > ul {
   margin: 0;
@@ -30,7 +40,6 @@
   text-decoration: none;
 }
 #tab-demo > ul > li.active {
-  border-bottom: 1px solid #fff;
   background: #fff;
 }
 #tab-demo > .tab-inner {
