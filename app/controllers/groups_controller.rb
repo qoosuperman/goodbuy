@@ -1,6 +1,6 @@
 class GroupsController < ApplicationController
   before_action :authenticate_user!, only: [:index]
-  before_action :find_group, only: [:edit, :update]
+  before_action :find_group, only: [:edit, :update, :close]
 
   def index
   end
@@ -38,13 +38,19 @@ class GroupsController < ApplicationController
   end
 
   def create
-     #這裏之後要改掉 User.first
-    @group = User.first.groups.new(group_params)
-    if @group.save
-      redirect_to my_groups_path
-    else
-      render :new
-    end
+    render html: params
+    #  #這裏之後要改掉 User.first
+    # @group = User.first.groups.new(group_params)
+    # if @group.save
+    #   redirect_to my_groups_path
+    # else
+    #   render :new
+    # end
+  end
+
+  def close
+    @group.update(is_active: false)
+    redirect_to my_groups_path
   end
 
   private
