@@ -16,6 +16,10 @@
       <%= stylesheet_link_tag    'groups_new', media: 'all'%>
     <% end %>
 
+    <% if (params[:controller].include?('devise'))%>
+      <%= stylesheet_link_tag    'devise', media: 'all'%>
+    <% end %>
+
   </head>
 
   <body>
