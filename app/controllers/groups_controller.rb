@@ -55,7 +55,6 @@ class GroupsController < ApplicationController
 
 
   def buy
-
   end
 
 

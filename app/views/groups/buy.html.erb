@@ -1,4 +1,4 @@
-<div class="container bg-white rounded box-shadow mt-3 mb-3 pb-5 pt-5">
+<div class="container bg-white rounded box-shadow mt-3 mb-3 pb-5 pt-5">  
     <h1>團名</h1>
     <div class="group-info d-flex align-items-center p-3 my-3">
       <ul>
@@ -9,7 +9,11 @@
     </div>
 
     <div class="menu-pic d-flex align-items-center justify-content-center mb-5">
-      <img src="https://sites.google.com/site/taiwandrinkshop/_/rsrc/1307604797877/wu-shi-lan/50lan-de-pin-zhi-yu-ce-e/50%E5%B5%903.jpg" alt="Menu">
+      <% if @group.shop_photo.attached? %>
+        <div class="row justify-content-center">
+        <%= image_tag @group.shop_photo.variant(resize: "300x300"), class: "group-img " %>
+        </div>
+      <% end %>
     </div>
 
 
