@@ -1,0 +1,14 @@
+<h1>連結頁面</h1>
+
+<h2>QR Code</h2>
+<div id="qrcode" data-link= "<%= @link %>"  ></div>
+
+<h2>網址</h2>
+<%= @link %>
+
+<%= link_to "回到我的團購", my_groups_path, class:"btn btn-success" %>
+
+<script type="text/javascript">
+var link = $("#qrcode").data('link')
+new QRCode(document.getElementById("qrcode"), link);
+</script>

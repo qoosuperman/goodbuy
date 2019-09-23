@@ -29,6 +29,7 @@
                   <thead>
                     <tr>
                       <th>連結</th>
+                      <th>編輯</th>
                       <th>團名</th>
                       <th>狀態</th>
                       <th>起始時間</th>
@@ -39,6 +40,7 @@
                   <tfoot>
                     <tr>
                       <th>連結</th>
+                      <th>編輯</th>
                       <th>團名</th>
                       <th>狀態</th>
                       <th>起始時間</th>
@@ -49,6 +51,7 @@
                   <tbody></tbody>
                   <% @groups.each do |group| %>
                     <tr>
+                      <td> <%= link_to "連結", link_group_path(group.id) %> </td>
                       <td> <%= link_to "編輯", edit_group_path(group.id) %> </td>
                       <td><%= group.title  %></td>
                       <td> 
