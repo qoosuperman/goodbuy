@@ -19,6 +19,9 @@
     <% if (params[:controller].include?('devise'))%>
       <%= stylesheet_link_tag    'devise', media: 'all'%>
     <% end %>
+    <% if (params[:controller] == 'groups') && (params[:action] == 'new' || 'edit'|| 'link') %>
+      <%= javascript_include_tag  'groups_new'%>
+    <% end %>
 
   </head>
 
@@ -26,6 +29,9 @@
     <%= yield %>
     <% if (params[:controller] == 'groups') && (params[:action] == 'new' || 'edit') %>
       <%= javascript_include_tag  'groups_new'%>
+    <% end %>
+        <% if (params[:controller] == 'groups') && (params[:action] == 'link') %>
+      <%= javascript_include_tag  'groups_link'%>
     <% end %>
   </body>
 </html>
