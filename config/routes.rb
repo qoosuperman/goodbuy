@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   resources :groups do
     member do
       put :close
-      post :buy
+      get :buy
+      post :checkout
       get :link
     end
     collection do

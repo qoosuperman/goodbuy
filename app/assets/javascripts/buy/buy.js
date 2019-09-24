@@ -1,7 +1,7 @@
 $(function () {
 
   var countPrice = function () {
-    var productMoney = $("input:radio:checked").val();
+    var productMoney = $("#tab-demo .products .product input[type=radio]:checked").val();
     var total = Number(productMoney) || 0;
     $("#tab-demo .options .option input[type=checkbox]:checked").each(function () {
       var optMoney = (Number(this.value) || 0);

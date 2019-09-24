@@ -1,6 +1,7 @@
 class GroupsController < ApplicationController
   before_action :authenticate_user!
-  before_action :find_group, only: [:edit, :update, :close, :link]
+  before_action :find_group, only: [:edit, :update, :close, :link, :buy, :add_to_order]
+  # protect_from_forgery prepend: true
 
   require 'rqrcode'
 
@@ -52,6 +53,20 @@ class GroupsController < ApplicationController
   def buy
     @products = @group.products
     @options = @group.options
+  end
+
+  def checkout
+    @group
+    @product = Product.find_by(name: params[:products])
+    @option = Option.find_by(name: params[:options])
+    @order_item = @product.build_order_item
+    # @order_item.options
+
+
+    # @order = current_user.order.build
+    # @order.save()
+    # params[:products, :options]
+    # params[:options]
   end
 
 
