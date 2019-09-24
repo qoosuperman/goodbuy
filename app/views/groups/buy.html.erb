@@ -29,18 +29,18 @@
         <form>
           <h6 class="border-bottom border-gray pb-2">請選擇品項</h6>
           <div class="row media-body pb-3 lh-125 border-bottom border-gray mt-3">
-            <div class="products col-6">
+            <div class="products col-6" id="product">
               <% @products.each do |p| %>
-                <div class="product"><input type="radio" name="product"> <%= p.name %> <%= p.price %>元</div>
+                <div class="product"><input type="radio" name="product" value="<%= p.price %>"> <%= p.name %> <%= p.price %>元</div>
               <% end %>
             </div>
             <div class="options col-6">
               <% @options.each do |o| %>
-                <div class="option"><input type="checkbox"> <%= o.name %> <%= o.price %>元</div>
+                <div class="option" id="option"><input type="checkbox" value='<%= o.price %>'> <%= o.name %> <%= o.price %>元</div>
               <% end %>
             </div>
           </div>
-          <div class="total-prcie rounded mt-3"><input type="text" name="" id="" placeholder="總金額"></div>
+          <div class="rounded mt-3">總金額：<span class="total-price"></span></div>
           <%= link_to "提交", '#', class:'mt-3 btn btn-success btn-sm' %>
         </form>
       </div>
