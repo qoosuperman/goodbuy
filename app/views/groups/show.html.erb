@@ -1,0 +1,69 @@
+<h1>團購資料</h1>
+<div>
+團購名稱
+<%= @group.title %>
+</div>
+<div>
+團購電話
+<%= @group.phone %>
+</div>
+<div>
+團購地址
+<%= @group.address %>
+</div>
+<div>
+狀態
+<%= @group.is_active %>
+</div>
+<div>
+描述
+<%= @group.description %>
+</div>
+<div>
+開始時間
+<%= @group.created_at %>
+</div>
+
+<table class= "table">
+  <thead>
+  <tr>
+    <td>品名</td>
+    <td>選項</td>
+    <td>單價</td>
+    <td>數量</td>
+    <td>合計</td>
+    <td>購買人</td>
+  </tr>
+  </thead>
+  <tbody>
+    <% @group.orders.each do |order| %>
+      <% order.order_items.each do |order_item| %>
+        <tr>
+          <td>
+            <%= order_item.product.name %>
+          </td>
+          <td>
+            <% order_item.options.each do |option| %>
+              <%= option.name %>
+              (+<%= option.price %>元)
+            <% end %>
+          </td>
+          <td>
+            <%= order_item.product.price %>
+          </td>
+          <td>
+            <%= order_item.quantity %>
+          </td>
+          <td>
+          </td>
+          <td>
+            <%= order_item.order.buyer.name %>
+          </td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+  
+
+
+</table>

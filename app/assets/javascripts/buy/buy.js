@@ -10,7 +10,6 @@ $(function () {
     $('.total-price').text(`${total}元`);
   };
 
-
   $("input").on("click", countPrice);
 
 });

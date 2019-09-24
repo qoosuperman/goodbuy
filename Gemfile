@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.3'
 
+gem 'pg', '~> 0.18.4'
 gem 'rqrcode'
 gem 'mini_magick', '~> 4.9', '>= 4.9.5'
 gem 'cocoon', '~> 1.2', '>= 1.2.14'
@@ -52,6 +53,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'hirb-unicode', '~> 0.0.5'
 end
 
 group :development do

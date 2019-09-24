@@ -34,9 +34,11 @@
     <% if (params[:controller] == 'groups') && (params[:action] == 'new' || 'edit' || 'buy' ) %>
       <%= javascript_include_tag  'groups_new'%>
     <% end %>
+    
     <% if (params[:controller] == 'groups') && (params[:action] == 'buy' ) %>
       <%= javascript_include_tag  'buy'%>
     <% end %>
+    
     <% if (params[:controller] == 'groups') && (params[:action] == 'link') %>
       <%= javascript_include_tag  'groups_link'%>
     <% end %>

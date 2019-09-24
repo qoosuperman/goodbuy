@@ -1,7 +1,7 @@
 class CreateOrders < ActiveRecord::Migration[5.2]
   def change
     create_table :orders do |t|
-      t.references :buyer, foreign_key: true
+      t.integer :buyer_id 
       t.references :group, foreign_key: true
 
       t.timestamps

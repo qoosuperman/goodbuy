@@ -1,11 +1,14 @@
 class GroupsController < ApplicationController
   before_action :authenticate_user!
-  before_action :find_group, only: [:edit, :update, :close, :link, :buy, :add_to_order]
-  # protect_from_forgery prepend: true
+  before_action :find_group, only: [:edit, :update, :close, :link, :buy, :show, :add_to_order]
+  
 
   require 'rqrcode'
 
   def index
+  end
+
+  def show
   end
 
   def my
