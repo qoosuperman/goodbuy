@@ -19,6 +19,9 @@
     <% if (params[:controller].include?('devise'))%>
       <%= stylesheet_link_tag    'devise', media: 'all'%>
     <% end %>
+    <% if (params[:controller] == 'groups') && (params[:action] == 'new' || 'edit'|| 'link') %>
+      <%= javascript_include_tag  'groups_new'%>
+    <% end %>
 
     <% if (params[:controller] == 'groups') && (params[:action] == 'buy' ) %>
       <%= stylesheet_link_tag    'buy', media: 'all'%>
@@ -31,8 +34,13 @@
     <% if (params[:controller] == 'groups') && (params[:action] == 'new' || 'edit' || 'buy' ) %>
       <%= javascript_include_tag  'groups_new'%>
     <% end %>
+<<<<<<< HEAD
     <% if (params[:controller] == 'groups') && (params[:action] == 'buy' ) %>
       <%= javascript_include_tag  'buy'%>
+=======
+        <% if (params[:controller] == 'groups') && (params[:action] == 'link') %>
+      <%= javascript_include_tag  'groups_link'%>
+>>>>>>> master
     <% end %>
   </body>
 </html>
