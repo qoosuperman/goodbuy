@@ -48,6 +48,14 @@ class GroupsController < ApplicationController
     redirect_to my_groups_path
   end
 
+
+  def buy
+    @products = @group.products
+    @options = @group.options
+  end
+
+
+  
   def link
     @link = edit_group_url
     qrcode = RQRCode::QRCode.new(@link)

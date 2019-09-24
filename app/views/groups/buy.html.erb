@@ -1,0 +1,96 @@
+<div class="container bg-white rounded box-shadow mt-3 mb-3 pb-5 pt-5">  
+    <h1>團名</h1>
+    <div class="group-info d-flex align-items-center p-3 my-3">
+      <ul>
+        <li>電話：<%= @group.phone %></li>
+        <li>地址：<%= @group.address %></li>
+        <li>描述：<%= @group.description %></li>
+      </ul>
+    </div>
+
+    <div class="menu-pic d-flex align-items-center justify-content-center mb-5">
+      <% if @group.shop_photo.attached? %>
+        <div class="row justify-content-center">
+        <%= image_tag @group.shop_photo.variant(resize: "300x300"), class: "group-img " %>
+        </div>
+      <% end %>
+    </div>
+
+
+
+  <div id="tab-demo" class="m-auto">
+      <ul class="tab-title">
+          <li><a href="#tab01">我要跟團</a></li>
+          <li><a href="#tab02">我要結帳</a></li>
+          <li><a href="#tab03">看看其他人買了什麼</a></li>
+      </ul>
+
+      <div id="tab01" class="tab-inner">
+        <form>
+          <h6 class="border-bottom border-gray pb-2">請選擇品項</h6>
+          <div class="row media-body pb-3 lh-125 border-bottom border-gray mt-3">
+            <div class="products col-6" id="product">
+              <% @products.each do |p| %>
+                <div class="product"><input type="radio" name="product" value="<%= p.price %>"> <%= p.name %> <%= p.price %>元</div>
+              <% end %>
+            </div>
+            <div class="options col-6">
+              <% @options.each do |o| %>
+                <div class="option" id="option"><input type="checkbox" value='<%= o.price %>'> <%= o.name %> <%= o.price %>元</div>
+              <% end %>
+            </div>
+          </div>
+          <div class="rounded mt-3">總金額：<span class="total-price"></span></div>
+          <%= link_to "提交", '#', class:'mt-3 btn btn-success btn-sm' %>
+        </form>
+      </div>
+
+      <div id="tab02" class="tab-inner">
+        <h6 class="border-bottom border-gray pb-2">我的購買清單</h6>
+        <div class="order-items media text-muted pt-3">
+          <img data-src="holder.js/32x32?theme=thumb&bg=007bff&fg=007bff&size=1" alt="" class="mr-2 rounded">
+          <div class="media-body pb-3 lh-125 border-bottom border-gray">
+            <div class="d-flex justify-content-between align-items-center w-100">
+              <strong class="text-gray-dark">品名</strong>
+            </div>
+            <span class="d-block">選項</span>
+            <span class="d-block">價格</span>
+          </div>
+        </div>
+        <%= link_to "結帳", '#', class:'mt-3 btn btn-warning btn-sm' %>
+        
+      </div>
+
+      <div id="tab03" class="tab-inner">
+          <h6 class="border-bottom border-gray pb-2">所有人的購買清單</h6>
+          <div class="orders media text-muted pt-3">
+            <img data-src="holder.js/32x32?theme=thumb&bg=007bff&fg=007bff&size=1" alt="" class="mr-2 rounded">
+            <div class="media-body pb-3 lh-125 border-bottom border-gray">
+              <div class="d-flex justify-content-between align-items-center w-100">
+                <strong class="text-gray-dark">名字</strong>
+              </div>
+              <span class="d-block">品名+選項</span>
+            </div>
+          </div>
+          <div class="orders media text-muted pt-3">
+            <img data-src="holder.js/32x32?theme=thumb&bg=007bff&fg=007bff&size=1" alt="" class="mr-2 rounded">
+            <div class="media-body pb-3 lh-125 border-bottom border-gray">
+              <div class="d-flex justify-content-between align-items-center w-100">
+                <strong class="text-gray-dark">名字</strong>
+              </div>
+              <span class="d-block">品名+選項</span>
+            </div>
+          </div>
+          <div class="orders media text-muted pt-3">
+            <img data-src="holder.js/32x32?theme=thumb&bg=007bff&fg=007bff&size=1" alt="" class="mr-2 rounded">
+            <div class="media-body pb-3 lh-125 border-bottom border-gray">
+              <div class="d-flex justify-content-between align-items-center w-100">
+                <strong class="text-gray-dark">名字</strong>
+              </div>
+              <span class="d-block">品名+選項</span>
+          </div>
+      </div>
+      
+  </div>
+
+</div>
