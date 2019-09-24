@@ -3,12 +3,13 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
   
-  root to: 'groups#index'
+  root to: 'groups#my'
 
   resources :groups do
     member do
       put :close
       post :buy
+      get :link
     end
     collection do
       get :my

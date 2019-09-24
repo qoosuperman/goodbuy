@@ -1,19 +1,23 @@
 class GroupsController < ApplicationController
+<<<<<<< HEAD
   before_action :authenticate_user!, only: [:index]
   before_action :find_group, only: [:edit, :update, :close, :buy]
+=======
+  before_action :authenticate_user!
+  before_action :find_group, only: [:edit, :update, :close, :link]
+
+  require 'rqrcode'
+>>>>>>> b531ae481eb84fd895aacdaad79cf8c25b3df579
 
   def index
   end
 
   def my
-    #這裏之後要改掉 User.first
-    @current_user= User.first
-    @groups = @current_user.groups
+    @groups = current_user.groups
   end
 
   def attend
-    # @current_user= User.first
-    # @groups = @current_user.groups.orders.find_by(buyer_id: @current_user.id)
+    @groups = Order.where(buyer_id: current_user.id).map{ |order| order.group }
   end
 
   def public
@@ -21,9 +25,7 @@ class GroupsController < ApplicationController
   end
 
   def new
-    #  #這裏之後要改掉 User.first
-    @group = User.first.groups.new
-    @group.products.build
+    @group = current_user.groups.build
   end
 
   def edit 
@@ -38,14 +40,12 @@ class GroupsController < ApplicationController
   end
 
   def create
-    render html: params
-    #  #這裏之後要改掉 User.first
-    # @group = User.first.groups.new(group_params)
-    # if @group.save
-    #   redirect_to my_groups_path
-    # else
-    #   render :new
-    # end
+    @group = current_user.groups.build(group_params)
+    if @group.save
+      redirect_to link_group_path(@group.id)
+    else
+      render :new
+    end
   end
 
   def close
@@ -60,6 +60,11 @@ class GroupsController < ApplicationController
 
 
   
+  def link
+    @link = edit_group_url
+    qrcode = RQRCode::QRCode.new(@link)
+  end
+
   private
   def find_group
     @group = Group.find_by(id: params[:id])
