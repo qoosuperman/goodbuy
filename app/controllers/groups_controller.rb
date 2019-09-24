@@ -1,10 +1,13 @@
 class GroupsController < ApplicationController
   before_action :authenticate_user!
-  before_action :find_group, only: [:edit, :update, :close, :link]
+  before_action :find_group, only: [:edit, :update, :close, :link, :buy, :show]
 
   require 'rqrcode'
 
   def index
+  end
+
+  def show
   end
 
   def my
