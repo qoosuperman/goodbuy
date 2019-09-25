@@ -1,6 +1,6 @@
 class GroupsController < ApplicationController
   before_action :authenticate_user!
-  before_action :find_group, only: [:edit, :update, :close, :link, :buy, :show, :add_to_order]
+  before_action :find_group, only: [:edit, :update, :close, :link, :buy, :show, :checkout]
   
 
   require 'rqrcode'
@@ -59,17 +59,15 @@ class GroupsController < ApplicationController
   end
 
   def checkout
-    @group
-    @product = Product.find_by(name: params[:products])
-    @option = Option.find_by(name: params[:options])
-    @order_item = @product.build_order_item
-    # @order_item.options
+    # order = Order.build(group_id: @group.id , buyer_id: current_user.id)
+    # product = Product.find_by(name: params[:products])
+    # option = Option.find_by(name: params[:options])
 
+    # order_item = OrderItem.new(order_id: order.id, product_id: product.id)
+    # order_item.options = [option]
 
-    # @order = current_user.order.build
-    # @order.save()
-    # params[:products, :options]
-    # params[:options]
+    # order.save
+    byebug
   end
 
 
