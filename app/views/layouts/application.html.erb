@@ -42,5 +42,9 @@
     <% if (params[:controller] == 'groups') && (params[:action] == 'link') %>
       <%= javascript_include_tag  'groups_link'%>
     <% end %>
+
+    <% if (params[:controller] == 'orders') && (params[:action] == 'show') %>
+      <%= javascript_include_tag  'orders_show'%>
+    <% end %>
   </body>
 </html>

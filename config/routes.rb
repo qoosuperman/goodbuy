@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     member do
       put :close
       get :buy
-      get :checkout
+      post :checkout
       get :link
     end
     collection do
@@ -19,10 +19,8 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :order do
-    member do
-      get :checkout
-    end
-  end
+  resources :orders, only: [:show]
+
+
 
 end
