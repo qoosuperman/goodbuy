@@ -59,15 +59,20 @@ class GroupsController < ApplicationController
   end
 
   def checkout
-    # order = Order.build(group: @group , buyer: current_user)
-    # product = Product.find_by(name: params[:products])
-    # option = Option.find_by(name: params[:options])
+    order = Order.create(group: @group , buyer: current_user)
 
-    # order_item = OrderItem.new(order_id: order.id, product_id: product.id)
-    # order_item.options = [option]
+    params[:item].each do |i|
+      product = Product.find_by(id: i["product"])
+      
+      order_item = OrderItem.create(order_id: order.id, product: product)
+      
+      i["options"].split(",").each do |option|
+        OptionOrderItemLog.create(option_id: option.to_i, order_item_id: order_item.id)
+      end
 
-    # order.save
-    # byebug
+    end
+
+
   end
   
   def link
