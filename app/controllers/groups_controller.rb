@@ -69,9 +69,28 @@ class GroupsController < ApplicationController
       i["options"].split(",").each do |option|
         OptionOrderItemLog.create(option_id: option.to_i, order_item_id: order_item.id)
       end
-
     end
 
+    #以下金流部分
+    @merchan_trade_no = order_generator
+    @time = time_generator
+    @total_amount = order.total_price
+    @item_name = order.item_name
+    @return_url = 'http://da202e30.ngrok.io/api/feedback'
+    raw_params = {
+      'MerchantID' => "2000132",
+      'MerchantTradeNo' => @merchan_trade_no,
+      'MerchantTradeDate' => @time,
+      'PaymentType' => 'aio',
+      'TotalAmount' => @total_amount,
+      'TradeDesc' => 'Goodbuy 團購網',
+      'ItemName' => @item_name,
+      'ReturnURL' => @return_url ,
+      'ChoosePayment' => 'Credit',
+      'EncryptType' => 1
+      }
+
+    @check_mac_value = Ecpay::Invoice::CreateMacValue.new(raw_params).run
 
   end
   
@@ -87,5 +106,18 @@ class GroupsController < ApplicationController
 
   def group_params
     clean_params = params.require(:group).permit(:title, :description, :address, :phone, :is_active, :start_time, :end_time, :is_public, :shop_photo, products_attributes:[:name, :price, :_destroy], options_attributes:[:name, :price, :_destroy])
+  end
+
+  def order_generator
+    year = Time.now.year
+    month = Time.now.month
+    day = Time.now.day
+    serial = [*"A".."Z", *0..9].sample(8).join
+    "%0d%02d%02d%s" % [year, month, day, serial]
+  end
+
+  def time_generator
+    t = Time.now
+    t.strftime("%Y/%m/%d %T")  
   end
 end

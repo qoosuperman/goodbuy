@@ -1,0 +1,14 @@
+<%= form_with(url: 'https://payment-stage.ecpay.com.tw/Cashier/AioCheckOut/V5', method: "post", local: "true", authenticity_token: false, id: "cool", skip_enforcing_utf8: true ) do |f| %>
+  <%= f.hidden_field :MerchantID, value: "2000132" %>
+  <%= f.hidden_field :MerchantTradeNo, value: @merchan_trade_no %>
+  <%= f.hidden_field :MerchantTradeDate, value: @time %>
+  <%= f.hidden_field :PaymentType, value: 'aio' %>
+  <%= f.hidden_field :TotalAmount, value: @total_amount %>
+  <%= f.hidden_field :TradeDesc, value: 'Goodbuy 團購網' %>
+  <%= f.hidden_field :ItemName, value: @item_name %>
+  <%= f.hidden_field :ReturnURL, value: @return_url  %>
+  <%= f.hidden_field :ChoosePayment, value: 'Credit' %>
+  <%= f.hidden_field :EncryptType, value: "1" %>
+  <%= f.hidden_field :CheckMacValue, value: @check_mac_value %>
+
+<% end %>

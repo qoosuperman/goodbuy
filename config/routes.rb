@@ -9,13 +9,19 @@ Rails.application.routes.draw do
     member do
       put :close
       get :buy
-      post :checkout
+      get :checkout
       get :link
     end
     collection do
       get :my
       get :attend
       get :public
+    end
+  end
+
+  resources :order do
+    member do
+      get :checkout
     end
   end
 
