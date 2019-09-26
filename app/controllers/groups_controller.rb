@@ -69,10 +69,9 @@ class GroupsController < ApplicationController
       i["options"].split(",").each do |option|
         OptionOrderItemLog.create(option_id: option.to_i, order_item_id: order_item.id)
       end
-
     end
 
-
+    redirect_to order_path(order.id)
   end
   
   def link
@@ -88,4 +87,6 @@ class GroupsController < ApplicationController
   def group_params
     clean_params = params.require(:group).permit(:title, :description, :address, :phone, :is_active, :start_time, :end_time, :is_public, :shop_photo, products_attributes:[:name, :price, :_destroy], options_attributes:[:name, :price, :_destroy])
   end
+
+
 end
