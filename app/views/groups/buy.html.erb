@@ -31,14 +31,14 @@
           <div class="row media-body pb-3 lh-125 border-bottom border-gray mt-3">
             <div class="products col-6">
               <% @products.each do |p| %>
-                <div class="product">
+                <div class="product" data-product= "<%= p.id %>">
                   <%= radio_button_tag(:p, p.price ) %> <%= p.name %> <%= p.price %>元
                 </div>
               <% end %>
             </div>
             <div class="options col-6">
               <% @options.each do |o| %>
-                <div class="option">
+                <div class="option" data-option= "<%= o.id %>">
                   <%= check_box_tag(:o, o.price) %>
                   <%= o.name %> <%= o.price %>元
                 </div>
@@ -58,7 +58,7 @@
           <%= form_with url:checkout_group_path do |form| %>
             <div id='order-item'>
             </div>
-            <button class='mt-3 btn btn-warning btn-sm'>結帳囉</button>
+            <%= form.submit '結帳囉', :class => 'mt-3 btn btn-warning btn-sm' %>
           <% end %>
         </div>        
       </div>

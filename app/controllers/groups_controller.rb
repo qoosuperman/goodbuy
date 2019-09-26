@@ -59,7 +59,7 @@ class GroupsController < ApplicationController
   end
 
   def checkout
-    # order = Order.build(group_id: @group.id , buyer_id: current_user.id)
+    # order = Order.build(group: @group , buyer: current_user)
     # product = Product.find_by(name: params[:products])
     # option = Option.find_by(name: params[:options])
 
@@ -67,10 +67,8 @@ class GroupsController < ApplicationController
     # order_item.options = [option]
 
     # order.save
-    byebug
+    # byebug
   end
-
-
   
   def link
     @link = edit_group_url
