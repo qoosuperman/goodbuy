@@ -1,6 +1,7 @@
 class GroupsController < ApplicationController
   before_action :authenticate_user!
-  before_action :find_group, only: [:edit, :update, :close, :link, :buy, :show]
+  before_action :find_group, only: [:edit, :update, :close, :link, :buy, :show, :checkout]
+  
 
   require 'rqrcode'
 
@@ -57,7 +58,22 @@ class GroupsController < ApplicationController
     @options = @group.options
   end
 
+  def checkout
+    order = Order.create(group: @group , buyer: current_user)
 
+    params[:item].each do |i|
+      product = Product.find_by(id: i["product"])
+      
+      order_item = OrderItem.create(order_id: order.id, product: product)
+      
+      i["options"].split(",").each do |option|
+        OptionOrderItemLog.create(option_id: option.to_i, order_item_id: order_item.id)
+      end
+
+    end
+
+
+  end
   
   def link
     @link = edit_group_url
