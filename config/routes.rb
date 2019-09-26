@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     member do
       put :close
       get :buy
+      post :checkout
       get :link
     end
     collection do
