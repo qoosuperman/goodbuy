@@ -9,6 +9,7 @@
   <%= f.hidden_field :ReturnURL, value: @return_url  %>
   <%= f.hidden_field :ChoosePayment, value: 'Credit' %>
   <%= f.hidden_field :EncryptType, value: "1" %>
+  <%= f.hidden_field :ClientBackURL, value: @client_back_url %>
   <%= f.hidden_field :CheckMacValue, value: @check_mac_value %>
 
 <% end %>

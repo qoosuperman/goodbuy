@@ -1,14 +1,17 @@
 class OrdersController < ApplicationController
   before_action :find_order
 
+  def index
+  end
+
   def show
     #以下金流部分
     @merchan_trade_no = order_generator
     @time = time_generator
     @total_amount = @order.total_price
     @item_name = @order.item_name
-    @return_url = 'http://da202e30.ngrok.io/api/feedback'
-
+    @return_url = "http://da202e30.ngrok.io/api/feedback"
+    @client_back_url = "http://da202e30.ngrok.io/thank"
 
     @check_mac_value = Ecpay::Invoice::CreateMacValue.new(raw_params).run
   end
@@ -42,7 +45,8 @@ class OrdersController < ApplicationController
     'ItemName' => @item_name,
     'ReturnURL' => @return_url ,
     'ChoosePayment' => 'Credit',
-    'EncryptType' => 1
+    'EncryptType' => 1,
+    'ClientBackURL' => @client_back_url
   }
   end
 end
