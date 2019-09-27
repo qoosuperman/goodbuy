@@ -52,7 +52,7 @@
                   <% @groups.each do |group| %>
                     <tr>
                       <td> <%= link_to "連結", link_group_path(group.id) %> </td>
-                      <td> <%= link_to "編輯", edit_group_path(group.id) %> </td>
+                      <td> <%= link_to "目前購買狀況", group_path(group.id) %> </td>
                       <td><%= group.title  %></td>
                       <td> 
                       <% if group.is_active == true %>
