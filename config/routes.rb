@@ -20,6 +20,8 @@ Rails.application.routes.draw do
   end
 
   resources :orders, only: [:show]
+  resources :thank, only: [:index]
+  post "api/feedback" ,to: "api#feedback"
 
 
 

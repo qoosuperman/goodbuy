@@ -2,21 +2,21 @@ module Ecpay
   module Invoice
     class CreateMacValue
 
-      def initialize(params = {})
-        @params = params
+      def initialize(inside_params = {})
+        @inside_params = inside_params
       end
 
       def run
-        compute_check_mac_value(@params)
+        compute_check_mac_value(@inside_params)
       end
 
       private
-      def compute_check_mac_value(params)
+      def compute_check_mac_value(hash)
         # 先將參數備份
-        params = params.dup
+        hash = hash.dup
 
         # 轉成 query_string
-        query_string = to_query_string(params)
+        query_string = to_query_string(hash)
         # 加上 HashKey 和 HashIV
         query_string = "HashKey=5294y06JbISpM5x9&#{query_string}&HashIV=v77hoKGq4kWxNNIS"
         # 進行 url encode
@@ -40,17 +40,17 @@ module Ecpay
         encoded_data
       end
 
-      def to_query_string(params)
+      def to_query_string(hash)
         # 對小寫的 key 排序
-        params = params.sort_by do |key, _val|
+        hash = hash.sort_by do |key, _val|
           key.downcase
         end
 
         # 組成 query_string
-        params = params.map do |key, val|
+        hash = hash.map do |key, val|
           "#{key}=#{val}"
         end
-        params.join('&')
+        hash.join('&')
       end
 
     end
