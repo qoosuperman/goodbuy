@@ -1,4 +1,7 @@
 <h1>團購資料</h1>
+
+<%= link_to "編輯團購", edit_group_path(@group.id) %>
+<%= image_tag @group.shop_photo.variant(resize: "300x300"), class: "group-img " %>
 <div>
 團購名稱
 <%= @group.title %>
@@ -29,9 +32,8 @@
   <tr>
     <td>購買人</td>
     <td>品名</td>
-    <td>選項</td>
     <td>單價</td>
-    <td>數量</td>
+    <td>選項</td>
     <td>合計</td>
   </tr>
   </thead>
@@ -46,18 +48,16 @@
             <%= order_item.product.name %>
           </td>
           <td>
+            <%= order_item.product.price %>
+          </td>
+          <td>
             <% order_item.options.each do |option| %>
               <%= option.name %>
               (+<%= option.price %>元)
             <% end %>
           </td>
           <td>
-            <%= order_item.product.price %>
-          </td>
-          <td>
-            <%= order_item.quantity %>
-          </td>
-          <td>
+            <%= order_item.total_price %>
           </td>
         </tr>
       <% end %>
