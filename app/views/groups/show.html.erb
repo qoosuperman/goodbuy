@@ -58,11 +58,6 @@
             <%= order_item.quantity %>
           </td>
           <td>
-            <% order_item_price = order_item.product.price %>
-            <% order_item.options.each do |option| %>
-              <% order_item_price += option.price %>
-            <% end %>
-            <%= order_item_price%>
           </td>
         </tr>
       <% end %>
