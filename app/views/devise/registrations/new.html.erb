@@ -5,7 +5,11 @@
     <%= render "devise/shared/error_messages", resource: resource %>
 
     <div class="field">
-      <%= f.label :email %><br />
+      <%= f.label :name %>
+      <%= f.text_field :name, require: true, class:"form-control" %>
+      <%= f.label :nick_name %>
+      <%= f.text_field :nick_name, require: true, class:"form-control" %>
+      <%= f.label :email %>
       <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", placeholder:"Email address" %>
       <%= f.label :password %>
       <% if @minimum_password_length %>
