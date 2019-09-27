@@ -31,7 +31,7 @@
 
   <body>
     <%= yield %>
-    <% if (params[:controller] == 'groups') && (params[:action] == 'new' || 'edit' || 'buy' ) %>
+    <% if (params[:controller] == 'groups') && (params[:action] == 'new' || 'edit' ) %>
       <%= javascript_include_tag  'groups_new'%>
     <% end %>
     

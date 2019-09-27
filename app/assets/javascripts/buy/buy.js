@@ -1,5 +1,15 @@
 $(function () {
 
+  var $li = $('ul.tab-title li');
+  $($li.eq(0).addClass('active').find('a').attr('href')).siblings('.tab-inner').hide();
+
+  $li.click(function (e) {
+    e.preventDefault();
+    $($(this).find('a').attr('href')).show().siblings('.tab-inner').hide();
+    $(this).addClass('active').siblings('.active').removeClass('active');
+  });
+
+
   let countPrice = function () {
     let productMoney = $("#tab-demo .products .product input[type=radio]:checked").val();
     let total = Number(productMoney) || 0;
@@ -15,11 +25,7 @@ $(function () {
 
   let orderItemId = 0
 
-
-  let orderList = new Array()
-
-  function showItem(e) {
-    e.preventDefault()
+  let showItem = function () {
 
     let product = $("#tab-demo .products .product input[type=radio]:checked").parent(".product:eq(0)").text()
 
@@ -54,14 +60,19 @@ $(function () {
 
     $('input').prop('checked', false)
 
-    orderList.push(tpl)
-    console.log(orderList)
-
+    $('.total-price').text(`${0}元`)
 
   }
 
+  // $("#buy").click(showItem)
+  // $("#buy").on('click', () => showItem)
 
-  $("#buy").click(showItem)
+  $("#buy").on('click', function (e) {
+    e.preventDefault()
+    showItem()
+    alert("已加入購買清單");
+  });
+
 
   $('#tab02 #order-item').on('click', '.delete', function (e) {
     e.preventDefault();
