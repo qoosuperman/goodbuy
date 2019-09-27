@@ -10,4 +10,11 @@ class OrderItem < ApplicationRecord
     }.join(" ")
     "#{product["name"]}(#{product["price"]}元) #{options_arr}"
   end
+
+  def total_price
+    options_money = options.reduce(0) { |acc, option|
+      acc + option["price"]
+    }
+    product.price + options_money
+  end
 end
