@@ -1,73 +1,79 @@
-<h1>團購資料</h1>
-
-<%= link_to "編輯團購", edit_group_path(@group.id) %>
-<%= image_tag @group.shop_photo.variant(resize: "300x300"), class: "group-img " %>
-<div>
-團購名稱
-<%= @group.title %>
-</div>
-<div>
-團購電話
-<%= @group.phone %>
-</div>
-<div>
-團購地址
-<%= @group.address %>
-</div>
-<div>
-狀態
-<%= @group.is_active %>
-</div>
-<div>
-描述
-<%= @group.description %>
-</div>
-<div>
-開始時間
-<%= @group.created_at %>
-</div>
-<div>
-目前團購金額
-<%= @group.total_price %>
-</div>
-
-<table class= "table">
-  <thead>
-  <tr>
-    <td>購買人</td>
-    <td>品名</td>
-    <td>單價</td>
-    <td>選項</td>
-    <td>合計</td>
-  </tr>
-  </thead>
-  <tbody>
-    <% @group.orders.each do |order| %>
-      <% order.order_items.each do |order_item| %>
-        <tr>
-          <td>
-            <%= order_item.order.buyer.name %>
-          </td>
-          <td>
-            <%= order_item.product.name %>
-          </td>
-          <td>
-            <%= order_item.product.price %>
-          </td>
-          <td>
-            <% order_item.options.each do |option| %>
-              <%= option.name %>
-              (+<%= option.price %>元)
-            <% end %>
-          </td>
-          <td>
-            <%= order_item.total_price %>
-          </td>
-        </tr>
-      <% end %>
-    <% end %>
-  </tbody>
+<div class = "container bg-white rounded mt-5 text-center pb-5">
+  <h1 class = "pt-5" >團購資料</h1>
   
+  <% if @group.shop_photo.attached? %>
+    <div class="row justify-content-center">
+      <%= image_tag @group.shop_photo.variant(resize: "300x300"), class: "group-img "  %>
+    </div>
+  <% end %>
 
-
-</table>
+  <div class = "container text-left">
+    <div>
+    團購名稱
+    <%= @group.title %>
+    </div>
+    <div>
+    團購電話
+    <%= @group.phone %>
+    </div>
+    <div>
+    團購地址
+    <%= @group.address %>
+    </div>
+    <div>
+    狀態
+    <%= @group.is_active %>
+    </div>
+    <div>
+    描述
+    <%= @group.description %>
+    </div>
+    <div>
+    開始時間
+    <%= @group.created_at %>
+    </div>
+    <div>
+    目前團購金額
+    <%= @group.total_price %>
+    </div>
+  </div>
+  <div class ="text-right m-3">
+    <%= link_to "編輯團購", edit_group_path(@group.id), class: "btn btn-success" %>
+  </div>
+  <table class= "table">
+    <thead>
+    <tr>
+      <td>購買人</td>
+      <td>品名</td>
+      <td>單價</td>
+      <td>選項</td>
+      <td>合計</td>
+    </tr>
+    </thead>
+    <tbody>
+      <% @group.orders.each do |order| %>
+        <% order.order_items.each do |order_item| %>
+          <tr>
+            <td>
+              <%= order_item.order.buyer.name %>
+            </td>
+            <td>
+              <%= order_item.product.name %>
+            </td>
+            <td>
+              <%= order_item.product.price %>
+            </td>
+            <td>
+              <% order_item.options.each do |option| %>
+                <%= option.name %>
+                (+<%= option.price %>元)
+              <% end %>
+            </td>
+            <td>
+              <%= order_item.total_price %>
+            </td>
+          </tr>
+        <% end %>
+      <% end %>
+  </table>
+</div>
