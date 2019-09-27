@@ -15,9 +15,6 @@ $(function () {
 
   let orderItemId = 0
 
-
-  let orderList = new Array()
-
   function showItem(e) {
     e.preventDefault()
 
@@ -54,9 +51,7 @@ $(function () {
 
     $('input').prop('checked', false)
 
-    orderList.push(tpl)
-    console.log(orderList)
-
+    $('.total-price').text(`${0}元`)
 
   }
 

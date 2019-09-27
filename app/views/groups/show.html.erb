@@ -27,18 +27,21 @@
 <table class= "table">
   <thead>
   <tr>
+    <td>購買人</td>
     <td>品名</td>
     <td>選項</td>
     <td>單價</td>
     <td>數量</td>
     <td>合計</td>
-    <td>購買人</td>
   </tr>
   </thead>
   <tbody>
     <% @group.orders.each do |order| %>
       <% order.order_items.each do |order_item| %>
         <tr>
+          <td>
+            <%= order_item.order.buyer.name %>
+          </td>
           <td>
             <%= order_item.product.name %>
           </td>
@@ -55,9 +58,11 @@
             <%= order_item.quantity %>
           </td>
           <td>
-          </td>
-          <td>
-            <%= order_item.order.buyer.name %>
+            <% order_item_price = order_item.product.price %>
+            <% order_item.options.each do |option| %>
+              <% order_item_price += option.price %>
+            <% end %>
+            <%= order_item_price%>
           </td>
         </tr>
       <% end %>
