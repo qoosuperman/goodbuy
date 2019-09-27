@@ -24,7 +24,12 @@ class GroupsController < ApplicationController
   end
 
   def new
-    @group = current_user.groups.build
+    if params[:group_id]
+      @group = Group.find_by(id: params[:group_id])
+      @group = current_user.groups.build(@group.as_json)
+    else
+      @group = current_user.groups.build
+    end
   end
 
   def edit 

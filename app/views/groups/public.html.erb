@@ -43,7 +43,7 @@
                   <tbody></tbody>
                   <% @groups.each do |group| %>
                     <tr>
-                      <td> <%= link_to "開團",edit_group_path(group.id) %> </td>
+                      <td> <%= link_to "開團",new_group_path(:group_id => group.id) %> </td>
                       <td> <%= group.title %> </td>
                       <td> <%= group.description %>  </td>
                     </tr>

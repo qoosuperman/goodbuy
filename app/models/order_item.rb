@@ -7,7 +7,7 @@ class OrderItem < ApplicationRecord
   def item_name
     options_arr = options.map{ |option|
       "#{option["name"]} (+#{option["price"]}元) "
-  }.join(" ")
+    }.join(" ")
     "#{product["name"]}(#{product["price"]}元) #{options_arr}"
   end
 end
