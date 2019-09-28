@@ -1,4 +1,7 @@
 <div class="box text-center">
+  <div class="logobox">
+    <%= image_tag("logo.png", :alt => "logo" ,class:'logo') %>
+  </div>
   <h2 class='signinh2 h3 mb-3'>Sign up</h2>
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>

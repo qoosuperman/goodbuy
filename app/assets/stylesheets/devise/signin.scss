@@ -23,6 +23,18 @@ body {
   color: #4ba0b5;
 }
 
+.logo {
+  width: 300px;
+}
+
+.logobox::after {
+  content: "";
+  display: block;
+  width: 100%;
+  border-bottom: 1px solid #5d4037;
+  margin: 10px auto 30px;
+}
+
 input {
   background-color: #64806a;
 }

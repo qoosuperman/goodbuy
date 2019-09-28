@@ -1,5 +1,7 @@
 <div class="box text-center">
-
+  <div class="logobox">
+    <%= image_tag("logo.png", :alt => "logo" ,class:'logo') %>
+  </div>
   <h2 class='signinh2 h3 mb-3'>Forgot your password?</h2>
 
   <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>

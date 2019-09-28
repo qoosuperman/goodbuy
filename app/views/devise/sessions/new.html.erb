@@ -1,4 +1,7 @@
 <div class="box text-center">
+  <div class="logobox">
+    <%= image_tag("logo.png", :alt => "logo" ,class:'logo') %>
+  </div>
   <h2 class='signinh2 h3 mb-3'>Log in</h2>
     <%= form_for(resource, as: resource_name, url: session_path(resource_name), class:'form-signin') do |f| %>
       <div class="field mt-4">
