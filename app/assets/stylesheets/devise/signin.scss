@@ -25,15 +25,16 @@ body {
 
 .logo {
   width: 300px;
+  margin-bottom: 10px;
 }
 
-.logobox::after {
-  content: "";
-  display: block;
-  width: 100%;
-  border-bottom: 1px solid #5d4037;
-  margin: 10px auto 30px;
-}
+// .logobox::after {
+//   content: "";
+//   display: block;
+//   width: 100%;
+//   border-bottom: 1px solid #5d4037;
+//   margin: 0px auto 30px;
+// }
 
 input {
   background-color: #64806a;
@@ -42,5 +43,26 @@ input {
 a {
   color: #5d4037;
   display: block;
-  margin: 5px;
+  margin: 5px 0px;
+}
+
+.social-btn-g {
+  margin-top: 0.5rem;
+  color: #fff;
+  background-color: #cc5542;
+}
+
+.social-btn-g:hover {
+  color: #fff;
+  background-color: #c23321;
+}
+
+.social-btn-f {
+  color: #fff;
+  background-color: #415993;
+}
+
+.social-btn-f:hover {
+  color: #fff;
+  background-color: #2d4273;
 }

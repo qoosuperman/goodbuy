@@ -300,4 +300,6 @@ Devise.setup do |config|
   # When set to false, does not sign a user in automatically after their password is
   # changed. Defaults to true, so a user is signed in automatically after changing a password.
   # config.sign_in_after_change_password = true
+  ICONS = { google_oauth2: 'google plus', twitter: 'twitter', facebook: 'facebook', linkedin: 'linkedin', github: 'github'}
+  COLOR = { google_oauth2: 'blue', twitter: 'twitter', facebook: 'facebook', linkedin: 'linkedin', github: 'black' }
 end
