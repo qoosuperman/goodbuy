@@ -80,8 +80,7 @@ class GroupsController < ApplicationController
   end
   
   def link
-    @link = edit_group_url
-    qrcode = RQRCode::QRCode.new(@link)
+    @link = buy_group_url
   end
 
   private
@@ -90,7 +89,7 @@ class GroupsController < ApplicationController
   end
 
   def group_params
-    clean_params = params.require(:group).permit(:title, :description, :address, :phone, :is_active, :start_time, :end_time, :is_public, :shop_photo, products_attributes:[:name, :price, :_destroy], options_attributes:[:name, :price, :_destroy])
+    clean_params = params.require(:group).permit(:title, :description, :address, :phone, :is_active, :start_time, :end_time, :is_public, :shop_photo, products_attributes:[:id, :name, :price, :_destroy], options_attributes:[:id, :name, :price, :_destroy])
   end
 
 

@@ -7,4 +7,11 @@ class Group < ApplicationRecord
   belongs_to :user
   has_one_attached :shop_photo
   has_one_attached :qr_img
+
+  def total_price
+    orders.reduce(0){ |acc, order|
+      acc + order.total_price
+    }
+  end
+
 end
