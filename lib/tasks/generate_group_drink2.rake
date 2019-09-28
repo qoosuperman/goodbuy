@@ -1,5 +1,5 @@
 namespace :group do
-  desc '產生兩筆訂單'
+  desc '產生狐狸先生菜單'
   task :generate_drink2 => :environment do
     Group.create(
       title: "狐狸先生",
