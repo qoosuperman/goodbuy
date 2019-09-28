@@ -58,7 +58,7 @@
                       <% end %>
                       </td>
                       <td> <%= group.created_at.to_s(:common) %> </td>
-                      <td> <%= group.updated_at.to_s(:common) %> </td>
+                      <td> <%= group.end_time.to_s(:common) if group.end_time %> </td>
                       <td> <%= group.description %> </td>
                     </tr>
                   <% end %>
