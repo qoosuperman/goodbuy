@@ -43,7 +43,15 @@ class GroupsController < ApplicationController
   end
 
   def create
-    @group = current_user.groups.build(group_params)
+    # 如果是用開過的團，要把 products 跟 options 裡面的 id 用掉
+    group = group_params.as_json
+    if group["products_attributes"]
+      group["products_attributes"].map{ | _k, v | v.delete("id")  }
+    end
+    if group["options_attributes"]
+      group["options_attributes"].map{ | _k, v | v.delete("id")  }
+    end
+    @group = current_user.groups.build(group)
     if @group.save
       redirect_to link_group_path(@group.id)
     else
