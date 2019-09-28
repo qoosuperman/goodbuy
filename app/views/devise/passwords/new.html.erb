@@ -1,13 +1,12 @@
 <div class="box text-center">
 
-  <h2 class='h3 mb-3'>Forgot your password?</h2>
+  <h2 class='signinh2 h3 mb-3'>Forgot your password?</h2>
 
   <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
 
-    <div class="field">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <div class="field mt-4">
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"Email address",class:"form-control" %><br/>
     </div>
 
     <div class="actions">
