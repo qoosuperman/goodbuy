@@ -57,8 +57,8 @@
                         已結單
                       <% end %>
                       </td>
-                      <td> <%= group.created_at %> </td>
-                      <td> <%= group.updated_at %> </td>
+                      <td> <%= group.created_at.to_s(:common) %> </td>
+                      <td> <%= group.updated_at.to_s(:common) %> </td>
                       <td> <%= group.description %> </td>
                     </tr>
                   <% end %>

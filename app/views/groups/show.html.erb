@@ -22,7 +22,11 @@
     </div>
     <div>
     狀態
-    <%= @group.is_active %>
+      <% if @group.is_active == true %>
+        <%= 尚未結單 %>
+      <% else%>
+        已結單
+      <% end %>
     </div>
     <div>
     描述
@@ -30,7 +34,7 @@
     </div>
     <div>
     開始時間
-    <%= @group.created_at %>
+    <%= @group.created_at.to_s(:common) %>
     </div>
     <div>
     目前團購金額
