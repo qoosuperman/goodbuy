@@ -27,6 +27,10 @@
       <%= stylesheet_link_tag    'buy', media: 'all'%>
     <% end %>
 
+    <% if (params[:controller] == 'groups') && (params[:action] == 'link') %>
+      <%= stylesheet_link_tag   'groups_link'%>
+    <% end %>
+
   </head>
 
   <body>
