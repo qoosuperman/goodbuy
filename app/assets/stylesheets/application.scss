@@ -13,3 +13,9 @@
 */
 
 @import "bootstrap";
+
+body {
+  background-image: image-url("food2.jpg");
+  background-size: 100%;
+  background-size: cover;
+}

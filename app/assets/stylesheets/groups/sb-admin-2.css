@@ -9943,14 +9943,12 @@ a:focus {
 }
 
 #wrapper #content-wrapper {
-  /* background-color: #fdb6c3; */
-  background-color: #FCEB99;
   width: 100%;
   overflow-x: hidden;
 }
 
 #wrapper #content-wrapper #content {
-  flex: 1 0 auto;
+  flex: 10 auto;
 }
 
 .container,
@@ -10597,7 +10595,7 @@ a:focus {
 
 .sidebar .sidebar-brand .sidebar-brand-text {
   display: none;
-  color: #fdb6c3;
+  color: #fdb14b;
   font-size: 20px;
 }
 
@@ -10644,11 +10642,11 @@ a:focus {
     width: 14rem;
   }
   .sidebar .nav-item .nav-link i {
-    font-size: 0.85rem;
+    font-size: 16px;
     margin-right: 0.25rem;
   }
   .sidebar .nav-item .nav-link span {
-    font-size: 0.85rem;
+    font-size: 16px;
     display: inline;
   }
   .sidebar .nav-item .nav-link[data-toggle="collapse"]::after {
@@ -11402,4 +11400,8 @@ footer.sticky-footer .copyright {
 
 body.sidebar-toggled footer.sticky-footer {
   width: 100%;
+}
+
+.sidebar-cos {
+  background-color: #383940;
 }
