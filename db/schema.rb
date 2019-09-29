@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_21_091757) do
+ActiveRecord::Schema.define(version: 2019_09_27_062209) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,7 +54,6 @@ ActiveRecord::Schema.define(version: 2019_09_21_091757) do
   create_table "option_order_item_logs", force: :cascade do |t|
     t.bigint "option_id"
     t.bigint "order_item_id"
-    t.boolean "is_chosen"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["option_id"], name: "index_option_order_item_logs_on_option_id"
