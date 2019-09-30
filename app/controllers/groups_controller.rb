@@ -1,10 +1,9 @@
 class GroupsController < ApplicationController
   before_action :authenticate_user!
   before_action :find_group, only: [:edit, :update, :close, :link, :buy, :show, :checkout]
+  before_action :validate_group_owner, only: [:edit, :close]
+  before_action :validate_group_active, only: [:buy, :edit]
   
-
-  require 'rqrcode'
-
   def index
   end
 
@@ -44,7 +43,15 @@ class GroupsController < ApplicationController
   end
 
   def create
-    @group = current_user.groups.build(group_params)
+    # 如果是用開過的團，要把 products 跟 options 裡面的 id 用掉
+    group = group_params.as_json
+    if group["products_attributes"]
+      group["products_attributes"].map{ | _k, v | v.delete("id")  }
+    end
+    if group["options_attributes"]
+      group["options_attributes"].map{ | _k, v | v.delete("id")  }
+    end
+    @group = current_user.groups.build(group)
     if @group.save
       redirect_to link_group_path(@group.id)
     else
@@ -53,7 +60,7 @@ class GroupsController < ApplicationController
   end
 
   def close
-    @group.update(is_active: false)
+    @group.update(is_active: false, end_time: Time.now)
     redirect_to my_groups_path
   end
 
@@ -92,5 +99,16 @@ class GroupsController < ApplicationController
     clean_params = params.require(:group).permit(:title, :description, :address, :phone, :is_active, :start_time, :end_time, :is_public, :shop_photo, products_attributes:[:id, :name, :price, :_destroy], options_attributes:[:id, :name, :price, :_destroy])
   end
 
+  def validate_group_owner
+    if @group.user_id != current_user.id
+      redirect_to my_groups_path, notice: "只有團主可以編輯/結單喔！"
+    end
+  end
+
+  def validate_group_active
+    unless @group.is_active 
+      redirect_to my_groups_path, notice: "這個團已經結單囉！"
+    end
+  end
 
 end

@@ -58,13 +58,13 @@
                       <% if group.is_active == true %>
                         <%= link_to "結單", close_group_path(group.id), class: "btn btn-close", method: "put", data: {confirm: "確定要結單？不能重新開啟喔！"} %>
                       <% else%>
-                        已結單
+                        <%= link_to "再開一次團",new_group_path(:group_id => group.id), class: "btn btn-success" %>
                       <% end %>
                       </td>
                       <td> <%= group.created_at.to_s(:common) %> </td>
                       <td> 
                         <% unless group.is_active %>
-                          <%= group.updated_at.to_s(:common) %> 
+                          <%= group.end_time.to_s(:common) if group.end_time %> 
                         <% end %>
                       </td>
                       <td> <%= group.description %> </td>
