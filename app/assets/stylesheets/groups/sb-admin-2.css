@@ -11453,3 +11453,24 @@ body.sidebar-toggled footer.sticky-footer {
   background-color: rgb(222, 186, 109);
   color: #555;
 }
+
+.btn-close{
+  background-color: #bf4a3b;
+  color: #fff;
+}
+
+.btn-close:hover{
+  background-color: #a53323;
+  color: #fff;
+}
+
+.btn-delete{
+  background-color: #bf4a3b;
+  color: #fff;
+  margin-top: 32px;
+}
+
+.btn-delete:hover{
+  background-color: #a53323;
+  color: #fff;
+}
