@@ -11403,5 +11403,27 @@ body.sidebar-toggled footer.sticky-footer {
 }
 
 .sidebar-cos {
-  background-color: #383940;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.sidebar-logo {
+  margin: 10px auto;
+}
+.sidebar-logo img {
+  width: 80px;
+  border-radius: 50%;
+}
+
+.text-heading {
+  color: #FDF3E2;
+  margin-bottom: 25px;
+}
+
+.btn-open {
+  background-color: #fdb14b;
+  color: #fff;
+}
+.btn-open:hover {
+  background-color: #ff9a16;
+  color: #fff;
 }

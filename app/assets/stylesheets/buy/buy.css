@@ -2,6 +2,10 @@
   margin: 0;
   padding: 0;
   list-style: none;
+  color: #555;
+}
+a {
+  color: #555;
 }
 
 .menu-pic {
@@ -24,33 +28,56 @@
   display: inline-block;
   vertical-align: top;
   font-family: "微軟正黑體";
-  border: 1px solid #c4edfd;
+  border: 2px solid #fdb14b;
   height: 50px;
   line-height: 50px;
-  background: #c4edfd;
+  background: #fdb14b;
   padding: 0 15px;
   list-style: none;
   box-sizing: border-box;
-  border-radius: 5px;
   margin: auto;
   width: 33.33%;
+  border-radius: 5px;
 }
 #tab-demo > ul > li a {
-  color: #000;
   text-decoration: none;
 }
 #tab-demo > ul > li.active {
   background: #fff;
 }
 #tab-demo > .tab-inner {
-  color: #000;
-  border: 1px #c4edfd solid;
+  border: 2px #fdb14b solid;
   border-radius: 5px;
 }
 .tab-inner {
   padding: 15px;
   background-color: #fff;
 }
-body {
-  background-color: #fdb6c3;
+
+.btn-buy,
+.btn-pay {
+  background-color: #bf4a3b;
+  color: #fff;
+}
+
+.btn-buy:hover {
+  background-color: #a53323;
+  color: #fff;
+}
+.btn-pay:hover {
+  background-color: #a53323;
+  color: #fff;
+}
+
+.btn-delete {
+  background-color: #658264;
+  color: #fff;
+}
+
+.btn-delete:hover {
+  background-color: #4a6149;
+  color: #fff;
+}
+.order-item {
+  margin-bottom: 10px;
 }

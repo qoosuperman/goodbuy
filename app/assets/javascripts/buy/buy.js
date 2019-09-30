@@ -51,7 +51,7 @@ $(function () {
         <span class="d-block">價格：${total}</span>
         <input type="hidden" name="item[][product]" value="${productId}" />
         <input type="hidden" name="item[][options]" value="${optionId}" />
-        <button class='delete mt-3 btn btn-danger btn-sm'>刪除囉</button>
+        <button class='delete mt-2 btn btn-delete btn-sm'>刪除囉</button>
       </div>
     `
 
