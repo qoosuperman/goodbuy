@@ -28,10 +28,10 @@ a {
   display: inline-block;
   vertical-align: top;
   font-family: "微軟正黑體";
-  border: 2px solid #fdb14b;
+  border: 1px solid #64806a;
   height: 50px;
   line-height: 50px;
-  background: #fdb14b;
+  background: #64806a;
   padding: 0 15px;
   list-style: none;
   box-sizing: border-box;
@@ -42,11 +42,15 @@ a {
 #tab-demo > ul > li a {
   text-decoration: none;
 }
+#tab-demo > ul > li.active a {
+  color: #555;
+}
+
 #tab-demo > ul > li.active {
   background: #fff;
 }
 #tab-demo > .tab-inner {
-  border: 2px #fdb14b solid;
+  border: 1px #64806a solid;
   border-radius: 5px;
 }
 .tab-inner {

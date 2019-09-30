@@ -14,10 +14,10 @@
   display: inline-block;
   vertical-align: top;
   font-family: "微軟正黑體";
-  border: 1px solid #c4edfd;
+  border: 1px solid #64806a;
   height: 50px;
   line-height: 50px;
-  background: #c4edfd;
+  background: #64806a;
   padding: 0 15px;
   list-style: none;
   box-sizing: border-box;
@@ -26,19 +26,25 @@
   width: 33.33%;
 }
 #tab-demo > ul > li a {
-  color: #555;
+  color: #fff;
   text-decoration: none;
 }
 #tab-demo > ul > li.active {
   border-bottom: 1px solid #fff;
   background: #fff;
 }
+#tab-demo > ul > li.active a {
+  color: #555;
+}
+
 #tab-demo > .tab-inner {
   color: #555;
-  border: 1px #c4edfd solid;
+  border: 1px #64806a solid;
   border-radius: 5px;
 }
 .tab-inner {
   padding: 15px;
   background-color: #fff;
 }
+
+

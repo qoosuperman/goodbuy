@@ -1,8 +1,8 @@
-
-
-<h1 class="mt-5 text-center text-light">
-來開團囉 <br>
-<%= link_to "回到團購紀錄", my_groups_path, class: "btn btn-dark" %>
-</h1>
-
+<h1 class="mt-5 text-center text-light">來開團囉</h1>
 <%= render 'form', group: @group %>
+
+<div class="container">
+  <div class="row d-flex justify-content-center">
+    <%= link_to "回到團購紀錄", my_groups_path, class: "btn btn-back btn-lg" %>
+  </div>
+</div>
