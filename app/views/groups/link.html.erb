@@ -1,19 +1,21 @@
-<div class = "container bg-white mt-5 rounded text-center">
-  <h1>連結頁面</h1>
-  
-  <h2 class = "m-4">QR Code</h2>
-  <div class = "row justify-content-center">
+<div class = "box text-center p-5">
+  <h1 class='title mb-5'>你的團購連結</h1>
+  <h2 class="link-h2 mb-4">QR Code</h2>
+
+  <div class="row justify-content-center">
     <div id="qrcode" data-link= "<%= @link %>"  ></div>
   </div>
   
+   <div class="row justify-content-center m-5">
+    <h2 class="link-h2">網址</h2>
+    <%= link_to @link, buy_group_path, class: "url_for_buy", id:'group-link' %>  
+  </div>
   
-  <h2 class = "m-4">網址</h2>
-  <%= link_to @link, buy_group_path, class: "url_for_buy" %>
   
-  <br>
   
-  <%= link_to "回到我的團購", my_groups_path, class:"btn btn-success m-3" %> 
+  <%= link_to "回到我的團購", my_groups_path, class:"btn btn-back m-3" %> 
 </div>
+
 
 <script type="text/javascript">
 var link = $("#qrcode").data('link')

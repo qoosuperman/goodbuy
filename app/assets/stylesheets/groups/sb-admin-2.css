@@ -4626,6 +4626,7 @@ input[type="button"].btn-block {
 .card-body {
   flex: 1 1 auto;
   padding: 1.25rem;
+  box-shadow: 1rem 1rem 2rem 0 rgba(0, 0, 0, 0.5);
 }
 
 .card-title {
@@ -11405,7 +11406,7 @@ body.sidebar-toggled footer.sticky-footer {
 
 .sidebar-cos {
   /* background-color: rgba(191, 120, 45, 0.666); */
-  background-color: rgba(46, 75, 40, 0.694);
+  background-color: rgba(32, 55, 28, 0.8);
 }
 
 .sidebar-logo {
@@ -11432,7 +11433,7 @@ body.sidebar-toggled footer.sticky-footer {
 }
 
 .btn-back {
-  background-color: #989EA7;
+  background-color: #989ea7;
   color: #fff;
   width: 150px;
   margin-bottom: 60px;
@@ -11445,7 +11446,7 @@ body.sidebar-toggled footer.sticky-footer {
 }
 
 .btn-new {
-  background-color: #FFD377;
+  background-color: #ffd377;
   color: #555;
 }
 
@@ -11454,33 +11455,33 @@ body.sidebar-toggled footer.sticky-footer {
   color: #555;
 }
 
-.btn-close{
+.btn-close {
   background-color: #bf4a3b;
   color: #fff;
 }
 
-.btn-close:hover{
+.btn-close:hover {
   background-color: #a53323;
   color: #fff;
 }
 
-.btn-delete{
+.btn-delete {
   background-color: #bf4a3b;
   color: #fff;
   margin-top: 32px;
 }
 
-.btn-delete:hover{
+.btn-delete:hover {
   background-color: #a53323;
   color: #fff;
 }
 
-.btn-reopen{
+.btn-reopen {
   background-color: #488054;
   color: #fff;
 }
 
-.btn-reopen:hover{
+.btn-reopen:hover {
   background-color: #3d6c47;
   color: #fff;
 }
