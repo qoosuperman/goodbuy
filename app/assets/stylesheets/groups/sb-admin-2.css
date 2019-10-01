@@ -11474,3 +11474,13 @@ body.sidebar-toggled footer.sticky-footer {
   background-color: #a53323;
   color: #fff;
 }
+
+.btn-reopen{
+  background-color: #488054;
+  color: #fff;
+}
+
+.btn-reopen:hover{
+  background-color: #3d6c47;
+  color: #fff;
+}
