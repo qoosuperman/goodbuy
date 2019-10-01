@@ -46,7 +46,7 @@
             </div>
           </div>
           <div class="rounded mt-3">價格：<span class="total-price"></span></div>
-          <button class='mt-3 btn btn-success btn-sm' id='buy'>買吧買吧</button>
+          <button class='mt-3 btn btn-buy' id='buy'>買吧買吧</button>
         </form>
       </div>
 
@@ -58,7 +58,7 @@
           <%= form_with url: checkout_group_path, local: true do |form| %>
             <div id='order-item'>
             </div>
-            <%= form.submit '結帳囉', :class => 'mt-3 btn btn-warning btn-sm' %>
+            <%= form.submit '結帳囉', :class => 'mt-3 btn btn-pay' %>
           <% end %>
         </div>        
       </div>

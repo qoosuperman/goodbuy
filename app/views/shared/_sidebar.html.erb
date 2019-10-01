@@ -2,22 +2,27 @@
   <div id="wrapper">
 
     <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-info sidebar sidebar-dark accordion" id="accordionSidebar">
+    <ul class="navbar-nav sidebar sidebar-dark accordion sidebar-cos d-flex align-items-center" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <div class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+      <%# <div class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
         <div class="sidebar-brand-icon d-flex align-items-center justify-content-center">
           <div class="sidebar-brand-text mx-3">Good Buy</div>
         </div>
+      </div> %>
+
+      <div class="sidebar-logo">
+        <%= image_tag("logo.png", :alt => "logo") %>
       </div>
         
-      <!-- Divider -->
-      <hr class="sidebar-divider my-0">
 
       <!-- Heading -->
-      <div class="sidebar-heading">
+      <div class="sidebar-heading mt-3">
         團購紀錄
       </div>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0">
 
       <!-- Nav Item - Pages Collapse Menu -->
 
@@ -34,17 +39,16 @@
       </li>
 
 
+      <!-- Heading -->
+      <div class="sidebar-heading">
+        開團囉
+      </div>
 
       <!-- Divider -->
       <hr class="sidebar-divider">
 
-      <!-- Heading -->
-      <div class="sidebar-heading">
-        開團囉！
-      </div>
-
       <!-- Nav Item - Charts -->
-      <li class="nav-item">
+      <li class="nav-item active">
         <%= link_to public_groups_path, class: "nav-link" do %>
           <span>既有團</span>
         <% end %>
@@ -57,17 +61,19 @@
         <% end %>
       </li>
 
-      <!-- Divider -->
-      <hr class="sidebar-divider d-none d-md-block">
+      
 
       <!-- Heading -->
       <div class="sidebar-heading">
         其他
       </div>
 
+      <!-- Divider -->
+      <hr class="sidebar-divider d-none d-md-block">
+
       <!-- Nav Item - Charts -->
 
-      <li class="nav-item">
+      <li class="nav-item active">
         <%= link_to edit_user_registration_path(current_user), class: "nav-link" do %>
           <span>個人資訊</span>
         <% end %>
@@ -81,8 +87,7 @@
         <% end %>
       </li>
 
-      <!-- Divider -->
-      <hr class="sidebar-divider d-none d-md-block">
+      
 
     </ul>
     <!-- End of Sidebar -->

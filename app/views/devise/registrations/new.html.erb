@@ -2,7 +2,7 @@
   <div class="logobox">
     <%= image_tag("logo.png", :alt => "logo" ,class:'logo') %>
   </div>
-  <h2 class='signinh2 h3 mb-3'>Sign up</h2>
+  <h2 class='signinh2 h3 mb-3'>Sign in</h2>
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
@@ -19,7 +19,7 @@
     </div>
 
     <div class="actions">
-      <%= f.submit "Sign up", class:'btn btn-md btn-info btn-block' %>
+      <%= f.submit "Sign in", class:'btn btn-md btn-info btn-block' %>
     </div>
   <% end %>
 

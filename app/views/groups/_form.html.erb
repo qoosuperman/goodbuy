@@ -26,7 +26,7 @@
                   <%= render 'product_fields', f: product %>
               <% end %>
               <div class="links">
-                  <%= link_to_add_association '新增菜單', f, :products, class: "btn, btn-success btn-sm" %>
+                  <%= link_to_add_association '新增菜單', f, :products, class: "btn btn-new btn-sm" %>
               </div>
           </div>
       </div>
@@ -35,14 +35,14 @@
               <%= render 'option_fields', f: option %>
           <% end %>
           <div class="links">
-              <%= link_to_add_association '新增選項', f, :options, class: "btn, btn-success btn-sm"  %>
+              <%= link_to_add_association '新增選項', f, :options, class: "btn btn-new btn-sm"  %>
           </div>
             </div>
         </div>
       </div>
     <div class="container mt-5">
         <div class="row">
-            <%= f.button :submit, value: "確定開團",class:"btn btn-danger mt-5 m-auto btn-lg"  %>
+            <%= f.button :submit, value: "確定開團",class:"btn btn-open btn-lg mb-3 mx-auto btn-lg"  %>
         </div>
     </div>
   </div>

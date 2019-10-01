@@ -15,12 +15,12 @@
         <div class="container-fluid mt-5">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">跟團紀錄</h1>
+          <h1 class="h3 text-heading">跟團紀錄</h1>
 
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">紀錄列表</h6>
+              <h6 class="m-0 font-weight-bold text-dark">紀錄列表</h6>
             </div>
             <div class="card-body">
               <div class="table-responsive">
@@ -52,7 +52,7 @@
                       <td><%= group.title  %></td>
                       <td> 
                       <% if group.is_active == true %>
-                        <%= link_to "結單", close_group_path(group.id), class: "btn btn-danger", method: "put", data: {confirm: "確定要結單？不能重新開啟喔！"} %>
+                        <%= link_to "結單", close_group_path(group.id), class: "btn btn-close", method: "put", data: {confirm: "確定要結單？不能重新開啟喔！"} %>
                       <% else%>
                         已結單
                       <% end %>
