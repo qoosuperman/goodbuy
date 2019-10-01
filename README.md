@@ -4,7 +4,7 @@ GoodBuy makes you BuyGood!
 
 Want to buy something with your colleagues/friends but still bothered by handling complicated orders?
 
-Goodbuy provide a platform which helps people arrange orders / manupulate calculations and even collect the money for you!
+Goodbuy provides a platform which helps people arrange orders / manupulates calculations and even collects the money for you!
 
 
 ## Table of content
@@ -65,18 +65,18 @@ Check rails routes for more detail:
 $ rails routes
 ```
 
-| Pages           | Prefix                | URI Pattern                 |
-| :-------------- | :-------------------- | :-------------------------  |
-| User sign up:   | new_user_registration | `/users/sign_up(.:format)`  |
-| User sign in:   | new_user_session      | `/users/sign_in(.:format)`  |
-| User edit:      | edit_user_registration| `/users/edit(.:format)`     |
-| my groups:      | my_groups             | `/groups/my(.:format)`      |
-| attend groups:  | attend_groups         | `/groups/attend(.:format)`  |
-| public groups:  | public_groups         | `/groups/public(.:format)`  |
-| buy group:      | buy_groups            | `/groups/:id/buy(.:format)` |
-| edit group:     | edit_groups           | `/groups/:id/edit(.:format)`|
-| new group:      | new_groups            | `/groups/new(.:format)`     |
-| group:          | group                 | `/groups/:id(.:format)`     |
+| Pages                         | Prefix                | URI Pattern                 |
+| :-----------------------------| :-------------------- | :-------------------------  |
+| User sign up:                 | new_user_registration | `/users/sign_up(.:format)`  |
+| User sign in:                 | new_user_session      | `/users/sign_in(.:format)`  |
+| User edit:                    | edit_user_registration| `/users/edit(.:format)`     |
+| Groups you owned:             | my_groups             | `/groups/my(.:format)`      |
+| Groups you attended:          | attend_groups         | `/groups/attend(.:format)`  |
+| Public menus:                 | public_groups         | `/groups/public(.:format)`  |
+| Buy things:                   | buy_groups            | `/groups/:id/buy(.:format)` |
+| Edit group:                   | edit_groups           | `/groups/:id/edit(.:format)`|
+| Create a new group :          | new_groups            | `/groups/new(.:format)`     |
+| Monitor group status:         | group                 | `/groups/:id(.:format)`     |
 
 
 ***
@@ -108,14 +108,14 @@ Just visit `/groups/:id`, GoodBuy has already build a table for you to monitor t
 ***
 ## Attend groups if you are a buyer
 
-Once a group owner share a link with you, you ara able to attend a group after login.
+Once a group owner share a link with you, you are able to attend a group after login.
 
 -  Buy things
 
-Visit buy group page and now it's your shopping time! You can also know 
+Visit buy group page and now it's your shopping time! You can also 
 
 
--  Monitoring group status
+-  Monitor group status
 
 Also, you can monitor the current status of the group you've attended. The only difference is that you are NOT authorized to edit the group unless you are the owner.
 
