@@ -42,7 +42,12 @@
       </div>
     <div class="container mt-5">
         <div class="row">
-            <%= f.button :submit, value: "確定開團",class:"btn btn-open btn-lg mb-3 mx-auto btn-lg"  %>
+            <%= f.button :submit, value: "確定開團",class:"btn btn-delete btn-lg mx-auto btn-lg"  %>
+        </div>
+    </div>
+    <div class="container mt-3">
+        <div class="row">
+            <%= link_to "回到團購紀錄", my_groups_path, class: "m-auto btn btn-dark btn-lg" %>
         </div>
     </div>
   </div>
