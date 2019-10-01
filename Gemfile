@@ -28,8 +28,7 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 gem "figaro"
-gem 'bootstrap-social-rails'
-
+gem 'clipboard-rails'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'

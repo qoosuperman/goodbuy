@@ -8,7 +8,11 @@
   
    <div class="row justify-content-center m-5">
     <h2 class="link-h2">網址</h2>
-    <%= link_to @link, buy_group_path, class: "url_for_buy", id:'group-link' %>  
+    <div class="row">
+      <%= link_to @link, buy_group_path, class: "url_for_buy", id:'group-link' %>  
+      <button class="clipboard-btn btn btn-primary btn-sm m-auto mt-2" data-clipboard-action="copy" data-clipboard-target="#group-link">
+      複製網址</button>      
+    </div>
   </div>
   
   
