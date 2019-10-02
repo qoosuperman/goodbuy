@@ -12,6 +12,8 @@ class OrdersController < ApplicationController
     @item_name = @order.item_name
     @return_url = "http://da202e30.ngrok.io/api/feedback"
     @client_back_url = "http://da202e30.ngrok.io/thank"
+    @order.update(trade_no: @merchan_trade_no)
+    OrderMailer.with(order: @order).confirm_email.deliver_later
 
     @check_mac_value = Ecpay::Invoice::CreateMacValue.new(raw_params).run
   end
