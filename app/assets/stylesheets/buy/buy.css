@@ -4,6 +4,26 @@
   list-style: none;
   color: #555;
 }
+.wrap {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  justify-content: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-image: image-url("background.jpg");
+  background-size: 100%;
+}
+.box {
+  width: 1000px;
+  background-color: #fff;
+  margin: 50px;
+  padding: 40px;
+  border-radius: 5px;
+  box-shadow: 10px 10px 10px #555;
+}
+
 a {
   color: #555;
 }

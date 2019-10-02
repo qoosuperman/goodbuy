@@ -1,4 +1,32 @@
-.url_for_buy{
-  font-size: 30px;
+body {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  justify-content: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-image: image-url("background.jpg");
+  background-size: 100%;
+}
+.box {
+  background-color: #fff;
+  margin: 50px;
+  width: 400px;
+  padding: 40px;
+  border-radius: 5px;
+  box-shadow: 3px 3px 10px #999;
 }
 
+.link-h2 {
+  color: #4ba0b5;
+}
+
+.url_for_buy {
+  font-size: 20px;
+}
+
+.title {
+  color: #555;
+  font-size: 36px;
+}
