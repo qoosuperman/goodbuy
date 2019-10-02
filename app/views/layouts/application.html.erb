@@ -19,7 +19,7 @@
     <% end %>
 
     <% if (params[:controller].include?('devise'))%>
-      <%= stylesheet_link_tag    'devise', media: 'all'%>
+      <%= stylesheet_link_tag    'devise', 'data-turbolinks-track': 'reload'%>
     <% end %>
     <% if (params[:controller] == 'groups') && (params[:action] == 'new' || 'edit'|| 'link') %>
       <%= javascript_include_tag  'groups_new'%>
