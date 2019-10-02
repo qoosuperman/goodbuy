@@ -1,0 +1,3 @@
+smtp_address: 'your_smtp_server'
+smtp_user_name: 'your_smtp_user_name'
+smtp_password: 'your_smtp_user_password'
