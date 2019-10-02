@@ -62,4 +62,15 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
   config.active_storage.service = :local
+
+  config.action_mailer.preview_path = "#{Rails.root}/spec/mailers/previews"
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address:              ENV['smtp_address'],
+    port:                 587,
+    domain:               '5xruby.tw',
+    user_name:            ENV['smtp_user_name'],
+    password:             ENV['smtp_password'],
+    authentication:       'plain',
+    enable_starttls_auto: true }
 end
