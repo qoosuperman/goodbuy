@@ -1,0 +1,83 @@
+
+// wrapper部分
+@media screen and (min-width: 768px) {
+  #wrapper{
+    display: flex;
+  }
+}
+@media screen and (max-width: 767px) {
+  #wrapper{
+    display: block;
+  }
+}
+// mac部分
+
+@media screen and (min-width: 768px) {
+  .mac.sidebar{
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .mac{
+    display: none !important;
+  }
+}
+
+// phone 部分
+
+@media screen and (min-width: 768px) {
+  .phone{
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .phone{
+    background-color: rgba(32, 55, 28, 0.8);
+  }
+  .phone_sidebar-logo{
+    max-width: 50px;
+  }
+  .phone_sidebar-logo img{
+    width: 100%;
+    border-radius: 50%;
+  }
+}
+// 標題
+@media screen and (max-width: 767px) {
+  h1{
+    text-align: center;
+  }
+}
+
+
+
+// mac table部分
+@media screen and (max-width: 767px) {
+  .card.shadow.mb-4{
+    display: none;
+  }
+}
+
+// phone card 部分
+
+.phone-card{
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .phone-card{
+    display: none;
+  }
+}
+
+.card.mt-3{
+  justify-content: center;
+}
+
+@media screen and (max-width: 767px) {
+  .card.shadow.mb-4{
+    display: none;
+  }
+}

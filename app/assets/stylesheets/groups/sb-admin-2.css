@@ -178,7 +178,7 @@ sup {
 }
 
 a {
-  color: #4e73df;
+  color: #ffffff;
   text-decoration: none;
   background-color: transparent;
 }
@@ -9939,9 +9939,6 @@ a:focus {
   outline: none;
 }
 
-#wrapper {
-  display: flex;
-}
 
 #wrapper #content-wrapper {
   width: 100%;

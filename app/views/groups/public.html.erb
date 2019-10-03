@@ -1,5 +1,4 @@
-<body id="page-top">
-
+  <div id="wrapper">
     <%= render 'shared/sidebar' %>
 
     <!-- Content Wrapper -->
@@ -19,7 +18,7 @@
           <h1 class="h3 text-heading">既有團</h1>
 
           <!-- DataTales Example -->
-          <div class="card shadow mb-4">
+          <div class="card shadow mb-3">
             <div class="card-header py-3">
               <h6 class="m-0 font-weight-bold text-dark">紀錄列表</h6>
             </div>
@@ -43,7 +42,7 @@
                   <tbody></tbody>
                   <% @groups.each do |group| %>
                     <tr>
-                      <td> <%= link_to "開團",new_group_path(:group_id => group.id) %> </td>
+                      <td> <%= link_to "開團",new_group_path(:group_id => group.id), class: "btn btn-outline-info" %> </td>
                       <td> <%= group.title %> </td>
                       <td> <%= group.description %>  </td>
                     </tr>
@@ -64,6 +63,4 @@
     <!-- End of Content Wrapper -->
   </div>
   <!-- End of Page Wrapper -->
-</body>
 
-</html>

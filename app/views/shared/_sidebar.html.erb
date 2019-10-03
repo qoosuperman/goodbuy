@@ -1,20 +1,17 @@
   <!-- Page Wrapper -->
-  <div id="wrapper">
+  
 
     <!-- Sidebar -->
-    <ul class="navbar-nav sidebar sidebar-dark accordion sidebar-cos d-flex align-items-center" id="accordionSidebar">
-
+    <ul class="mac navbar-nav sidebar sidebar-dark accordion sidebar-cos align-items-center" id="accordionSidebar">
       <!-- Sidebar - Brand -->
       <%# <div class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
         <div class="sidebar-brand-icon d-flex align-items-center justify-content-center">
           <div class="sidebar-brand-text mx-3">Good Buy</div>
         </div>
       </div> %>
-
       <div class="sidebar-logo">
         <%= image_tag("logo.png", :alt => "logo") %>
       </div>
-        
 
       <!-- Heading -->
       <div class="sidebar-heading mt-3">
@@ -91,3 +88,46 @@
 
     </ul>
     <!-- End of Sidebar -->
+  
+
+<ul class="nav nav-pills phone pt-3 pb-3 justify-content-between">
+  <div class="phone_sidebar-logo ml-3">
+    <%= image_tag("logo.png", :alt => "logo") %>
+  </div>
+  <div class="row">
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">團購紀錄</a>
+      <div class="dropdown-menu">
+        <%= link_to my_groups_path, class: "dropdown-item" do %>
+          <span>我的團購</span>
+        <% end %>
+        <%= link_to attend_groups_path, class: "dropdown-item" do %>
+          <span>跟團紀錄</span>
+        <% end %>
+      </div>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">開團囉</a>
+      <div class="dropdown-menu">
+        <%= link_to public_groups_path, class: "dropdown-item" do %>
+          <span>既有團</span>
+        <% end %>
+        <%= link_to new_group_path, class: "dropdown-item" do %>
+          <span>新增團購</span>
+        <% end %>
+      </div>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">其他</a>
+      <div class="dropdown-menu">
+        <%= link_to edit_user_registration_path(current_user), class: "dropdown-item" do %>
+          <span>個人資訊</span>
+        <% end %>
+        <%= link_to destroy_user_session_path, class: "dropdown-item" ,method: 'delete' do %>
+          <span>登出</span>
+        <% end %>
+      </div>
+    </li>
+  </div>
+
+</ul>
