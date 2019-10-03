@@ -13,7 +13,7 @@
 
 
   <div class="row justify-content-center">
-    <div id="qrcode" data-link= "<%= @link %>"></div>
+    <div class="qrcodebox" id="qrcode" data-link= "<%= @link %>"></div>
   </div>
   
   
@@ -23,6 +23,6 @@
 
 
 <script type="text/javascript">
-var link = $("#qrcode").data('link')
-new QRCode(document.getElementById("qrcode"), link);
+  var link = $("#qrcode").data('link')
+  new QRCode(document.getElementById("qrcode"), link);
 </script>

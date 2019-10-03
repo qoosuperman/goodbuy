@@ -7,7 +7,8 @@ body {
   padding-top: 40px;
   padding-bottom: 40px;
   background-image: image-url("background.jpg");
-  background-size: 100%;
+  background-position: center;
+  background-size: cover;
 }
 .box {
   background-color: #fff;
@@ -25,4 +26,19 @@ body {
 .title {
   color: #555;
   font-size: 36px;
+}
+
+@media screen and (max-width: 768px) {
+  .box {
+    width: 300px;
+  }
+  .qrcodebox img {
+    width: 200px;
+  }
+  .title {
+    font-size: 30px;
+  }
+  .url_for_buy {
+    font-size: 14px;
+  }
 }
