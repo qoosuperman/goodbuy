@@ -41,11 +41,15 @@
     <%= @group.total_price %>
     </div>
   </div>
-  <% if @group.user_id == current_user.id %>
-    <div class ="text-right m-3">
-      <%= link_to "編輯團購", edit_group_path(@group.id), class: "btn btn-success" %>
-    </div>
-  <% end %>
+ 
+  
+  <div class ="text-right m-3">
+    <%= link_to "回到團購紀錄", my_groups_path, class: "btn btn-dark" %>
+    <% if @group.user_id == current_user.id %>
+      <%= link_to "編輯團購", edit_group_path(@group.id), class: "btn btn-delete" %>
+    <% end %>
+  </div>
+  
   <table class= "table">
     <thead>
     <tr>

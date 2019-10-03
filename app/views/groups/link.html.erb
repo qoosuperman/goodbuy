@@ -1,23 +1,24 @@
 <div class = "box text-center p-5">
   <h1 class='title mb-5'>你的團購連結</h1>
-  <h2 class="link-h2 mb-4">QR Code</h2>
-
-  <div class="row justify-content-center">
-    <div id="qrcode" data-link= "<%= @link %>"  ></div>
-  </div>
   
    <div class="row justify-content-center m-5">
-    <h2 class="link-h2">網址</h2>
     <div class="row">
-      <%= link_to @link, buy_group_path, class: "url_for_buy", id:'group-link' %>  
-      <button class="clipboard-btn btn btn-primary btn-sm m-auto mt-2" data-clipboard-action="copy" data-clipboard-target="#group-link">
-      複製網址</button>      
+        <%= link_to @link, buy_group_path, class: "url_for_buy", id:'group-link' %>  
+
+        <button class="clipboard-btn btn btn-primary btn-sm mx-auto mt-2" data-clipboard-action="copy" data-clipboard-target="#group-link">
+        複製網址</button>
+
     </div>
+  </div>
+
+
+  <div class="row justify-content-center">
+    <div id="qrcode" data-link= "<%= @link %>"></div>
   </div>
   
   
   
-  <%= link_to "回到我的團購", my_groups_path, class:"btn btn-dark m-3" %> 
+  <%= link_to "回到我的團購", my_groups_path, class:"btn btn-dark mt-5" %> 
 </div>
 
 
