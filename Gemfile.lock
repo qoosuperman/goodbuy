@@ -927,6 +927,7 @@ GEM
     multi_json (1.13.1)
     multi_xml (0.6.0)
     multipart-post (2.1.1)
+    mustermann (1.0.3)
     nio4r (2.5.1)
     nokogiri (1.10.4)
       mini_portile2 (~> 2.4.0)
@@ -1044,6 +1045,11 @@ GEM
     simple_form (4.1.0)
       actionpack (>= 5.0)
       activemodel (>= 5.0)
+    sinatra (2.0.7)
+      mustermann (~> 1.0)
+      rack (~> 2.0)
+      rack-protection (= 2.0.7)
+      tilt (~> 2.0)
     spring (2.1.0)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -1114,6 +1120,7 @@ DEPENDENCIES
   selenium-webdriver
   sidekiq (~> 6.0, >= 6.0.1)
   simple_form (~> 4.1)
+  sinatra
   spring
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)

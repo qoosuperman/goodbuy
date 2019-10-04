@@ -23,6 +23,8 @@ Rails.application.routes.draw do
   resources :thank, only: [:index]
   post "api/feedback" ,to: "api#feedback"
 
+  require 'sidekiq/web'
+  mount Sidekiq::Web => '/sidekiq'
 
 
 end
