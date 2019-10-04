@@ -1108,7 +1108,6 @@ DEPENDENCIES
   pg (~> 1.1, >= 1.1.4)
   puma (~> 3.11)
   rails (~> 5.2.3)
-  redis (~> 4.0)
   rqrcode
   rspec-rails (~> 4.0.0.beta2)
   sass-rails (~> 5.0)
