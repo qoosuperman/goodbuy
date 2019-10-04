@@ -42,7 +42,7 @@
                   <tbody></tbody>
                   <% @groups.each do |group| %>
                     <tr>
-                      <td> <%= link_to "開團",new_group_path(:group_id => group.id), class: "btn btn-delete" %> </td>
+                      <td> <%= link_to "開團",new_group_path(:group_id => group.id), class: "btn btn-o" %> </td>
                       <td> <%= group.title %> </td>
                       <td> <%= group.description %>  </td>
                     </tr>

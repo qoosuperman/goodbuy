@@ -48,7 +48,7 @@
                   <tbody></tbody>
                   <% @groups.each do |group| %>
                     <tr>
-                      <td> <%= link_to "目前購買狀況", group_path(group.id), class: "btn btn-outline-info" %> </td>
+                      <td> <%= link_to "目前購買狀況", group_path(group.id), class: "btn btn-status" %> </td>
                       <td><%= group.title  %></td>
                       <td> 
                         <%= group.user.name %>
@@ -83,8 +83,8 @@
                         已結單
                     <% end %> </p>
 
-                  <%= link_to "連結", link_group_path(group.id), class: "btn btn-outline-primary" %>
-                  <%= link_to "目前購買狀況", group_path(group.id), class: "btn btn-outline-info" %>
+                  <%= link_to "連結", link_group_path(group.id), class: "btn btn-secondary" %>
+                  <%= link_to "目前購買狀況", group_path(group.id), class: "btn btn-status" %>
                 </div>
               </div>
             <% end %>
