@@ -1,90 +1,101 @@
+body {
+  background-image: image-url("background.jpg");
+  background-size: cover;
+}
+
+.btn-status {
+  color: #fff !important;
+  background-color: #415993 !important;
+}
+
+.btn-status:hover {
+  color: #fff !important;
+  background-color: #2d4273 !important;
+}
 
 // wrapper部分
 @media screen and (min-width: 768px) {
-  #wrapper{
+  #wrapper {
     display: flex;
   }
 }
 @media screen and (max-width: 767px) {
-  #wrapper{
+  #wrapper {
     display: block;
   }
 }
 // mac navbar部分
 
 @media screen and (min-width: 768px) {
-  .mac.sidebar{
+  .mac.sidebar {
     display: flex;
   }
 }
 
 @media screen and (max-width: 767px) {
-  .mac{
+  .mac {
     display: none !important;
   }
 }
 
 // phone navbar 部分
-.dropdown-toggle:hover{
+.dropdown-toggle:hover {
   color: #ffffff;
 }
 .nav-pills .show > .nav-link {
-  background-color: #FEB14A;
+  background-color: #feb14a;
 }
 
-
 @media screen and (min-width: 768px) {
-  .phone{
+  .phone {
     display: none !important;
   }
 }
 
 @media screen and (max-width: 767px) {
-  .phone{
+  .phone {
     background-color: rgba(32, 55, 28, 0.8);
   }
-  .phone_sidebar-logo{
+  .phone_sidebar-logo {
     max-width: 50px;
   }
-  .phone_sidebar-logo img{
+  .phone_sidebar-logo img {
     width: 100%;
     border-radius: 50%;
   }
 }
 // 標題
 @media screen and (max-width: 767px) {
-  h1{
+  h1 {
     text-align: center;
   }
 }
 
-
-
 // mac table部分
 @media screen and (max-width: 767px) {
-  .card.shadow.mb-4{
+  .card.shadow.mb-4 {
     display: none;
   }
 }
 
 // phone card 部分
 
-.phone-card{
+.phone-card {
   text-align: center;
 }
 
 @media screen and (min-width: 768px) {
-  .phone-card{
+  .phone-card {
     display: none;
   }
 }
 
-.card.mt-3{
+.card.mt-3 {
   justify-content: center;
 }
 
 @media screen and (max-width: 767px) {
-  .card.shadow.mb-4{
+  .card.shadow.mb-4 {
     display: none;
   }
 }

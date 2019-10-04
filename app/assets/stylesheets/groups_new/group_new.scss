@@ -92,7 +92,7 @@
     margin: 30px 20px;
     padding: 5px 5px 25px;
   }
-  .pc {
+  .form-pc {
     display: none;
   }
   h2 {
@@ -105,7 +105,7 @@
 }
 
 @media screen and (min-width: 768px) {
-  .phone {
+  .form-phone {
     display: none;
   }
 }

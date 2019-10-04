@@ -45,7 +45,7 @@ $(function () {
 
 
     let tpl = `
-      <div class="id-${orderItemId} media-body pb-3 lh-125 border-bottom border-gray order-item">
+      <div class="id-${orderItemId} pb-3 lh-125 border-bottom border-gray order-item">
         <strong class="text-gray-dark">品名：${product}</strong>
         <span class="d-block">選項：${options}</span>
         <span class="d-block">價格：${total}</span>
