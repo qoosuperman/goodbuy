@@ -1,3 +1,7 @@
 smtp_address: 'your_smtp_server'
 smtp_user_name: 'your_smtp_user_name'
 smtp_password: 'your_smtp_user_password'
+
+aws_access_key_id: 'your_aws_access_key_id'
+aws_secret_access_key: 'your_aws_secret_access_key'
+aws_bucket: 'your_aws_bucket'
