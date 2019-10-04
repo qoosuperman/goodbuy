@@ -10,7 +10,7 @@
     display: block;
   }
 }
-// mac部分
+// mac navbar部分
 
 @media screen and (min-width: 768px) {
   .mac.sidebar{
@@ -24,7 +24,14 @@
   }
 }
 
-// phone 部分
+// phone navbar 部分
+.dropdown-toggle:hover{
+  color: #ffffff;
+}
+.nav-pills .show > .nav-link {
+  background-color: #FEB14A;
+}
+
 
 @media screen and (min-width: 768px) {
   .phone{

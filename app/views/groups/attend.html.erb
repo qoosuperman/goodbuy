@@ -71,7 +71,7 @@
           </div>
           <div class="phone-card">
             <% @groups.each do |group| %>
-              <div class="card mt-3" style="width: 18rem;">
+              <div class="card mt-3">
                 <div class="card-body">
                   <h5 class="card-title"> <%= group.title %> </h5>
                   <h6 class="card-subtitle mb-2 text-muted"> <%= group.description %> </h6>
@@ -83,8 +83,8 @@
                         已結單
                     <% end %> </p>
 
-                  <%= link_to "連結", link_group_path(group.id), class: "card-link btn btn-outline-primary" %>
-                  <%= link_to "目前購買狀況", group_path(group.id), class: "card-link btn btn-outline-info" %>
+                  <%= link_to "連結", link_group_path(group.id), class: "btn btn-outline-primary" %>
+                  <%= link_to "目前購買狀況", group_path(group.id), class: "btn btn-outline-info" %>
                 </div>
               </div>
             <% end %>
