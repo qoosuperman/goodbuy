@@ -106,4 +106,6 @@ Rails.application.configure do
 
   config.serve_static_assets = true
   config.assets.compile = true
+
+  config.active_storage.service = :amazon
 end
