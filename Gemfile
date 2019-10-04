@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.3'
 
+gem 'aws-sdk', '~> 3.0', '>= 3.0.1'
+gem 'aws-sdk-s3', '~> 1.48'
 gem 'pg', '~> 1.1', '>= 1.1.4'
 gem 'rqrcode'
 gem 'mini_magick', '~> 4.9', '>= 4.9.5'
