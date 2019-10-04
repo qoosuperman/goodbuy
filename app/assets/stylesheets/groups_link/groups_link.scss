@@ -7,7 +7,7 @@ body {
   padding-top: 40px;
   padding-bottom: 40px;
   background-image: image-url("background.jpg");
-  background-size: 100%;
+  background-size: cover;
 }
 .box {
   background-color: #fff;
@@ -16,6 +16,11 @@ body {
   padding: 40px;
   border-radius: 5px;
   box-shadow: 3px 3px 10px #999;
+}
+@media screen and (max-width: 767px) {
+  .box{
+    width: 300px;
+  }
 }
 
 .link-h2 {

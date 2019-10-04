@@ -178,7 +178,7 @@ sup {
 }
 
 a {
-  color: #4e73df;
+  color: #ffffff;
   text-decoration: none;
   background-color: transparent;
 }
@@ -4204,7 +4204,6 @@ input[type="button"].btn-block {
 .nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {
   color: #fff;
-  background-color: #4e73df;
 }
 
 .nav-fill .nav-item {
@@ -9939,9 +9938,6 @@ a:focus {
   outline: none;
 }
 
-#wrapper {
-  display: flex;
-}
 
 #wrapper #content-wrapper {
   width: 100%;

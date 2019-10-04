@@ -1,5 +1,5 @@
 
-
+  <div id="wrapper"  >
     <%= render 'shared/sidebar' %>
 
     <!-- Content Wrapper -->
@@ -51,8 +51,8 @@
                   <tbody></tbody>
                   <% @groups.each do |group| %>
                     <tr>
-                      <td> <%= link_to "連結", link_group_path(group.id) %> </td>
-                      <td> <%= link_to "目前購買狀況", group_path(group.id) %> </td>
+                      <td> <%= link_to "連結", link_group_path(group.id), class: "btn btn-outline-primary" %> </td>
+                      <td> <%= link_to "目前購買狀況", group_path(group.id), class: "btn btn-outline-info" %> </td>
                       <td><%= group.title  %></td>
                       <td> 
                       <% if group.is_active == true %>
@@ -75,12 +75,33 @@
               </div>
             </div>
           </div>
+          <div class="phone-card">
+            <% @groups.each do |group| %>
+              <div class="card mt-3">
+                <div class="card-body">
+                  <h5 class="card-title"> <%= group.title %> </h5>
+                  <h6 class="card-subtitle mb-2 text-muted"> <%= group.description %> </h6>
+                  <p class="card-text">起始時間： <%= group.created_at.to_s(:common) %> </p>
+                  <% if group.is_active == true %>
+                    <%= link_to "結單", close_group_path(group.id), class: "btn btn-close", method: "put", data: {confirm: "確定要結單？不能重新開啟喔！"} %>
+                  <% else%>
+                    <%= link_to "再開團",new_group_path(:group_id => group.id), class: "btn btn-reopen" %>
+                  <% end %>
+                  <%= link_to "連結", link_group_path(group.id), class: "btn btn-outline-primary" %>
+                  <%= link_to "購買狀況", group_path(group.id), class: "btn btn-outline-info" %>
+                </div>
+              </div>
+            <% end %>
+          </div>
 
         </div>
         <!-- /.container-fluid -->
 
       </div>
       <!-- End of Main Content -->
+
+
+
 
       <!-- Footer -->
       <%= render "footer" %>
