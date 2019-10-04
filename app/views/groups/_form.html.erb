@@ -1,54 +1,116 @@
 <%= simple_form_for(group) do |f| %>
-  <div class="container mt-5">
-    <div id="tab-demo" class="m-auto">
-      <ul class="tab-title">
-        <li><a href="#tab01">店家資訊</a></li>
-        <li><a href="#tab02">菜單</a></li>
-        <li><a href="#tab03">選項</a></li>
-      </ul>
-      <div id="tab01" class="tab-inner">
-        <% if group.shop_photo.attached? %>
-          <div class="row justify-content-center">
-            <%= image_tag group.shop_photo.variant(resize: "300x300"), class: "group-img " %>
-          </div>
-        <% end %>
-          <div>
-            <%= f.input :shop_photo, label: '照片' %>
-            <%= f.input :title, label: "團名" %> 
-            <%= f.input :address, label: "店家地址" %> 
-            <%= f.input :phone, label: "店家電話" %> 
-            <%= f.input :description, label: "描述" %>
-          </div>
-      </div>
-      <div id="tab02" class="tab-inner">
-          <div id="products">
-              <%= f.simple_fields_for :products do |product| %>
-                  <%= render 'product_fields', f: product %>
-              <% end %>
-              <div class="links">
-                  <%= link_to_add_association '新增菜單', f, :products, class: "btn btn-new btn-sm" %>
-              </div>
-          </div>
-      </div>
-      <div id="tab03" class="tab-inner">
-          <%= f.simple_fields_for :options do |option| %>
-              <%= render 'option_fields', f: option %>
+  <div class="pc">
+    <div class="container mt-5">
+      <div id="tab-demo" class="m-auto">
+        <ul class="tab-title">
+          <li><a href="#tab01">店家資訊</a></li>
+          <li><a href="#tab02">菜單</a></li>
+          <li><a href="#tab03">選項</a></li>
+        </ul>
+        <div id="tab01" class="tab-inner">
+          <% if group.shop_photo.attached? %>
+            <div class="row justify-content-center">
+              <%= image_tag group.shop_photo.variant(resize: "300x300"), class: "group-img " %>
+            </div>
           <% end %>
-          <div class="links">
-              <%= link_to_add_association '新增選項', f, :options, class: "btn btn-new btn-sm"  %>
-          </div>
+            <div>
+              <%= f.input :shop_photo, label: '照片' %>
+              <%= f.input :title, label: "團名" %> 
+              <%= f.input :address, label: "店家地址" %> 
+              <%= f.input :phone, label: "店家電話" %> 
+              <%= f.input :description, label: "描述" %>
+            </div>
+        </div>
+        <div id="tab02" class="tab-inner">
+            <div id="products">
+                <%= f.simple_fields_for :products do |product| %>
+                    <%= render 'product_fields', f: product %>
+                <% end %>
+                <div class="links">
+                    <%= link_to_add_association '新增菜單', f, :products, class: "btn btn-new btn-sm" %>
+                </div>
+            </div>
+        </div>
+        <div id="tab03" class="tab-inner">
+            <%= f.simple_fields_for :options do |option| %>
+                <%= render 'option_fields', f: option %>
+            <% end %>
+            <div class="links">
+                <%= link_to_add_association '新增選項', f, :options, class: "btn btn-new btn-sm"  %>
             </div>
         </div>
       </div>
+    </div>
+  
     <div class="container mt-5">
+      <div class="row">
+          <%= f.button :submit, value: "確定開團",class:"btn btn-delete btn-lg mx-auto btn-lg"  %>
+      </div>
+    </div>
+  
+    <div class="container mt-2">
+      <div class="row">
+          <%= link_to "回到團購紀錄", my_groups_path, class: "m-auto btn btn-dark btn-sm" %>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="phone">
+    <div class="container mt-5">
+        <div id="contents" class="m-auto">
+          <div class="shop-info">
+            <hr class="mt-5">
+            <h2>店家資訊</h2>
+            <% if group.shop_photo.attached? %>
+              <div class="row justify-content-center">
+                <%= image_tag group.shop_photo.variant(resize: "300x300"), class: "group-img " %>
+              </div>
+            <% end %>
+              <div>
+                <%= f.input :shop_photo, label: '照片' %>
+                <%= f.input :title, label: "團名" %> 
+                <%= f.input :address, label: "店家地址" %> 
+                <%= f.input :phone, label: "店家電話" %> 
+                <%= f.input :description, label: "描述" %>
+              </div>
+          </div>
+          <hr class="mt-5">
+          <div class="product-info">
+            <h2>菜單</h2>
+              <div id="products">
+                  <%= f.simple_fields_for :products do |product| %>
+                      <%= render 'product_fields', f: product %>
+                  <% end %>
+                  <div class="links">
+                      <%= link_to_add_association '新增菜單', f, :products, class: "btn btn-new btn-sm mt-3" %>
+                  </div>
+              </div>
+          </div>
+          <hr class="mt-5">
+          <div class="option-info">
+            <h2>選項</h2>
+              <%= f.simple_fields_for :options do |option| %>
+                  <%= render 'option_fields', f: option %>
+              <% end %>
+              <div class="links">
+                  <%= link_to_add_association '新增選項', f, :options, class: "btn btn-new btn-sm mt-3"  %>
+              </div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="container mt-5">
         <div class="row">
             <%= f.button :submit, value: "確定開團",class:"btn btn-delete btn-lg mx-auto btn-lg"  %>
         </div>
-    </div>
-    <div class="container mt-2">
+      </div>
+    
+      <div class="container mt-2">
         <div class="row">
             <%= link_to "回到團購紀錄", my_groups_path, class: "m-auto btn btn-dark btn-sm" %>
         </div>
-    </div>
+      </div>
   </div>
+
 <% end %>

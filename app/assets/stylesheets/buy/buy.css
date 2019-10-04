@@ -13,7 +13,8 @@
   padding-top: 40px;
   padding-bottom: 40px;
   background-image: image-url("background.jpg");
-  background-size: 100%;
+  background-size: cover;
+  background-position: center;
 }
 .box {
   width: 1000px;
