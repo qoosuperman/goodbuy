@@ -13,7 +13,8 @@
   padding-top: 40px;
   padding-bottom: 40px;
   background-image: image-url("background.jpg");
-  background-size: 100%;
+  background-size: cover;
+  background-position: center;
 }
 .box {
   width: 1000px;
@@ -43,6 +44,11 @@ a {
   list-style: none;
   display: flex;
   padding-inline-start: 0px;
+  position: relative;
+  z-index: 1;
+}
+#tab-demo > ul > li:first-child {
+  margin-left: 0;
 }
 #tab-demo > ul > li {
   display: inline-block;
@@ -57,7 +63,8 @@ a {
   box-sizing: border-box;
   margin: auto;
   width: 33.33%;
-  border-radius: 5px;
+  border-radius: 5px 5px 0 0;
+  margin-left: 3px;
 }
 #tab-demo > ul > li a {
   text-decoration: none;
@@ -71,7 +78,9 @@ a {
 }
 #tab-demo > .tab-inner {
   border: 1px #64806a solid;
-  border-radius: 5px;
+  border-radius: 0 0 5px 5px;
+  position: relative;
+  top: -1px;
 }
 .tab-inner {
   padding: 15px;

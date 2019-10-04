@@ -3,7 +3,7 @@
     <%= render 'shared/sidebar' %>
 
     <!-- Content Wrapper -->
-    <div id="content-wrapper" class="d-flex flex-column">
+    <div id="content-wrapper" class="d-flex flex-column mb-5">
 
       <!-- Main Content -->
       <div id="content">
@@ -51,8 +51,8 @@
                   <tbody></tbody>
                   <% @groups.each do |group| %>
                     <tr>
-                      <td> <%= link_to "連結", link_group_path(group.id), class: "btn btn-outline-primary" %> </td>
-                      <td> <%= link_to "目前購買狀況", group_path(group.id), class: "btn btn-outline-info" %> </td>
+                      <td> <%= link_to "連結", link_group_path(group.id), class: "btn btn-secondary" %> </td>
+                      <td> <%= link_to "目前購買狀況", group_path(group.id), class: "btn btn-status" %> </td>
                       <td><%= group.title  %></td>
                       <td> 
                       <% if group.is_active == true %>
@@ -75,6 +75,7 @@
               </div>
             </div>
           </div>
+
           <div class="phone-card">
             <% @groups.each do |group| %>
               <div class="card mt-3">
@@ -87,8 +88,8 @@
                   <% else%>
                     <%= link_to "再開團",new_group_path(:group_id => group.id), class: "btn btn-reopen" %>
                   <% end %>
-                  <%= link_to "連結", link_group_path(group.id), class: "btn btn-outline-primary" %>
-                  <%= link_to "購買狀況", group_path(group.id), class: "btn btn-outline-info" %>
+                  <%= link_to "連結", link_group_path(group.id), class: "btn btn-secondary" %>
+                  <%= link_to "購買狀況", group_path(group.id), class: "btn btn-status" %>
                 </div>
               </div>
             <% end %>

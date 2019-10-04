@@ -7,6 +7,7 @@ body {
   padding-top: 40px;
   padding-bottom: 40px;
   background-image: image-url("background.jpg");
+  background-position: center;
   background-size: cover;
 }
 .box {
@@ -18,20 +19,31 @@ body {
   box-shadow: 3px 3px 10px #999;
 }
 @media screen and (max-width: 767px) {
-  .box{
+  .box {
     width: 300px;
   }
 }
 
-.link-h2 {
-  color: #4ba0b5;
-}
-
 .url_for_buy {
-  font-size: 20px;
+  font-size: 16px;
 }
 
 .title {
   color: #555;
   font-size: 36px;
+}
+
+@media screen and (max-width: 768px) {
+  .box {
+    width: 300px;
+  }
+  .qrcodebox img {
+    width: 200px;
+  }
+  .title {
+    font-size: 30px;
+  }
+  .url_for_buy {
+    font-size: 14px;
+  }
 }

@@ -7,7 +7,8 @@
   padding-top: 40px;
   padding-bottom: 40px;
   background-image: image-url("background.jpg");
-  background-size: 100%;
+  background-size: cover;
+  background-position: center;
 }
 .box {
   width: 900px;
@@ -29,7 +30,17 @@
   list-style: none;
   display: flex;
   padding-inline-start: 0px;
+  position: relative;
+  z-index: 1;
 }
+#tab-demo > ul > li:first-child {
+  margin-left: 0;
+}
+#tab-demo > ul > li.active {
+  border-bottom: 1px solid #fff;
+  background: #fff;
+}
+
 #tab-demo > ul > li {
   display: inline-block;
   vertical-align: top;
@@ -41,9 +52,10 @@
   padding: 0 15px;
   list-style: none;
   box-sizing: border-box;
-  border-radius: 5px;
+  border-radius: 5px 5px 0 0;
   margin: auto;
   width: 33.33%;
+  margin-left: 3px;
 }
 #tab-demo > ul > li a {
   color: #fff;
@@ -60,9 +72,40 @@
 #tab-demo > .tab-inner {
   color: #555;
   border: 1px #64806a solid;
-  border-radius: 5px;
+  border-radius: 0 0 5px 5px;
+  position: relative;
+  top: -1px;
 }
 .tab-inner {
   padding: 15px;
   background-color: #fff;
+}
+.btn-delete {
+  margin-top: 31px;
+}
+
+@media screen and (max-width: 767px) {
+  .wrap {
+    padding: 0;
+  }
+  .box {
+    margin: 30px 20px;
+    padding: 5px 5px 25px;
+  }
+  .form-pc {
+    display: none;
+  }
+  h2 {
+    margin: auto;
+    text-align: center;
+    color: #4ba0b5;
+    font-size: 30px;
+    margin: 20px 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .form-phone {
+    display: none;
+  }
 }
