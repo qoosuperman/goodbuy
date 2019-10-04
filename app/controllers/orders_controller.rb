@@ -13,7 +13,7 @@ class OrdersController < ApplicationController
     @return_url = "https://goodbuy-anthony-chai.herokuapp.com/api/feedback"
     @client_back_url = "https://goodbuy-anthony-chai.herokuapp.com/thank"
     @order.update(trade_no: @merchan_trade_no)
-    PostManJob.set(wait: 30.seconds).perform_later(@order)
+    PostManJob.set(wait: 2.seconds).perform_later(@order)
 
     @check_mac_value = Ecpay::Invoice::CreateMacValue.new(raw_params).run
   end

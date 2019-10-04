@@ -29,6 +29,7 @@ gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 gem "figaro"
 gem 'clipboard-rails'
+gem 'sidekiq', '~> 6.0', '>= 6.0.1'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
