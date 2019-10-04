@@ -10,8 +10,8 @@ class OrdersController < ApplicationController
     @time = time_generator
     @total_amount = @order.total_price
     @item_name = @order.item_name
-    @return_url = "http://da202e30.ngrok.io/api/feedback"
-    @client_back_url = "http://da202e30.ngrok.io/thank"
+    @return_url = "https://goodbuy-anthony-chai.herokuapp.com/api/feedback"
+    @client_back_url = "https://goodbuy-anthony-chai.herokuapp.com/thank"
     @order.update(trade_no: @merchan_trade_no)
     OrderMailer.with(order: @order).confirm_email.deliver_later
 
