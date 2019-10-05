@@ -29,6 +29,7 @@ gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 gem "figaro"
 gem 'clipboard-rails'
+gem 'sidekiq', '~> 6.0', '>= 6.0.1'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
@@ -51,6 +52,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'factory_bot_rails', '~> 5.1'
 gem 'faker', '~> 2.5'
+gem 'sinatra'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
