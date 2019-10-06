@@ -51,7 +51,13 @@
                   <tbody></tbody>
                   <% @groups.each do |group| %>
                     <tr>
-                      <td> <%= link_to "連結", link_group_path(group.id), class: "btn btn-secondary" %> </td>
+                      <td> 
+                        <% if group.is_active == true %>
+                          <%= link_to "連結", link_group_path(group.id), class: "btn btn-secondary" %>
+                        <% else%>
+                          <%= link_to "連結",link_group_path(group.id), class: "btn btn-secondary disabled" %>
+                        <% end %>
+                      </td>
                       <td> <%= link_to "目前購買狀況", group_path(group.id), class: "btn btn-status" %> </td>
                       <td><%= group.title  %></td>
                       <td> 
