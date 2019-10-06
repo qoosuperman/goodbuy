@@ -4625,7 +4625,7 @@ input[type="button"].btn-block {
 .card-body {
   flex: 1 1 auto;
   padding: 1.25rem;
-  box-shadow: 1rem 1rem 2rem 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 1rem 1rem 1rem 0 rgba(0, 0, 0, 0.5);
 }
 
 .card-title {
@@ -11478,5 +11478,26 @@ body.sidebar-toggled footer.sticky-footer {
 
 .btn-reopen:hover {
   background-color: #3d6c47;
+  color: #fff;
+}
+
+
+.btn-status {
+  color: #fff;
+  background-color: #415993;
+}
+
+.btn-status:hover {
+  color: #fff;
+  background-color: #2d4273;
+}
+
+.btn-o {
+  background-color: #bf4a3b;
+  color: #fff;
+}
+
+.btn-o:hover {
+  background-color: #a53323;
   color: #fff;
 }
