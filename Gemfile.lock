@@ -1104,6 +1104,7 @@ DEPENDENCIES
   faker (~> 2.5)
   figaro
   hirb-unicode (~> 0.0.5)
+  i18n (~> 1.6)
   jbuilder (~> 2.5)
   jquery-rails
   listen (>= 3.0.5, < 3.2)

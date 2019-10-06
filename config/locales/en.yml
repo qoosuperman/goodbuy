@@ -31,3 +31,9 @@
 
 en:
   hello: "Hello world"
+
+    
+en:
+  errors:
+    # The default format to use in full error messages.
+    format: "%{message}"
