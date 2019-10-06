@@ -109,3 +109,12 @@
     display: none;
   }
 }
+
+@media screen and (max-width: 767px) {
+  .show-container{
+    width: 300px;
+  }
+  .mac-col{
+    display: none;
+  }
+}
