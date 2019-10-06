@@ -1,4 +1,4 @@
-<div class = "container bg-white rounded mt-5 text-center pb-5">
+<div class = "container bg-white rounded mt-5 text-center pb-5 show-container">
   <h1 class = "pt-5" >團購資料</h1>
   
   <% if @group.shop_photo.attached? %>
@@ -8,45 +8,50 @@
   <% end %>
 
   <div class = "container text-left">
-    <div>
-    團購名稱
-    <%= @group.title %>
-    </div>
-    <div>
-    團購電話
-    <%= @group.phone %>
-    </div>
-    <div>
-    團購地址
-    <%= @group.address %>
-    </div>
-    <div>
-    狀態
-      <% if @group.is_active == true %>
-        尚未結單
-      <% else%>
-        已結單
-      <% end %>
-    </div>
-    <div>
-    描述
-    <%= @group.description %>
-    </div>
-    <div>
-    開始時間
-    <%= @group.created_at.to_s(:common) %>
-    </div>
-    <div>
-    目前團購金額
-    <%= @group.total_price %>
-    </div>
-  </div>
+      <table class="table-sm mx-auto">
+        <tr>
+          <td>團名</td>
+          <td> <%= @group.title %> </td>
+        </tr>
+        <tr>
+          <td>團購電話</td>
+          <td> <%= @group.phone %> </td>
+        </tr>
+        <tr>
+          <td>團購地址</td>
+          <td> <%= @group.address %> </td>
+        </tr>
+        <tr>
+          <td>狀態</td>
+          <td>
+            <% if @group.is_active == true %>
+              尚未結單
+            <% else%>
+              已結單
+            <% end %>
+          </td>
+        </tr>
+        <tr>
+          <td>描述</td>
+          <td> <%= @group.description %> </td>
+        </tr>
+        <tr>
+          <td>開始時間</td>
+          <td> <%= @group.created_at.to_s(:common) %> </td>
+        </tr>
+        <tr>
+          <td>目前團購金額</td>
+          <td> <%= @group.total_price %> </td>
+        </tr>
+      
+      </table>
+  </div> 
  
   
-  <div class ="text-right m-3">
+  <div class ="text-right m-3 text-center">
     <%= link_to "回到團購紀錄", my_groups_path, class: "btn btn-dark" %>
     <% if @group.user_id == current_user.id %>
-      <%= link_to "編輯團購", edit_group_path(@group.id), class: "btn btn-delete" %>
+      <%= link_to "編輯團購", edit_group_path(@group.id), class: "btn btn-success" %>
     <% end %>
   </div>
   
@@ -55,7 +60,7 @@
     <tr>
       <td>購買人</td>
       <td>品名</td>
-      <td>單價</td>
+      <td class="mac-col">單價</td>
       <td>選項</td>
       <td>合計</td>
     </tr>
@@ -70,7 +75,7 @@
             <td>
               <%= order_item.product.name %>
             </td>
-            <td>
+            <td class="mac-col">
               <%= order_item.product.price %>
             </td>
             <td>

@@ -94,7 +94,9 @@
                   <% else%>
                     <%= link_to "再開團",new_group_path(:group_id => group.id), class: "btn btn-reopen" %>
                   <% end %>
-                  <%= link_to "連結", link_group_path(group.id), class: "btn btn-secondary" %>
+                  <% if group.is_active == true %>
+                    <%= link_to "連結", link_group_path(group.id), class: "btn btn-secondary" %>
+                  <% end %>
                   <%= link_to "購買狀況", group_path(group.id), class: "btn btn-status" %>
                 </div>
               </div>
