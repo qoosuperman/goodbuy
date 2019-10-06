@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   
   root to: 'groups#my'
 
-  resources :groups do
+  resources :groups, except: [:index, :destroy] do
     member do
       put :close
       get :buy
