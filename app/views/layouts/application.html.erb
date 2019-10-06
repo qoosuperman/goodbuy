@@ -5,7 +5,7 @@
     <title>Goodbuy</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta name="turbolinks-cache-control" content="no-preview">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
  
@@ -39,10 +39,16 @@
   </head>
 
   <body>
-    <%= flash[:notice] %>
+    <div id="flash-message">
+      <%= flash[:notice] %>
+    </div>
     <%= yield %>
     <% if (params[:controller] == 'groups') && (params[:action] == 'new' || 'edit' ) %>
       <%= javascript_include_tag  'groups_new'%>
+    <% end %>
+
+    <% if (params[:controller] == 'groups') && (params[:action] == 'my') %>
+      <%= javascript_include_tag  'groups_my'%>
     <% end %>
     
     <% if (params[:controller] == 'groups') && (params[:action] == 'buy' ) %>
