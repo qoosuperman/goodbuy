@@ -83,8 +83,7 @@
           <span> <%= t("groups.logout") %> </span>
         <% end %>
       </li>
-
-      
+      <%= render "shared/change_locale" %>
 
     </ul>
     <!-- End of Sidebar -->
@@ -123,7 +122,7 @@
         <%= link_to edit_user_registration_path, class: "dropdown-item" do %>
           <span><%= t("groups.self_info") %></span>
         <% end %>
-        <%= link_to destroy_user_session_path, class: "dropdown-item" ,method: 'delete' do %>
+        <%= link_to destroy_user_session_path, class: "dropdown-item" ,method: 'delete'  do %>
           <span><%= t("groups.logout") %></span>
         <% end %>
       </div>
