@@ -3132,7 +3132,6 @@ input[type="button"].btn-block {
   z-index: 1000;
   display: none;
   float: left;
-  min-width: 10rem;
   padding: 0.5rem 0;
   margin: 0.125rem 0 0;
   font-size: 0.85rem;
@@ -3143,6 +3142,7 @@ input[type="button"].btn-block {
   background-clip: padding-box;
   border: 1px solid #e3e6f0;
   border-radius: 0.35rem;
+  min-width: 0rem;
 }
 
 .dropdown-menu-left {
