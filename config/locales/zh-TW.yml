@@ -2,6 +2,7 @@
 zh-TW:
   activerecord:
     errors:
+      format: "%{message}"
       messages:
         record_invalid: '校驗失敗: %{errors}'
         restrict_dependent_destroy:
@@ -212,6 +213,9 @@ zh-TW:
       short: "%m月%d日 %H:%M"
     pm: 下午
   devise:
+    sessions:
+      user:
+        signed_in: '登入成功！'
     login: "登入"
     signin: "註冊"
     remember_me: "記住我的帳號/密碼"
@@ -231,6 +235,7 @@ zh-TW:
     update: "更新"
     cancel: "取消此帳號"
     back: "回上一頁"
+
   groups:
     my_group: "我的團購"
     records: "團購紀錄"
@@ -256,3 +261,34 @@ zh-TW:
     group_owner: "團長"
     not_close: "未結單"
     closed: "已結單"
+    group_info: "團購資料"
+    phone: "團購電話"
+    address: "團購地址"
+    total_price: "目前團購金額"
+    back_to_record: "回到團購紀錄"
+    edit_group: "編輯團購"
+    buy_man: "購買人"
+    product_name: "品名"
+    product_price: "單價"
+    option: "選項"
+    price: "價格"
+    description: "描述"
+    dollars: "元"
+    come_create: "來開團囉"
+    store_info: "店家資訊"
+    menu: "菜單"
+    photo: "照片"
+    confirm_group: "確定開團"
+    create_menu: "新增菜單"
+    create_option: "新增選項"
+    join_group: "我要跟團"
+    select: "請選擇品項"
+    buy_buy: "買吧買吧"
+    check_order: "我要結帳"
+    my_shop_list: "我的購買清單"
+    checkout: "結帳囉"
+    look_others: "其他人買了啥"
+    all_shop_list: "所有人的購買清單"
+    
+
+    

@@ -235,6 +235,7 @@ en:
     update: "Udate"
     cancel: "Cancel Account"
     back: "Back"
+    
   groups:
     my_group: "My Groups"
     records: "Records"

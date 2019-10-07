@@ -12,7 +12,10 @@
       <div class="sidebar-logo">
         <%= image_tag("logo.png", :alt => "logo") %>
       </div>
-
+      <div id="flash-message">
+        <%= flash[:notice] %>
+      </div>
+      
       <!-- Heading -->
       <div class="sidebar-heading mt-3">
         <%= t("groups.records") %>
