@@ -89,3 +89,28 @@ body {
     display: none;
   }
 }
+
+.url_for_buy {
+  font-size: 16px;
+  color: #5672d8;
+}
+
+.title {
+  color: #555;
+  font-size: 36px;
+}
+
+@media screen and (max-width: 768px) {
+  .modal.show .modal-dialog {
+    margin: 3rem;
+  }
+  .qrcodebox img {
+    width: 200px;
+  }
+  .title {
+    font-size: 30px;
+  }
+  .url_for_buy {
+    font-size: 14px;
+  }
+}
