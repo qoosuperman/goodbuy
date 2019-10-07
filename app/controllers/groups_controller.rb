@@ -82,6 +82,10 @@ class GroupsController < ApplicationController
   
   def link
     @link = buy_group_url
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   private
