@@ -15,49 +15,49 @@
         <div class="container-fluid mt-5">
 
           <!-- Page Heading -->
-          <h1 class="h3 text-heading">跟團紀錄</h1>
+          <h1 class="h3 text-heading"><%= t("groups.attended_group") %></h1>
 
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-dark">紀錄列表</h6>
+              <h6 class="m-0 font-weight-bold text-dark"><%= t("groups.record_list") %></h6>
             </div>
             <div class="card-body">
               <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                      <th>連結</th>
-                      <th>團名</th>
-                      <th>團長</th>
-                      <th>狀態</th>
-                      <th>結束時間</th>
-                      <th>備註</th>
+                      <th><%= t("groups.link") %></th>
+                      <th><%= t("groups.group_name") %></th>
+                      <th><%= t("groups.group_owner") %></th>
+                      <th><%= t("groups.status") %></th>
+                      <th><%= t("groups.end_time") %></th>
+                      <th><%= t("groups.comment") %></th>
                     </tr>
                   </thead>
                   <tfoot>
                     <tr>
-                      <th>連結</th>
-                      <th>團名</th>
-                      <th>團長</th>
-                      <th>狀態</th>
-                      <th>結束時間</th>
-                      <th>備註</th>
+                      <th><%= t("groups.link") %></th>
+                      <th><%= t("groups.group_name") %></th>
+                      <th><%= t("groups.group_owner") %></th>
+                      <th><%= t("groups.status") %></th>
+                      <th><%= t("groups.end_time") %></th>
+                      <th><%= t("groups.comment") %></th>
                     </tr>
                   </tfoot>
                   <tbody></tbody>
                   <% @groups.each do |group| %>
                     <tr>
-                      <td> <%= link_to "目前購買狀況", group_path(group.id), class: "btn btn-status" %> </td>
+                      <td> <%= link_to t("groups.see_status"), group_path(group.id), class: "btn btn-status" %> </td>
                       <td><%= group.title  %></td>
                       <td> 
                         <%= group.user.name %>
                       </td>
                       <td> 
                         <% if group.is_active == true %>
-                          未結單
+                          <%= t("groups.not_close") %>
                         <% else%>
-                          已結單
+                          <%= t("groups.closed") %>
                         <% end %>
                       </td>
                       <td> <%= group.end_time.to_s(:common) if group.end_time %> </td>
@@ -75,16 +75,16 @@
                 <div class="card-body">
                   <h5 class="card-title"> <%= group.title %> </h5>
                   <h6 class="card-subtitle mb-2 text-muted"> <%= group.description %> </h6>
-                  <p class="card-text">團長： <%= group.user.name %> </p>
-                  <p class="card-text">狀態：                       
+                  <p class="card-text"><%= t("groups.group_owner") %>： <%= group.user.name %> </p>
+                  <p class="card-text"><%= t("groups.status") %>：                       
                     <% if group.is_active == true %>
-                        未結單
+                        <%= t("groups.not_close") %>
                     <% else%>
-                        已結單
+                        <%= t("groups.closed") %>
                     <% end %> </p>
 
-                  <%= link_to "連結", link_group_path(group.id), class: "btn btn-secondary" %>
-                  <%= link_to "目前購買狀況", group_path(group.id), class: "btn btn-status" %>
+                  <%= link_to t("groups.link"), link_group_path(group.id), class: "btn btn-secondary" %>
+                  <%= link_to t("groups.see_status"), group_path(group.id), class: "btn btn-status" %>
                 </div>
               </div>
             <% end %>

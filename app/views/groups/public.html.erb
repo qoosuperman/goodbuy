@@ -15,34 +15,34 @@
         <div class="container-fluid mt-5">
 
           <!-- Page Heading -->
-          <h1 class="h3 text-heading">既有團</h1>
+          <h1 class="h3 text-heading"> <%= t("groups.public_group") %> </h1>
 
           <!-- DataTales Example -->
           <div class="card shadow mb-3">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-dark">紀錄列表</h6>
+              <h6 class="m-0 font-weight-bold text-dark"> <%= t("groups.record_list") %> </h6>
             </div>
             <div class="card-body">
               <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                      <th>連結</th>
-                      <th>團名</th>
-                      <th>備註</th>
+                      <th><%= t("groups.link") %></th>
+                      <th><%= t("groups.group_name") %></th>
+                      <th><%= t("groups.comment") %></th>
                     </tr>
                   </thead>
                   <tfoot>
                     <tr>
-                      <th>連結</th>
-                      <th>團名</th>
-                      <th>備註</th>
+                      <th><%= t("groups.link") %></th>
+                      <th><%= t("groups.group_name") %></th>
+                      <th><%= t("groups.comment") %></th>
                     </tr>
                   </tfoot>
                   <tbody></tbody>
                   <% @groups.each do |group| %>
                     <tr>
-                      <td> <%= link_to "開團",new_group_path(:group_id => group.id), class: "btn btn-o" %> </td>
+                      <td> <%= link_to t("groups.create_group"),new_group_path(:group_id => group.id), class: "btn btn-o" %> </td>
                       <td> <%= group.title %> </td>
                       <td> <%= group.description %>  </td>
                     </tr>

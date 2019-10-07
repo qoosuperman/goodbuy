@@ -15,7 +15,7 @@
 
       <!-- Heading -->
       <div class="sidebar-heading mt-3">
-        團購紀錄
+        <%= t("groups.records") %>
       </div>
 
       <!-- Divider -->
@@ -25,20 +25,20 @@
 
       <li class="nav-item active">
         <%= link_to my_groups_path, class: "nav-link" do %>
-          <span>我的團購</span>
+          <span> <%= t("groups.my_group") %> </span>
         <% end %>
       </li>
 
       <li class="nav-item active">
         <%= link_to attend_groups_path, class: "nav-link" do %>
-          <span>跟團紀錄</span>
+          <span> <%= t("groups.attended_group") %> </span>
         <% end %>
       </li>
 
 
       <!-- Heading -->
       <div class="sidebar-heading">
-        開團囉
+        <%= t("groups.create_group") %>
       </div>
 
       <!-- Divider -->
@@ -47,14 +47,14 @@
       <!-- Nav Item - Charts -->
       <li class="nav-item active">
         <%= link_to public_groups_path, class: "nav-link" do %>
-          <span>既有團</span>
+          <span> <%= t("groups.public_group") %> </span>
         <% end %>
       </li>
 
       <!-- Nav Item - Tables -->
       <li class="nav-item active">
         <%= link_to new_group_path, class: "nav-link" do %>
-          <span>新增團購</span>
+          <span> <%= t("groups.new_group") %> </span>
         <% end %>
       </li>
 
@@ -62,7 +62,7 @@
 
       <!-- Heading -->
       <div class="sidebar-heading">
-        其他
+        <%= t("groups.others") %>
       </div>
 
       <!-- Divider -->
@@ -72,7 +72,7 @@
 
       <li class="nav-item active">
         <%= link_to edit_user_registration_path, class: "nav-link" do %>
-          <span>個人資訊</span>
+          <span> <%= t("groups.self_info") %> </span>
         <% end %>
       </li>
       
@@ -80,7 +80,7 @@
       <!-- Nav Item - Tables -->
       <li class="nav-item active">
         <%= link_to destroy_user_session_path, class: "nav-link" ,method: 'delete' do %>
-          <span>登出</span>
+          <span> <%= t("groups.logout") %> </span>
         <% end %>
       </li>
 
@@ -96,35 +96,35 @@
   </div>
   <div class="row">
     <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">團購紀錄</a>
+      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><%= t("groups.records") %></a>
       <div class="dropdown-menu">
         <%= link_to my_groups_path, class: "dropdown-item" do %>
-          <span>我的團購</span>
+          <span> <%= t("groups.my_group") %>  </span>
         <% end %>
         <%= link_to attend_groups_path, class: "dropdown-item" do %>
-          <span>跟團紀錄</span>
+          <span><%= t("groups.attended_group") %></span>
         <% end %>
       </div>
     </li>
     <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">開團囉</a>
+      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><%= t("groups.create_group") %></a>
       <div class="dropdown-menu">
         <%= link_to public_groups_path, class: "dropdown-item" do %>
-          <span>既有團</span>
+          <span><%= t("groups.public_group") %></span>
         <% end %>
         <%= link_to new_group_path, class: "dropdown-item" do %>
-          <span>新增團購</span>
+          <span><%= t("groups.new_group") %></span>
         <% end %>
       </div>
     </li>
     <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">其他</a>
+      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><%= t("groups.others") %></a>
       <div class="dropdown-menu">
         <%= link_to edit_user_registration_path, class: "dropdown-item" do %>
-          <span>個人資訊</span>
+          <span><%= t("groups.self_info") %></span>
         <% end %>
         <%= link_to destroy_user_session_path, class: "dropdown-item" ,method: 'delete' do %>
-          <span>登出</span>
+          <span><%= t("groups.logout") %></span>
         <% end %>
       </div>
     </li>
