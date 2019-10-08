@@ -88,6 +88,16 @@ class GroupsController < ApplicationController
     end
   end
 
+
+  def follow 
+  end
+
+  def show_follow
+  end
+
+
+
+
   private
   def find_group
     @group = Group.find_by(id: params[:id])

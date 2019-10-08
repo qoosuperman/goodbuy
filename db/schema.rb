@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_01_093912) do
+ActiveRecord::Schema.define(version: 2019_10_08_015618) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,15 @@ ActiveRecord::Schema.define(version: 2019_10_01_093912) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "follows", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "group_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_follows_on_group_id"
+    t.index ["user_id"], name: "index_follows_on_user_id"
+  end
+
   create_table "groups", force: :cascade do |t|
     t.string "title"
     t.text "description"
@@ -48,6 +57,8 @@ ActiveRecord::Schema.define(version: 2019_10_01_093912) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "follow_id"
+    t.index ["follow_id"], name: "index_groups_on_follow_id"
     t.index ["user_id"], name: "index_groups_on_user_id"
   end
 
@@ -112,11 +123,16 @@ ActiveRecord::Schema.define(version: 2019_10_01_093912) do
     t.string "fb_token"
     t.string "google_uid"
     t.string "google_token"
+    t.bigint "follow_id"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["follow_id"], name: "index_users_on_follow_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "follows", "groups"
+  add_foreign_key "follows", "users"
+  add_foreign_key "groups", "follows"
   add_foreign_key "groups", "users"
   add_foreign_key "option_order_item_logs", "options"
   add_foreign_key "option_order_item_logs", "order_items"
@@ -125,4 +141,5 @@ ActiveRecord::Schema.define(version: 2019_10_01_093912) do
   add_foreign_key "order_items", "products"
   add_foreign_key "orders", "groups"
   add_foreign_key "products", "groups"
+  add_foreign_key "users", "follows"
 end

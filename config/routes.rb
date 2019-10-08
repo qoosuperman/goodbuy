@@ -12,6 +12,8 @@ Rails.application.routes.draw do
       get :buy
       post :checkout
       get :link
+      patch :follow
+      get :show_follow
     end
     collection do
       get :my
