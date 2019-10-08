@@ -1,22 +1,22 @@
 <div class="box text-center">
-  <h2 class='signinh2 h3 mb-3'>編輯個人資料</h2>
+  <h2 class='signinh2 h3 mb-3'> <%= t("devise.edit_user") %> </h2>
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field mt-2">
-  <%= f.label :name, '名字', class:'label-text' %>
-  <%= f.text_field :name, autofocus: true, class:"form-control", placeholder:"名字"  %>
+  <%= f.label :name, class:'label-text',value: t('devise.name')  %>
+  <%= f.text_field :name, autofocus: true, class:"form-control", placeholder: t('devise.name')%>
   </div>
 
   <div class="field mt-2">
-  <%= f.label :nick_name, '暱稱', class:'label-text' %>
-  <%= f.text_field :nick_name, autofocus: true, class:"form-control", placeholder:"暱稱" %>
+  <%= f.label :nick_name, class:'label-text',value: t('devise.nick_name') %>
+  <%= f.text_field :nick_name, autofocus: true, class:"form-control", placeholder:t('devise.nick_name') %>
   </div>
 
   <div class="field mt-2">
-  <%= f.label :email, '信箱', class:'label-text' %>
-  <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", placeholder:"信箱" %>
+  <%= f.label :email, class:'label-text',value: t('devise.email') %>
+  <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", placeholder:t('devise.email') %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -24,27 +24,27 @@
   <% end %>
 
   <div class="field mt-2">
-  <%= f.label :password, '新密碼', class:'label-text' %> <p><i>(若不更改則不需輸入)</i></p>
-  <%= f.password_field :password, autocomplete: "新密碼", class:"form-control", placeholder:"不得少於6個字" %>
+  <%= f.label :password, class:'label-text',value: t('devise.password') %> <p><i>(<%= t("devise.leave_blank") %>)</i></p>
+  <%= f.password_field :password, autocomplete: "new-password", class:"form-control", placeholder: t("devise.password") %>
   </div>
 
   <div class="field mt-2">
-  <%= f.label :password_confirmation, '確認密碼', class:'label-text' %>
-  <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control", placeholder:"確認密碼"  %>
+  <%= f.label :password_confirmation, class:'label-text', value: t('devise.password_confirm') %>
+  <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control", placeholder: t("devise.password_confirm")  %>
   </div>
 
   <div class="field mt-2">
-  <%= f.label :current_password, '目前密碼', class:'label-text' %> <p><i>(請輸入目前密碼以更新資訊)</i></p>
-  <%= f.password_field :current_password, autocomplete: "current-password", class:"form-control", placeholder:"目前密碼" %>
+  <%= f.label :current_password, class:'label-text', value: t("devise.current_password") %> <p><i> <%=t("devise.need_password")%> </i></p>
+  <%= f.password_field :current_password, autocomplete: "current-password", class:"form-control", placeholder:t("devise.current_password") %>
   </div>
 
   <div class="actions">
-  <%= f.submit "更新資料", class:'btn btn-info mt-3'%>
+  <%= f.submit t("devise.update"), class:'btn btn-info mt-3'%>
   </div>
   <% end %>
 
-  <%= button_to "刪除帳戶", registration_path(resource_name), data: { confirm: "真的嗎QAQ" }, method: :delete, class:'btn btn-danger btn-sm mt-1' %>
+  <%= button_to t("devise.cancel"), registration_path(resource_name), data: { confirm: "真的嗎QAQ" }, method: :delete, class:'btn btn-danger btn-sm mt-1' %>
 
-  <%= link_to "回到我的團購", :back, class:'btn btn-sm btn-dark'  %>
+  <%= link_to t("devise.back"), :back, class:'btn btn-sm btn-dark'  %>
 
 </div>

@@ -1,5 +1,5 @@
 <div class = "container bg-white rounded mt-5 text-center pb-5 show-container">
-  <h1 class = "pt-5" >團購資料</h1>
+  <h1 class = "pt-5" > <%= t("groups.group_info") %> </h1>
   
   <% if @group.shop_photo.attached? %>
     <div class="row justify-content-center">
@@ -10,37 +10,37 @@
   <div class = "container text-left">
       <table class="table-sm mx-auto">
         <tr>
-          <td>團名</td>
+          <td> <%= t("groups.group_name") %> </td>
           <td> <%= @group.title %> </td>
         </tr>
         <tr>
-          <td>團購電話</td>
+          <td><%= t("groups.phone") %></td>
           <td> <%= @group.phone %> </td>
         </tr>
         <tr>
-          <td>團購地址</td>
+          <td><%= t("groups.address") %></td>
           <td> <%= @group.address %> </td>
         </tr>
         <tr>
-          <td>狀態</td>
+          <td><%= t("groups.status") %></td>
           <td>
             <% if @group.is_active == true %>
-              尚未結單
+              <%= t("groups.not_close") %>
             <% else%>
-              已結單
+              <%= t("groups.closed") %>
             <% end %>
           </td>
         </tr>
         <tr>
-          <td>描述</td>
+          <td><%= t("groups.description") %></td>
           <td> <%= @group.description %> </td>
         </tr>
         <tr>
-          <td>開始時間</td>
+          <td><%= t("groups.start_time") %></td>
           <td> <%= @group.created_at.to_s(:common) %> </td>
         </tr>
         <tr>
-          <td>目前團購金額</td>
+          <td><%= t("groups.total_price") %></td>
           <td> <%= @group.total_price %> </td>
         </tr>
       
@@ -49,20 +49,20 @@
  
   
   <div class ="text-right m-3 text-center">
-    <%= link_to "回到團購紀錄", my_groups_path, class: "btn btn-dark" %>
+    <%= link_to t("groups.back_to_record"), my_groups_path, class: "btn btn-dark" %>
     <% if @group.user_id == current_user.id %>
-      <%= link_to "編輯團購", edit_group_path(@group.id), class: "btn btn-success" %>
+      <%= link_to t("groups.edit_group"), edit_group_path(@group.id), class: "btn btn-success" %>
     <% end %>
   </div>
   
   <table class= "table">
     <thead>
     <tr>
-      <td>購買人</td>
-      <td>品名</td>
-      <td class="mac-col">單價</td>
-      <td>選項</td>
-      <td>合計</td>
+      <td><%= t("groups.buy_man") %></td>
+      <td><%= t("groups.product_name") %></td>
+      <td class="mac-col"><%= t("groups.product_price") %></td>
+      <td><%= t("groups.option") %></td>
+      <td><%= t("groups.price") %></td>
     </tr>
     </thead>
     <tbody>
@@ -81,7 +81,7 @@
             <td>
               <% order_item.options.each do |option| %>
                 <%= option.name %>
-                (+<%= option.price %>元)
+                (+<%= option.price %> <%= t("groups.dollars") %>)
               <% end %>
             </td>
             <td>

@@ -39,9 +39,7 @@
   </head>
 
   <body>
-    <div id="flash-message">
-      <%= flash[:notice] %>
-    </div>
+
     <%= yield %>
     <% if (params[:controller] == 'groups') && (params[:action] == 'new' || 'edit' ) %>
       <%= javascript_include_tag  'groups_new'%>

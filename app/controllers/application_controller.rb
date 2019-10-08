@@ -1,8 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-
+  around_action :switch_locale
   before_action :configure_permitted_parameters, if: :devise_controller?
-
   after_action :store_action
 
   def store_action
@@ -18,12 +17,22 @@ class ApplicationController < ActionController::Base
     end
   end
   
-
+  def switch_locale(&action)
+    locale = params[:locale] || I18n.default_locale
+    I18n.with_locale(locale, &action)
+  end
+  def default_url_options
+    { locale: I18n.locale }
+  end
   protected
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:name, :nick_name, :email, :password)}
+    devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:name, :nick_name, :email, :password, :current_password)}
+  end
 
-        def configure_permitted_parameters
-            devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:name, :nick_name, :email, :password)}
-
-            devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:name, :nick_name, :email, :password, :current_password)}
-        end
+  private
+  # 登出回到登入頁並且保留語言
+  def after_sign_out_path_for(resource_or_scope)
+    new_user_session_path(:locales => params[:locales])
+  end
 end

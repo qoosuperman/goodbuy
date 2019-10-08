@@ -54,6 +54,15 @@ body {
     border-radius: 50%;
   }
 }
+.change_language{
+  margin-top: 50px;
+  padding: 0;
+}
+.change_language li{
+  list-style: none;
+  padding: 10px;
+}
+
 // 標題
 @media screen and (max-width: 767px) {
   h1 {

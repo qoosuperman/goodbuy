@@ -3,9 +3,9 @@
     <h1> <%= @group.title %> </h1>
     <div class="group-info d-flex align-items-center p-3 my-3">
       <ul>
-        <li>電話：<%= @group.phone %></li>
-        <li>地址：<%= @group.address %></li>
-        <li>描述：<%= @group.description %></li>
+        <li> <%= t("groups.phone") %> ：<%= @group.phone %></li>
+        <li><%= t("groups.address") %>：<%= @group.address %></li>
+        <li><%= t("groups.description") %>：<%= @group.description %></li>
       </ul>
     </div>
 
@@ -22,19 +22,19 @@
     <div class="buy-pc">
       <div id="tab-demo" class="m-auto">
           <ul class="tab-title">
-              <li><a href="#tab01">我要跟團</a></li>
-              <li><a href="#tab02">我要結帳</a></li>
-              <li><a href="#tab03">看看其他人買了什麼</a></li>
+              <li><a href="#tab01"> <%= t("groups.join_group") %> </a></li>
+              <li><a href="#tab02"><%= t("groups.check_order") %></a></li>
+              <li><a href="#tab03"><%= t("groups.look_others") %></a></li>
           </ul>
     
           <div id="tab01" class="tab-inner">
             <form>
-              <h6 class="border-bottom border-gray pb-2">請選擇品項</h6>
+              <h6 class="border-bottom border-gray pb-2"><%= t("groups.select") %></h6>
               <div class="row media-body pb-3 lh-125 border-bottom border-gray mt-3">
                 <div class="products col-6">
                   <% @products.each do |p| %>
                     <div class="product" data-product= "<%= p.id %>">
-                      <%= radio_button_tag(:p, p.price ) %> <%= p.name %> <%= p.price %>元
+                      <%= radio_button_tag(:p, p.price ) %> <%= p.name %> <%= p.price %><%= t("groups.dollars") %>
                     </div>
                   <% end %>
                 </div>
@@ -42,40 +42,39 @@
                   <% @options.each do |o| %>
                     <div class="option" data-option= "<%= o.id %>">
                       <%= check_box_tag(:o, o.price) %>
-                      <%= o.name %> <%= o.price %>元
+                      <%= o.name %> <%= o.price %><%= t("groups.dollars") %>
                     </div>
                   <% end %>
                 </div>
               </div>
-              <div class="rounded mt-3">價格：<span class="total-price"></span></div>
-              <button class='mt-3 btn btn-buy' id='buy'>買吧買吧</button>
+              <div class="rounded mt-3"><%= t("groups.price") %>：<span class="total-price"></span></div>
+              <button class='mt-3 btn btn-buy' id='buy'><%= t("groups.buy_buy") %></button>
             </form>
           </div>
     
           <div id="tab02" class="tab-inner">
-            <h6 class="border-bottom border-gray pb-2">我的購買清單</h6>
+            <h6 class="border-bottom border-gray pb-2"><%= t("groups.my_shop_list") %></h6>
             <div class="order-items text-muted">
               <img data-src="holder.js/32x32?theme=thumb&bg=007bff&fg=007bff&size=1" alt="" class="mr-2 rounded">
               
               <%= form_with url: checkout_group_path, local: true do |form| %>
                 <div id='order-item'>
                 </div>
-                <%= form.submit '結帳囉', :class => 'mt-3 btn btn-pay' %>
+                <%= form.submit t("groups.checkout"), :class => 'mt-3 btn btn-pay' %>
               <% end %>
             </div>        
           </div>
     
           <div id="tab03" class="tab-inner">
-              <h6>所有人的購買清單</h6>
+              <h6><%= t("groups.all_shop_list") %></h6>
               <table class= "table">
                   <thead>
                   <tr>
-                    <td>購買人</td>
-                    <td>品名</td>
-                    <td>選項</td>
-                    <td>單價</td>
-                    <td>數量</td>
-                    <td>合計</td>
+                    <td><%= t("groups.buy_man") %></td>
+                    <td><%= t("groups.product_name") %></td>
+                    <td><%= t("groups.option") %></td>
+                    <td><%= t("groups.product_price") %></td>
+                    <td><%= t("groups.price") %></td>
                   </tr>
                   </thead>
                   <tbody>
@@ -91,14 +90,11 @@
                           <td>
                             <% order_item.options.each do |option| %>
                               <%= option.name %>
-                              (+<%= option.price %>元)
+                              (+<%= option.price %><%= t("groups.dollars") %>)
                             <% end %>
                           </td>
                           <td>
                             <%= order_item.product.price %>
-                          </td>
-                          <td>
-                            <%= order_item.quantity %>
                           </td>
                           <td>
                             <%= order_item.total_price %>
@@ -117,15 +113,15 @@
     <div class="buy-phone">
       <div id="tab-demo" class="m-auto">
         <div div id="tab01" class="item others-list">
-        <h2>其他人買了啥</h2>
-          <h6>所有人的購買清單</h6>
+        <h2><%= t("groups.look_others") %></h2>
+          <h6><%= t("groups.all_shop_list") %></h6>
           <table class= "table">
               <thead>
               <tr>
-                <td>購買人</td>
-                <td>品名</td>
-                <td>選項</td>
-                <td>合計</td>
+                <td><%= t("groups.buy_man") %></td>
+                <td><%= t("groups.product_name") %></td>
+                <td><%= t("groups.option") %></td>
+                <td><%= t("groups.price") %></td>
               </tr>
               </thead>
               <tbody>
@@ -141,7 +137,7 @@
                       <td>
                         <% order_item.options.each do |option| %>
                           <%= option.name %>
-                          (+<%= option.price %>元)
+                          (+<%= option.price %><%= t("groups.dollars") %>)
                         <% end %>
                       </td>
                       <td>
@@ -158,14 +154,14 @@
 
         
             <div id="tab02" class="item product-list">
-              <h2>我要跟團</h2>
+              <h2><%= t("groups.join_group") %></h2>
               <form>
-                <h6 class="border-bottom border-gray pb-2">請選擇品項</h6>
+                <h6 class="border-bottom border-gray pb-2"><%= t("groups.select") %></h6>
                 <div class="row media-body pb-3 lh-125 border-bottom border-gray mt-3">
                   <div class="products col-6">
                     <% @products.each do |p| %>
                       <div class="product" data-product= "<%= p.id %>">
-                        <%= radio_button_tag(:p, p.price ) %> <%= p.name %> <%= p.price %>元
+                        <%= radio_button_tag(:p, p.price ) %> <%= p.name %> <%= p.price %><%= t("groups.dollars") %>
                       </div>
                     <% end %>
                   </div>
@@ -173,13 +169,13 @@
                     <% @options.each do |o| %>
                       <div class="option" data-option= "<%= o.id %>">
                         <%= check_box_tag(:o, o.price) %>
-                        <%= o.name %> <%= o.price %>元
+                        <%= o.name %> <%= o.price %><%= t("groups.dollars") %>
                       </div>
                     <% end %>
                   </div>
                 </div>
-                <div class="rounded mt-3">價格：<span class="total-price2"></span></div>
-                <button class='mt-3 btn btn-buy' id='buy2'>買吧買吧</button>
+                <div class="rounded mt-3"><%= t("groups.price") %>：<span class="total-price2"></span></div>
+                <button class='mt-3 btn btn-buy' id='buy2'><%= t("groups.buy_buy") %></button>
               </form>
             </div>
 
@@ -187,15 +183,15 @@
 
             
             <div id="tab03" class="item option-list">
-              <h2>我要購買</h2>
-              <h6 class="border-bottom border-gray pb-2">我的購買清單</h6>
+              <h2><%= t("groups.check_order") %></h2>
+              <h6 class="border-bottom border-gray pb-2"><%= t("groups.my_shop_list") %></h6>
               <div class="order-items text-muted">
                 <img data-src="holder.js/32x32?theme=thumb&bg=007bff&fg=007bff&size=1" alt="" class="mr-2 rounded">
                 
                 <%= form_with url: checkout_group_path, local: true do |form| %>
                   <div id='order-item2'>
                   </div>
-                  <%= form.submit '結帳囉', :class => 'mt-3 btn btn-pay' %>
+                  <%= form.submit t("groups.checkout"), :class => 'mt-3 btn btn-pay' %>
                 <% end %>
               </div>        
             </div>

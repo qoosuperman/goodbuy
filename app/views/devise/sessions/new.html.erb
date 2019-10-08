@@ -2,28 +2,28 @@
   <div class="logobox">
     <%= image_tag("logo.png", :alt => "logo" ,class:'logo') %>
   </div>
-  <h2 class='signinh2 h3 mb-3'>Log in</h2>
+  <h2 class='signinh2 h3 mb-3'> <%= t("devise.login") %> </h2>
     <%= form_for(resource, as: resource_name, url: session_path(resource_name), class:'form-signin') do |f| %>
       <div class="field mt-4">
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", placeholder:"Email address" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", placeholder:t("devise.email") %>
         <br/>
-        <%= f.password_field :password, autocomplete: "current-password", class:"form-control",placeholder:"Password" %>
+        <%= f.password_field :password, autocomplete: "current-password", class:"form-control",placeholder:t("devise.password") %>
       </div>
 
       <% if devise_mapping.rememberable? %>
         <div class="field checkbox mb-3 mt-1">
           <%= f.check_box :remember_me %>
-          <%= f.label :remember_me %>
+          <%= f.label :remember_me, value: t("devise.remember_me") %>
         </div>
       <% end %>
 
       <div class="actions">
-        <%= f.submit "Log in", class:'btn btn-md btn-info btn-block'%>
+        <%= f.submit t("devise.login"), class:'btn btn-md btn-info btn-block'%>
       </div>
     <% end %>
     
     <%= render "devise/shared/links" %>
-  
+    <%= render "shared/change_locale" %>
 
 </div>
 
