@@ -13,12 +13,12 @@ Rails.application.routes.draw do
       post :checkout
       get :link
       patch :follow
-      get :show_follow
     end
     collection do
       get :my
       get :attend
       get :public
+      get :show_follow
     end
   end
 

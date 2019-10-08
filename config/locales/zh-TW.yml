@@ -4,63 +4,63 @@ zh-TW:
     errors:
       format: "%{message}"
       messages:
-        record_invalid: '校驗失敗: %{errors}'
+        record_invalid: "校驗失敗: %{errors}"
         restrict_dependent_destroy:
           has_one: 由於 %{record} 需要此記錄，所以無法移除記錄
           has_many: 由於 %{record} 需要此記錄，所以無法移除記錄
   date:
     abbr_day_names:
-    - 周日
-    - 周一
-    - 周二
-    - 周三
-    - 周四
-    - 周五
-    - 周六
+      - 周日
+      - 周一
+      - 周二
+      - 周三
+      - 周四
+      - 周五
+      - 周六
     abbr_month_names:
-    - 
-    - 1月
-    - 2月
-    - 3月
-    - 4月
-    - 5月
-    - 6月
-    - 7月
-    - 8月
-    - 9月
-    - 10月
-    - 11月
-    - 12月
+      -
+      - 1月
+      - 2月
+      - 3月
+      - 4月
+      - 5月
+      - 6月
+      - 7月
+      - 8月
+      - 9月
+      - 10月
+      - 11月
+      - 12月
     day_names:
-    - 星期日
-    - 星期一
-    - 星期二
-    - 星期三
-    - 星期四
-    - 星期五
-    - 星期六
+      - 星期日
+      - 星期一
+      - 星期二
+      - 星期三
+      - 星期四
+      - 星期五
+      - 星期六
     formats:
       default: "%Y-%m-%d"
       long: "%Y年%m月%d日"
       short: "%m月%d日"
     month_names:
-    - 
-    - 一月
-    - 二月
-    - 三月
-    - 四月
-    - 五月
-    - 六月
-    - 七月
-    - 八月
-    - 九月
-    - 十月
-    - 十一月
-    - 十二月
+      -
+      - 一月
+      - 二月
+      - 三月
+      - 四月
+      - 五月
+      - 六月
+      - 七月
+      - 八月
+      - 九月
+      - 十月
+      - 十一月
+      - 十二月
     order:
-    - :year
-    - :month
-    - :day
+      - :year
+      - :month
+      - :day
   datetime:
     distance_in_words:
       about_x_hours:
@@ -123,7 +123,7 @@ zh-TW:
       invalid: 是無效的
       less_than: 必須小於 %{count}
       less_than_or_equal_to: 必須小於或等於 %{count}
-      model_invalid: '校驗失敗: %{errors}'
+      model_invalid: "校驗失敗: %{errors}"
       not_a_number: 不是數字
       not_an_integer: 必須是整數
       odd: 必須是奇數
@@ -177,9 +177,9 @@ zh-TW:
           quadrillion: 千兆
           thousand: 千
           trillion: 兆
-          unit: ''
+          unit: ""
       format:
-        delimiter: ''
+        delimiter: ""
         precision: 1
         significant: false
         strip_insignificant_zeros: false
@@ -195,11 +195,11 @@ zh-TW:
           tb: TB
     percentage:
       format:
-        delimiter: ''
+        delimiter: ""
         format: "%n%"
     precision:
       format:
-        delimiter: ''
+        delimiter: ""
   support:
     array:
       last_word_connector: ", 和 "
@@ -280,13 +280,14 @@ zh-TW:
       signed_out: "成功登出了。"
       already_signed_out: "成功登出了。"
       user:
-        signed_in: '登入成功！'
+        signed_in: "登入成功！"
     unlocks:
       send_instructions: "您將在幾分鐘後收到一封電子郵件，內有將帳號解除鎖定的步驟說明。"
       send_paranoid_instructions: "如果您的帳號已存在，您的電子信箱將會收到如何解鎖帳號的指示。"
       unlocked: "您的帳號已被解鎖，現在已經登入。"
 
   groups:
+    follow_group: "我的最愛"
     my_group: "我的團購"
     records: "團購紀錄"
     attended_group: "跟團紀錄"
@@ -339,6 +340,3 @@ zh-TW:
     checkout: "結帳囉"
     look_others: "其他人買了啥"
     all_shop_list: "所有人的購買清單"
-    
-
-    

@@ -1,6 +1,6 @@
 class GroupsController < ApplicationController
   before_action :authenticate_user!
-  before_action :find_group, only: [:edit, :update, :close, :link, :buy, :show, :checkout]
+  before_action :find_group, only: [:edit, :update, :close, :link, :buy, :show, :checkout, :follow]
   before_action :validate_group_owner, only: [:edit, :close]
   before_action :validate_group_active, only: [:buy, :edit]
   
@@ -89,10 +89,12 @@ class GroupsController < ApplicationController
   end
 
 
-  def follow 
+  def follow
+    current_user.followed_groups << @group
   end
 
   def show_follow
+    @groups = current_user.followed_groups
   end
 
 
