@@ -237,6 +237,7 @@ en:
     back: "Back"
 
   groups:
+    remove: "Delete"
     follow_group: "My Favorite"
     my_group: "My Groups"
     records: "Records"

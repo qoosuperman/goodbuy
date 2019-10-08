@@ -13,6 +13,7 @@ Rails.application.routes.draw do
       post :checkout
       get :link
       patch :follow
+      patch :delete_follow
     end
     collection do
       get :my

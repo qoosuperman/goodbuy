@@ -34,6 +34,7 @@
                       <th><%= t("groups.start_time") %></th>
                       <th><%= t("groups.end_time") %></th>
                       <th><%= t("groups.comment") %></th>
+                      <th><%= t("groups.remove") %></th>
                     </tr>
                   </thead>
                   <tfoot>
@@ -45,6 +46,7 @@
                       <th><%= t("groups.start_time") %></th>
                       <th><%= t("groups.end_time") %></th>
                       <th><%= t("groups.comment") %></th>
+                      <th><%= t("groups.remove") %></th>
                     </tr>
                   </tfoot>
                   <tbody></tbody>
@@ -74,6 +76,7 @@
                         <% end %>
                       </td>
                       <td> <%= group.description %> </td>
+                      <td> <%= link_to t("groups.remove"), delete_follow_group_path(group.id), class: "btn btn-warning", method: "patch", data: {confirm: t("groups.confirm_close")} %> </td>
                     </tr>
                   <% end %>
                   </tbody>
