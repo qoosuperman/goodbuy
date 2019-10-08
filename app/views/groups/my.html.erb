@@ -52,7 +52,7 @@
                     <tr>
                       <td> 
                         <% if group.is_active == true %>
-                          <%= link_to t("groups.link"), link_group_path(group.id), class: "btn btn-secondary" %>
+                          <%= link_to t("groups.link"), link_group_path(group.id), class: "btn btn-secondary", :remote => true %>
 
                         <% else%>
                           <%= link_to t("groups.link"),link_group_path(group.id), class: "btn btn-secondary disabled" %>
