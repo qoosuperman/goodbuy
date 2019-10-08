@@ -287,6 +287,7 @@ zh-TW:
       unlocked: "您的帳號已被解鎖，現在已經登入。"
 
   groups:
+    confirm_remove: "確定從我的最愛移除嗎？"
     remove: "移除"
     follow_group: "我的最愛"
     my_group: "我的團購"

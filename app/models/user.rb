@@ -3,7 +3,8 @@ class User < ApplicationRecord
   has_many :orders, foreign_key: "buyer_id", inverse_of: 'buyer'
   has_many :follows
   has_many :followed_groups, through: :follows, source: :group
-  validates :name, presence: { message: "名字不能是空白喔！" }
+  validates :name, presence: { message: "名字不能是空白喔！" }  
+ 
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -64,4 +65,6 @@ class User < ApplicationRecord
     return user
   end
 
+
+  
 end

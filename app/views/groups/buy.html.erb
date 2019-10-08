@@ -1,14 +1,17 @@
 <div class="wrap">
   <div class="box">  
-    <h1> <%= @group.title %> </h1>
+    <div class="d-flex justify-content-start">
+      <h1> <%= @group.title %> </h1>
+      <div class="ml-2 mt-2">
+        <%= link_to '★ 我的最愛', follow_group_path, class: "btn btn-warning btn-sm", method: 'patch', remote: true %>
+      </div>
+    </div>
+
     <div class="group-info d-flex align-items-center p-3 my-3">
       <ul>
         <li> <%= t("groups.phone") %> ：<%= @group.phone %></li>
         <li><%= t("groups.address") %>：<%= @group.address %></li>
         <li><%= t("groups.description") %>：<%= @group.description %></li>
-        <li class="mt-2">
-          <%= link_to '★ 我的最愛', follow_group_path, class: "btn btn-warning btn-sm", method: 'patch' %>
-        </li>
       </ul>
     </div>
 

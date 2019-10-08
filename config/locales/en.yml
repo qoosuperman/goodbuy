@@ -237,6 +237,7 @@ en:
     back: "Back"
 
   groups:
+    confirm_remove: "Sure to remove from my favorites?"
     remove: "Delete"
     follow_group: "My Favorite"
     my_group: "My Groups"

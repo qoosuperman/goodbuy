@@ -31,8 +31,6 @@
                       <th><%= t("groups.edit") %></th>
                       <th><%= t("groups.group_name") %></th>
                       <th><%= t("groups.status") %></th>
-                      <th><%= t("groups.start_time") %></th>
-                      <th><%= t("groups.end_time") %></th>
                       <th><%= t("groups.comment") %></th>
                       <th><%= t("groups.remove") %></th>
                     </tr>
@@ -43,8 +41,6 @@
                       <th><%= t("groups.edit") %></th>
                       <th><%= t("groups.group_name") %></th>
                       <th><%= t("groups.status") %></th>
-                      <th><%= t("groups.start_time") %></th>
-                      <th><%= t("groups.end_time") %></th>
                       <th><%= t("groups.comment") %></th>
                       <th><%= t("groups.remove") %></th>
                     </tr>
@@ -69,14 +65,8 @@
                         <%= link_to t("groups.create_again"),new_group_path(:group_id => group.id), class: "btn btn-reopen" %>
                       <% end %>
                       </td>
-                      <td> <%= group.created_at.to_s(:common) %> </td>
-                      <td> 
-                        <% unless group.is_active %>
-                          <%= group.end_time.to_s(:common) if group.end_time %> 
-                        <% end %>
-                      </td>
                       <td> <%= group.description %> </td>
-                      <td> <%= link_to t("groups.remove"), delete_follow_group_path(group.id), class: "btn btn-warning", method: "patch", data: {confirm: t("groups.confirm_close")} %> </td>
+                      <td> <%= link_to t("groups.remove"), delete_follow_group_path(group.id), class: "btn btn-warning", method: "patch", data: {confirm: t("groups.confirm_remove")} %> </td>
                     </tr>
                   <% end %>
                   </tbody>

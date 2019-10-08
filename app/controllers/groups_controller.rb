@@ -90,7 +90,12 @@ class GroupsController < ApplicationController
 
 
   def follow
-    current_user.followed_groups << @group
+    follow = current_user.follows.new(group_id: @group.id)
+    if follow.save
+      @ajax_result = '已加入我的最愛'
+    else
+      @ajax_result = follow.errors.full_messages.join(', ')
+    end
   end
 
   def show_follow
