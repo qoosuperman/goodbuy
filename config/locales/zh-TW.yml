@@ -12,6 +12,11 @@ zh-TW:
         follow:
           cant_follow: 已經加過囉
 
+  controllers:
+    groups:
+      follow:
+        result: 已加入我的最愛
+
   date:
     abbr_day_names:
       - 周日

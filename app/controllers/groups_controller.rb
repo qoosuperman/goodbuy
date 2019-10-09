@@ -92,7 +92,7 @@ class GroupsController < ApplicationController
   def follow
     follow = current_user.follows.new(group_id: @group.id)
     if follow.save
-      @ajax_result = '已加入我的最愛'
+      @ajax_result =  t('controllers.groups.follow.result')
     else
       @ajax_result = follow.errors.full_messages.join(', ')
     end
