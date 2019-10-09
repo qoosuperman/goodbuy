@@ -3,9 +3,6 @@ class GroupsController < ApplicationController
   before_action :find_group, only: [:edit, :update, :close, :link, :buy, :show, :checkout, :follow, :delete_follow]
   before_action :validate_group_owner, only: [:edit, :close]
   before_action :validate_group_active, only: [:buy, :edit]
-  
-  def index
-  end
 
   def show
   end
