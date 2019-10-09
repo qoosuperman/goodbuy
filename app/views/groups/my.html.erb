@@ -34,6 +34,7 @@
                       <th><%= t("groups.start_time") %></th>
                       <th><%= t("groups.end_time") %></th>
                       <th><%= t("groups.comment") %></th>
+                      <th><%= t("groups.follow_group") %></th>
                     </tr>
                   </thead>
                   <tfoot>
@@ -45,9 +46,10 @@
                       <th><%= t("groups.start_time") %></th>
                       <th><%= t("groups.end_time") %></th>
                       <th><%= t("groups.comment") %></th>
+                      <th><%= t("groups.follow_group") %></th>
                     </tr>
                   </tfoot>
-                  <tbody></tbody>
+                  <tbody>
                   <% @groups.each do |group| %>
                     <tr>
                       <td> 
@@ -74,6 +76,9 @@
                         <% end %>
                       </td>
                       <td> <%= group.description %> </td>
+                      <td>
+                        <%= link_to '★ 我的最愛', follow_group_path(group.id), class: "btn btn-warning btn-sm", method: 'patch', remote: true %>
+                      </td>
                     </tr>
                   <% end %>
                   </tbody>
