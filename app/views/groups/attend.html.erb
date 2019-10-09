@@ -33,6 +33,7 @@
                       <th><%= t("groups.status") %></th>
                       <th><%= t("groups.end_time") %></th>
                       <th><%= t("groups.comment") %></th>
+                      <th><%= t("groups.follow_group") %></th>
                     </tr>
                   </thead>
                   <tfoot>
@@ -43,9 +44,10 @@
                       <th><%= t("groups.status") %></th>
                       <th><%= t("groups.end_time") %></th>
                       <th><%= t("groups.comment") %></th>
+                      <th><%= t("groups.follow_group") %></th>
                     </tr>
                   </tfoot>
-                  <tbody></tbody>
+                  <tbody>
                   <% @groups.each do |group| %>
                     <tr>
                       <td> <%= link_to t("groups.see_status"), group_path(group.id), class: "btn btn-status" %> </td>
@@ -62,6 +64,9 @@
                       </td>
                       <td> <%= group.end_time.to_s(:common) if group.end_time %> </td>
                       <td> <%= group.description %> </td>
+                      <td>
+                        <%= link_to t("groups.follow_group_icon"), follow_group_path(group.id), class: "btn btn-warning btn-sm", method: 'patch', remote: true %>
+                      </td>
                     </tr>
                   <% end %>
                   </tbody>
