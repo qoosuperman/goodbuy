@@ -1,6 +1,6 @@
 class GroupsController < ApplicationController
   before_action :authenticate_user!
-  before_action :find_group, only: [:edit, :update, :close, :link, :buy, :show, :checkout]
+  before_action :find_group, only: [:edit, :update, :close, :link, :buy, :show, :checkout, :follow, :delete_follow]
   before_action :validate_group_owner, only: [:edit, :close]
   before_action :validate_group_active, only: [:buy, :edit]
   
@@ -87,6 +87,27 @@ class GroupsController < ApplicationController
       format.js
     end
   end
+
+
+  def follow
+    follow = current_user.follows.new(group_id: @group.id)
+    if follow.save
+      @ajax_result =  t('controllers.groups.follow.result')
+    else
+      @ajax_result = follow.errors.full_messages.join(', ')
+    end
+  end
+
+  def show_follow
+    @groups = current_user.followed_groups
+  end
+
+  def delete_follow
+    current_user.followed_groups.delete(@group)
+    redirect_to show_follow_groups_path
+  end
+
+
 
   private
   def find_group
