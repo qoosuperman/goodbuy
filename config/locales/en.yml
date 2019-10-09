@@ -249,6 +249,7 @@ en:
     confirm_remove: "Sure to remove from My Favorites?"
     remove: "Delete"
     follow_group: "My Favorite"
+    follow_group_icon: "★ My Favorite"
     my_group: "My Groups"
     records: "Records"
     attended_group: "Attended Groups"

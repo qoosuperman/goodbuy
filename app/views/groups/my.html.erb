@@ -77,7 +77,7 @@
                       </td>
                       <td> <%= group.description %> </td>
                       <td>
-                        <%= link_to '★ 我的最愛', follow_group_path(group.id), class: "btn btn-warning btn-sm", method: 'patch', remote: true %>
+                        <%= link_to t("groups.follow_group_icon"), follow_group_path(group.id), class: "btn btn-warning btn-sm", method: 'patch', remote: true %>
                       </td>
                     </tr>
                   <% end %>
