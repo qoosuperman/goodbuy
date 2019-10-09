@@ -8,6 +8,9 @@ en:
         restrict_dependent_destroy:
           has_one: Cannot delete record because a dependent %{record} exists
           has_many: Cannot delete record because dependent %{record} exist
+      models:
+        follow:
+          cant_follow: Already added to My Favorites
   date:
     abbr_day_names:
       - Sun
@@ -232,12 +235,13 @@ en:
     leave_blank: "Leave blank if don't want to change it"
     current_password: "Current Password"
     need_password: "(we need your current password to confirm your changes)"
-    update: "Udate"
+    update: "Update"
     cancel: "Cancel Account"
     back: "Back"
 
   groups:
-    confirm_remove: "Sure to remove from my favorites?"
+    confirm_follow: "Already added"
+    confirm_remove: "Sure to remove from My Favorites?"
     remove: "Delete"
     follow_group: "My Favorite"
     my_group: "My Groups"
@@ -291,4 +295,4 @@ en:
     my_shop_list: "My Shopping List"
     checkout: "Checkout"
     look_others: "What Others Buy"
-    all_shop_list: "All Shoping List"
+    all_shop_list: "All Shopping List"

@@ -8,6 +8,10 @@ zh-TW:
         restrict_dependent_destroy:
           has_one: 由於 %{record} 需要此記錄，所以無法移除記錄
           has_many: 由於 %{record} 需要此記錄，所以無法移除記錄
+      models:
+        follow:
+          cant_follow: 已經加過囉
+
   date:
     abbr_day_names:
       - 周日
@@ -287,6 +291,7 @@ zh-TW:
       unlocked: "您的帳號已被解鎖，現在已經登入。"
 
   groups:
+    confirm_follow: "已經加過囉"
     confirm_remove: "確定從我的最愛移除嗎？"
     remove: "移除"
     follow_group: "我的最愛"

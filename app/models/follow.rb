@@ -8,7 +8,7 @@ class Follow < ApplicationRecord
   private
   def followed_group_valid
     if Follow.where(user_id:self.user_id, group_id: self.group_id).exists?
-      errors[:follow] << '已經加過囉'
+      errors.add(:base, :cant_follow)
     end
   end
 end
