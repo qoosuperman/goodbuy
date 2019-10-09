@@ -4,8 +4,7 @@ FactoryBot.define do
     association :product
 
     trait :with_option do
-      after(:build) { options = build_list(:option, 2) }
-      after(:build) {|order_item| order_item.options = options }
+      after(:build) {|order_item| order_item.options << build_list(:option, 2) }
     end
   end
 end
