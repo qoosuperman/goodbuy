@@ -8,5 +8,16 @@ RSpec.describe Order, type: :model do
     end
   end
 
+  context "total_price function" do
+    it "可以計算產品總金額" do 
+      o1 = build(:order)
+      oi1 = build(:order_item)
+      oi2 = build(:order_item)
+      o1.order_items = [oi1, oi2]
+      
+      expect(o1.total_price).to be(oi1.total_price + oi2.total_price)
+    end
+  end
+
 
 end
