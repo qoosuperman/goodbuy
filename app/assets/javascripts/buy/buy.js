@@ -110,7 +110,9 @@ $(function () {
   $("#buy").on('click', function (e) {
     e.preventDefault()
     showItem()
-    alert("已加入購買清單");
+    // alert("已加入購買清單");
+    $('#myModal').modal("show");
+
   });
 
   $("#buy2").on('click', function (e) {
