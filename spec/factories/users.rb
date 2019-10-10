@@ -6,8 +6,7 @@ FactoryBot.define do
     password { Faker::Lorem.characters(number: 6) }
 
     trait :invalid do
-      phone { nil }
-      address { nil }
+      name { nil }
     end
   end
 end
