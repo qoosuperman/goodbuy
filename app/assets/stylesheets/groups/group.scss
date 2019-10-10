@@ -54,13 +54,16 @@ body {
     border-radius: 50%;
   }
 }
-.change_language{
-  margin-top: 50px;
+.change_language {
+  margin: 50px 0 30px;
   padding: 0;
+  text-align: center;
 }
-.change_language li{
+.change_language li a {
   list-style: none;
-  padding: 10px;
+  padding: 5px;
+  color: #ebd8c5;
+  text-decoration: none;
 }
 
 // 標題

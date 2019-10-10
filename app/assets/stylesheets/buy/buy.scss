@@ -12,9 +12,6 @@
   justify-content: center;
   padding-top: 40px;
   padding-bottom: 40px;
-  background-image: image-url("background.jpg");
-  background-size: cover;
-  background-position: center;
 }
 .box {
   width: 1000px;
@@ -137,6 +134,37 @@ a {
   }
   .others-list {
     margin-top: 0;
+  }
+}
+
+.buy-alert {
+  width: 300px;
+  margin: auto;
+  -moz-animation: cssAnimation 0s ease-in 3s forwards;
+  /* Firefox */
+  -webkit-animation: cssAnimation 0s ease-in 3s forwards;
+  /* Safari and Chrome */
+  -o-animation: cssAnimation 0s ease-in 3s forwards;
+  /* Opera */
+  animation: cssAnimation 0s ease-in 3s forwards;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+@keyframes cssAnimation {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@-webkit - keyframes cssAnimation {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
   }
 }
 
