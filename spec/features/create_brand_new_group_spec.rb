@@ -30,6 +30,8 @@ RSpec.feature "CreateBrandNewGroups", type: :feature do
       first('input[placeholder="50"]').set("20")
       click_button("確定開團")
     end
-    expect(page).to have_content("你的團購連結")
+    product = Group.last.products.first
+    expect(product.name).to eq("紅茶")
+    expect(product.price).to be(20)
   end
 end
