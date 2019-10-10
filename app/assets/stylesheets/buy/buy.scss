@@ -137,6 +137,37 @@ a {
   }
 }
 
+.buy-alert {
+  width: 300px;
+  margin: auto;
+  -moz-animation: cssAnimation 0s ease-in 3s forwards;
+  /* Firefox */
+  -webkit-animation: cssAnimation 0s ease-in 3s forwards;
+  /* Safari and Chrome */
+  -o-animation: cssAnimation 0s ease-in 3s forwards;
+  /* Opera */
+  animation: cssAnimation 0s ease-in 3s forwards;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+@keyframes cssAnimation {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@-webkit - keyframes cssAnimation {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .buy-phone {
     display: none;
