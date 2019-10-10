@@ -110,7 +110,10 @@ $(function () {
   $("#buy").on('click', function (e) {
     e.preventDefault()
     showItem()
-    alert("已加入購買清單");
+    // alert("已加入購買清單");
+    $('.alert-con').html(`<div class="alert alert-info alert-dismissible fade show fixed-top text-center buy-alert" role="alert">
+    已加入購買清單!<br>
+    <button class="close" data-dismiss="alert">&times;</button></div>`)
   });
 
   $("#buy2").on('click', function (e) {
