@@ -19,10 +19,9 @@ RSpec.feature "CreateBrandNewGroups", type: :feature do
       click_button("確定開團")
     end
 
-    check_group_correct
+    check_db_title_correct
 
-    visit my_groups_path
-    expect(page).to have_content("團團圓圓")
+    check_view_title_correct
   end
 
   scenario "填入基本資訊加菜單", js: true, slow: true do
@@ -34,13 +33,23 @@ RSpec.feature "CreateBrandNewGroups", type: :feature do
       first('input[placeholder="50"]').set("20")
       click_button("確定開團")
     end
-    product = Group.last.products.first
+
+    check_db_title_correct
+
+    check_view_title_correct
+    
+    product = last_group.products.first
     expect(product.name).to eq("紅茶")
     expect(product.price).to be(20)
   end
 
-  def check_group_correct
+  def check_db_title_correct
     expect(last_group).to be_present
     expect(last_group.title).to eq('團團圓圓') 
+  end
+
+  def check_view_title_correct
+    visit my_groups_path
+    expect(page).to have_content("團團圓圓")
   end
 end

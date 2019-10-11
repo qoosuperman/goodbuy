@@ -1,9 +1,10 @@
 require 'rails_helper'
 
 RSpec.feature "CreateGroupWithPublics", type: :feature do
+  let(:user) { create(:user) }
+
   before do
-    create(:group, :public, title: "Public_Menu")
-    user = create(:user)
+    create(:group_with_options_and_products, is_public: true, title: "Public_Menu")
     sign_in user
     visit public_groups_path
   end

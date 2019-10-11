@@ -59,10 +59,11 @@ RSpec.describe GroupsController, type: :controller do
     context "登入但非團主" do
 
       it "無法更新資訊" do
+        old_group
         spec_group_params = FactoryBot.attributes_for(:group, title: "New Group")
         sign_in other_user
         patch :update, params: { id: old_group.id, group: spec_group_params }
-        expect(group.reload.title).to eq("Old Group")
+        expect(old_group.reload.title).to eq("Old Group")
       end
 
       it "被導回首頁" do
