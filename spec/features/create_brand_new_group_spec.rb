@@ -1,8 +1,10 @@
 require 'rails_helper'
 
 RSpec.feature "CreateBrandNewGroups", type: :feature do
+  let(:user) { create(:user) }
+  let(:last_group) { Group.last }
+
   before do
-    user = create(:user)
     sign_in user
     visit new_group_path
   end
@@ -17,11 +19,13 @@ RSpec.feature "CreateBrandNewGroups", type: :feature do
       click_button("確定開團")
     end
 
+    check_group_correct
+
     visit my_groups_path
     expect(page).to have_content("團團圓圓")
   end
 
-  scenario "填入基本資訊加菜單", js: true do
+  scenario "填入基本資訊加菜單", js: true, slow: true do
     within(".form-pc") do
       fill_in("group[title]", with: "團團圓圓")
       click_on("菜單")
@@ -33,5 +37,10 @@ RSpec.feature "CreateBrandNewGroups", type: :feature do
     product = Group.last.products.first
     expect(product.name).to eq("紅茶")
     expect(product.price).to be(20)
+  end
+
+  def check_group_correct
+    expect(last_group).to be_present
+    expect(last_group.title).to eq('團團圓圓') 
   end
 end
