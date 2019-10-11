@@ -245,6 +245,7 @@ en:
     back: "Back"
 
   groups:
+    your_link: "Link of the group"
     confirm_follow: "Already added"
     confirm_remove: "Sure to remove from My Favorites?"
     remove: "Delete"
