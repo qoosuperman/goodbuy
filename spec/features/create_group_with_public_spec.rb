@@ -2,9 +2,10 @@ require 'rails_helper'
 
 RSpec.feature "CreateGroupWithPublics", type: :feature do
   let(:user) { create(:user) }
+  let(:last_group) { Group.last }
 
   before do
-    create(:group_with_options_and_products, is_public: true, title: "Public_Menu")
+    create(:group_with_option_and_product, is_public: true, title: "Public_Menu")
     sign_in user
     visit public_groups_path
   end
@@ -21,7 +22,7 @@ RSpec.feature "CreateGroupWithPublics", type: :feature do
     expect(page).to have_field('group[title]', with: "Public_Menu")
   end
 
-  scenario "按確定開團會寫進資料庫" do
+  scenario "按確定開團會寫進資料庫", js: true, slow: true do
     within('table.table-bordered') do
       click_link("開團")
     end
@@ -29,9 +30,17 @@ RSpec.feature "CreateGroupWithPublics", type: :feature do
       click_button("確定開團")
     end
 
-    group = Group.last
-    expect(group.products.count).to be(2)
-    expect(group.options.count).to be(2)
-    expect(group.title).to eq("Public_Menu")
+    expect(last_group.products.count).to be(1)
+    expect(last_group.options.count).to be(1)
+    expect(last_group.title).to eq("Public_Menu")
+
+    visit edit_group_path(id: last_group.id)
+    expect(page).to have_field('group[title]', with: "Public_Menu")
+    click_on("菜單")
+    expect(page).to have_field("group[products_attributes][0][name]", with: "紅茶")
+    expect(page).to have_field("group[products_attributes][0][price]", with: "20")
+    click_on("選項")
+    expect(page).to have_field("group[options_attributes][0][name]", with: "加椰果")
+    expect(page).to have_field("group[options_attributes][0][price]", with: "10")
   end
 end
