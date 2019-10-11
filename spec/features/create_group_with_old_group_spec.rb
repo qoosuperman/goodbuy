@@ -1,13 +1,15 @@
 require 'rails_helper'
 
 RSpec.feature "CreateGroupWithOldGroups", type: :feature do
+  include CheckProductOptionSupport
+
   let(:user) { create(:user) }
   let(:last_group) { Group.last }
   let(:product) { Group.last.products.first}
   let(:option) { Group.last.options.first}
 
   before do
-    create(:group_with_option_and_product, user: user, is_active: false, title: "Old Group")
+    create(:group_with_option_and_product, user: user, is_active: false, title: "團團圓圓")
     sign_in user
     visit my_groups_path
   end
@@ -21,7 +23,7 @@ RSpec.feature "CreateGroupWithOldGroups", type: :feature do
       click_link("再開團")
     end
     expect(page).to have_content("來開團囉")
-    expect(page).to have_field('group[title]', with: "Old Group")
+    expect(page).to have_field('group[title]', with: "團團圓圓")
   end
 
   scenario "按確定開團會寫進資料庫", js: true, slow: true do
@@ -32,21 +34,13 @@ RSpec.feature "CreateGroupWithOldGroups", type: :feature do
       click_button("確定開團")
     end
 
-    expect(last_group.products.count).to be(1)
-    expect(last_group.options.count).to be(1)
-    expect(product.name).to eq("紅茶")
-    expect(product.price).to be(20)
-    expect(option.name).to eq("加椰果")
-    expect(option.price).to be(10)
-    expect(last_group.title).to eq("Old Group")
+    check_db_title_correct
 
-    visit edit_group_path(id: last_group.id)
-    expect(page).to have_field('group[title]', with: "Old Group")
-    click_on("菜單")
-    expect(page).to have_field("group[products_attributes][0][name]", with: "紅茶")
-    expect(page).to have_field("group[products_attributes][0][price]", with: "20")
-    click_on("選項")
-    expect(page).to have_field("group[options_attributes][0][name]", with: "加椰果")
-    expect(page).to have_field("group[options_attributes][0][price]", with: "10")
+    check_view_title_correct
+
+    check_db_product_option_correct
+
+    check_view_field_correct
+    
   end
 end
