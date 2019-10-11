@@ -229,7 +229,7 @@ en:
     remember_me: "Remember me"
     email: "Email Address"
     password: "Password"
-    forget_password: "forget password?"
+    forget_password: "Forget password?"
     google_login: "Google Log In"
     facebook_login: "Facebook Log In"
     name: "Name"

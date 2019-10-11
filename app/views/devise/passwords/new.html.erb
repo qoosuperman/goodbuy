@@ -2,7 +2,7 @@
   <div class="logobox">
     <%= image_tag("logo.png", :alt => "logo" ,class:'logo') %>
   </div>
-  <h2 class='signinh2 h3 mb-3'>Forgot your password?</h2>
+  <h2 class='signinh2 h3 mb-3'><%= t("devise.login") %></h2>
 
   <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
@@ -12,7 +12,7 @@
     </div>
 
     <div class="actions">
-      <%= f.submit "Send me reset password instructions", class:'btn btn-md btn-info btn-block' %>
+      <%= f.submit t("devise.mailer.reset_password_instructions.subject"), class:'btn btn-md btn-info btn-block' %>
     </div>
   <% end %>
 
