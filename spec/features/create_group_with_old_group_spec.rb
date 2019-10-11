@@ -3,6 +3,8 @@ require 'rails_helper'
 RSpec.feature "CreateGroupWithOldGroups", type: :feature do
   let(:user) { create(:user) }
   let(:last_group) { Group.last }
+  let(:product) { Group.last.products.first}
+  let(:option) { Group.last.options.first}
 
   before do
     create(:group_with_option_and_product, user: user, is_active: false, title: "Old Group")
@@ -32,6 +34,10 @@ RSpec.feature "CreateGroupWithOldGroups", type: :feature do
 
     expect(last_group.products.count).to be(1)
     expect(last_group.options.count).to be(1)
+    expect(product.name).to eq("紅茶")
+    expect(product.price).to be(20)
+    expect(option.name).to eq("加椰果")
+    expect(option.price).to be(10)
     expect(last_group.title).to eq("Old Group")
 
     visit edit_group_path(id: last_group.id)
