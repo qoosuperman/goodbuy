@@ -20,6 +20,16 @@ body {
   .mac.sidebar {
     display: flex;
   }
+
+  .card {
+    box-sizing: border-box;
+    margin: 4px;
+    width: 49%;
+    box-shadow: 5px 5px 5px #888;
+  }
+  .time span {
+    font-size: 14px;
+  }
 }
 
 @media screen and (max-width: 767px) {
