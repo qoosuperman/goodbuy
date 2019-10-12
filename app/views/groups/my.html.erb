@@ -22,7 +22,15 @@
                 <% @groups.each do |group| %>
                 <div class="card">
                   <div class="row p-2">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrj_ckm8niEAe9xqwPnnghaZ6w-UzpKpQgu2UB1DZWSMVGi3UK" class="card-img-left col-4" alt="...">
+                    <div class="card-img-left col-4">
+                      <% if group.shop_photo.attached? %>
+                        <%= image_tag @group.shop_photo, class: "default-pic" %>
+                      <% else %>
+                          <%= image_tag("logo.png", :alt => "logo", class:"default-pic") %>
+                      <% end %>
+                    </div>
+                  
+                  
                     <div class="col-8">
                       <h2 class="card-title mt-2"><% if group.is_active == true %>
                             <%= link_to group.title, link_group_path(group.id), class: "text-primary", :remote => true %>
@@ -71,7 +79,14 @@
             <% @groups.each do |group| %>
               <div class="card mt-3">
                 <div class="card-body">
-                  <h5 class="card-title"> <%= group.title %> </h5>
+                  <div class="card-img-top">
+                    <% if group.shop_photo.attached? %>
+                      <%= image_tag @group.shop_photo, class: "default-pic" %>
+                    <% else %>
+                        <%= image_tag("logo.png", :alt => "logo", class:"default-pic") %>
+                    <% end %>
+                  </div>
+                  <h3 class="card-title"> <%= group.title %> </h3>
                   <h6 class="card-subtitle mb-2 text-muted"> <%= group.description %> </h6>
                   <p class="card-text"><%= t("groups.create_time") %> <%= group.created_at.to_s(:common) %> </p>
                   <% if group.is_active == true %>
