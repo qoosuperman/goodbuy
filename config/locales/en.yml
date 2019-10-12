@@ -116,7 +116,7 @@ en:
       month: Month
       year: Year
   errors:
-    format: "%{attribute} %{message}"
+    format: "%{message}"
     messages:
       accepted: must be accepted
       blank: can't be blank

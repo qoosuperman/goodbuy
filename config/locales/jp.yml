@@ -1,5 +1,18 @@
 jp:
   activerecord:
+    attributes:
+      user:
+        name: "名前"
+        email: "メールボックス"
+        password: "パスワード"
+      group:
+        title: "グループ名"
+      product:
+        name: "品名"
+        price: "価格"
+      option:
+        name: "オプション"
+        price: "価格"
     errors:
       format: "%{message}"
       messages:
