@@ -84,6 +84,13 @@
             <% @groups.each do |group| %>
               <div class="card mt-3">
                 <div class="card-body">
+                  <div class="card-img-top">
+                    <% if group.shop_photo.attached? %>
+                      <%= image_tag @group.shop_photo, class: "default-pic" %>
+                    <% else %>
+                        <%= image_tag("logo.png", :alt => "logo", class:"default-pic") %>
+                    <% end %>
+                  </div>
                   <h5 class="card-title"> <%= group.title %> </h5>
                   <h6 class="card-subtitle mb-2 text-muted"> <%= group.description %> </h6>
                   <p class="card-text"><%= t("groups.group_owner") %>： <%= group.user.name %> </p>
