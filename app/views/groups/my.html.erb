@@ -18,74 +18,50 @@
           <h1 class="h3 text-heading"> <%= t("groups.my_group") %> </h1>
 
           <!-- DataTales Example -->
-          <div class="card shadow mb-4">
-            <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-dark"> <%= t("groups.record_list") %> </h6>
-            </div>
-            <div class="card-body">
-              <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                  <thead>
-                    <tr>
-                      <th><%= t("groups.link") %></th>
-                      <th><%= t("groups.edit") %></th>
-                      <th><%= t("groups.group_name") %></th>
-                      <th><%= t("groups.status") %></th>
-                      <th><%= t("groups.start_time") %></th>
-                      <th><%= t("groups.end_time") %></th>
-                      <th><%= t("groups.comment") %></th>
-                      <th><%= t("groups.follow_group") %></th>
-                    </tr>
-                  </thead>
-                  <tfoot>
-                    <tr>
-                      <th><%= t("groups.link") %></th>
-                      <th><%= t("groups.edit") %></th>
-                      <th><%= t("groups.group_name") %></th>
-                      <th><%= t("groups.status") %></th>
-                      <th><%= t("groups.start_time") %></th>
-                      <th><%= t("groups.end_time") %></th>
-                      <th><%= t("groups.comment") %></th>
-                      <th><%= t("groups.follow_group") %></th>
-                    </tr>
-                  </tfoot>
-                  <tbody>
-                  <% @groups.each do |group| %>
-                    <tr>
-                      <td> 
+          <div class="card-group">
+              <div class="row">
+                <% @groups.each do |group| %>
+                <div class="card col-3">
+                  <div class="cotent p-2 text-center">
+                    <img src="http://2.bp.blogspot.com/_DLACMUy7uvw/TOh39orN-6I/AAAAAAAACmY/sX7C1V5WKlc/s1600/35311_410677479716_49825139716_4309384_6781198_n.jpg" class="card-img-top" alt="...">
+                    <h2 class="card-title mt-2"><%= group.title %></h2>
+                    <div class="follow mb-2">
+                    <%= link_to t("groups.follow_group_icon"), follow_group_path(group.id), class: "btn btn-warning btn-sm", method: 'patch', remote: true %>
+                    </div>
+                    <p><%= group.description %></p>
+                    
+                    <div class="d-flex justify-content-center">
+                      <div class="link mr-1">
                         <% if group.is_active == true %>
                           <%= link_to t("groups.link"), link_group_path(group.id), class: "btn btn-secondary", :remote => true %>
-
                         <% else%>
                           <%= link_to t("groups.link"),link_group_path(group.id), class: "btn btn-secondary disabled" %>
                         <% end %>
-                      </td>
-                      <td> <%= link_to t("groups.see_status"), group_path(group.id), class: "btn btn-status" %> </td>
-                      <td><%= group.title  %></td>
-                      <td> 
-                      <% if group.is_active == true %>
-                        <%= link_to t("groups.close_group"), close_group_path(group.id), class: "btn btn-close", method: "put", data: {confirm: t("groups.confirm_close")} %>
-                      <% else%>
-                        <%= link_to t("groups.create_again"),new_group_path(:group_id => group.id), class: "btn btn-reopen"%>
-                      <% end %>
-                      </td>
-                      <td> <%= group.created_at.to_s(:common) %> </td>
-                      <td> 
-                        <% unless group.is_active %>
-                          <%= group.end_time.to_s(:common) if group.end_time %> 
+                      </div>
+                      <div class="status mr-1">
+                        <%= link_to t("groups.see_status"), group_path(group.id), class: "btn btn-status" %>
+                      </div>
+                      <div class="close">
+                        <% if group.is_active == true %>
+                          <%= link_to t("groups.close_group"), close_group_path(group.id), class: "btn btn-close", method: "put", data: {confirm: t("groups.confirm_close")} %>
+                        <% else%>
+                          <%= link_to t("groups.create_again"),new_group_path(:group_id => group.id), class: "btn btn-reopen"%>
                         <% end %>
-                      </td>
-                      <td> <%= group.description %> </td>
-                      <td>
-                        <%= link_to t("groups.follow_group_icon"), follow_group_path(group.id), class: "btn btn-warning btn-sm", method: 'patch', remote: true %>
-                      </td>
-                    </tr>
-                  <% end %>
-                  </tbody>
-                </table>
-              </div>
+                      </div>
+                    </div>
+                    <div class="time mt-2">
+                      <%= group.created_at.to_s(:common) %>
+                      <% unless group.is_active %>
+                        <%= group.end_time.to_s(:common) if group.end_time %>
+                      <% end %>
+                    </div>
+                  </div>
+                   </div>
+                <% end %>
+             
             </div>
           </div>
+
 
           <div class="phone-card">
             <% @groups.each do |group| %>
