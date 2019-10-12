@@ -336,6 +336,7 @@ jp:
     store_info: "店舗情報"
     menu: "メニュー"
     photo: "写真"
+    upload_photo: "写真をアップロード"
     confirm_group: "作成する"
     create_menu: "メニュー作成"
     create_option: "メニュー項目追加"
@@ -347,3 +348,5 @@ jp:
     checkout: "レジに進む"
     look_others: "他の人が購入したもの"
     all_shop_list: "みんなのショッピングリスト"
+    add_pearl : "タピオカ入り"
+    milk_tea: "ミルクティー"
