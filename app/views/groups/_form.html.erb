@@ -14,7 +14,8 @@
             </div>
           <% end %>
             <div>
-              <%= f.input :shop_photo, label: t("groups.photo") %>
+              <%= f.label :shop_photo, t("groups.upload_photo"), class: "btn btn-sm btn-outline-primary" %>
+              <%= f.input :shop_photo, label: "" %>
               <%= f.input :title, label: t("groups.group_name") %> 
               <%= f.input :address, label: t("groups.address") %> 
               <%= f.input :phone, label: t("groups.phone") %> 
@@ -69,6 +70,7 @@
               </div>
             <% end %>
               <div>
+                <%= f.label :shop_photo, t("groups.upload_photo"), class: "btn btn-sm btn-outline-primary" %>
                 <%= f.input :shop_photo, label: t("groups.photo") %>
                 <%= f.input :title, label: t("groups.group_name") %> 
                 <%= f.input :address, label: t("groups.address") %> 
