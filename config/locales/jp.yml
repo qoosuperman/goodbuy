@@ -235,7 +235,7 @@ jp:
     password: "パスワード"
     forget_password: "パスワードを忘れましたか?"
     google_login: "Googleアカウントでログイン"
-    facebook_login: "facebookアカウントでログイン"
+    facebook_login: "Facebookアカウントでログイン"
     name: "名前"
     nick_name: "ニックネーム"
     password_confirm: "パスワード（確認用）"
