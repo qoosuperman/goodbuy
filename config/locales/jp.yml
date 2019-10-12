@@ -317,7 +317,7 @@ jp:
     comment: "コメント"
     confirm_close: "本当に良いですか？"
     group_owner: "グループオーナー"
-    not_close: "まだ終了していない"
+    not_close: "絶賛開催中"
     closed: "すでに終了"
     group_info: "グループ情報"
     phone: "電話番号"
