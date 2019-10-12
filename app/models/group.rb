@@ -11,6 +11,8 @@ class Group < ApplicationRecord
   has_one_attached :qr_img
   validates :title, presence: { message: "這欄必填喔！" }
 
+  default_scope -> { order('created_at DESC') }
+
   def total_price
     orders.reduce(0){ |acc, order|
       acc + order.total_price
