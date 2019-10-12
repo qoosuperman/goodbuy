@@ -3,7 +3,7 @@ class User < ApplicationRecord
   has_many :orders, foreign_key: "buyer_id", inverse_of: 'buyer'
   has_many :follows
   has_many :followed_groups, through: :follows, source: :group
-  validates :name, presence: { message: "名字不能是空白喔！" }  
+  validates :name, presence: true 
  
 
   # Include default devise modules. Others available are:

@@ -1,6 +1,19 @@
 ---
 zh-TW:
   activerecord:
+    attributes:
+      user:
+        name: "名字"
+        email: "信箱"
+        password: "密碼"
+      group:
+        title: "團名"
+      product:
+        name: "產品名"
+        price: "價格"
+      option:
+        name: "選項"
+        price: "價格"
     errors:
       format: "%{message}"
       messages:
@@ -343,6 +356,7 @@ zh-TW:
     store_info: "店家資訊"
     menu: "菜單"
     photo: "照片"
+    upload_photo: "上傳照片"
     confirm_group: "確定開團"
     create_menu: "新增菜單"
     create_option: "新增選項"
@@ -354,3 +368,5 @@ zh-TW:
     checkout: "結帳囉"
     look_others: "其他人買了啥"
     all_shop_list: "所有人的購買清單"
+    add_pearl : "加珍珠"
+    milk_tea: "奶茶"

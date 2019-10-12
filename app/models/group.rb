@@ -9,7 +9,7 @@ class Group < ApplicationRecord
   belongs_to :user
   has_one_attached :shop_photo
   has_one_attached :qr_img
-  validates :title, presence: { message: "這欄必填喔！" }
+  validates :title, presence: true
 
   default_scope -> { order('created_at DESC') }
 

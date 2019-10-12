@@ -1,9 +1,9 @@
 <div class="nested-fields row ">
   <div class="col-5">
-    <%= f.input :name, label: "品名", placeholder: "奶茶" %>
+    <%= f.input :name, label: t("groups.product_name"), placeholder: t("groups.milk_tea") %>
   </div>
   <div class="col-5">
-    <%= f.input :price, label: "價格", placeholder: "50" %>
+    <%= f.input :price, label: t("groups.price"), placeholder: "50" %>
   </div>
   <div class="col-2">
     <%= link_to_remove_association "X", f , class: "btn btn-delete"%>

@@ -1,5 +1,18 @@
 jp:
   activerecord:
+    attributes:
+      user:
+        name: "名前"
+        email: "メールボックス"
+        password: "パスワード"
+      group:
+        title: "グループ名"
+      product:
+        name: "品名"
+        price: "価格"
+      option:
+        name: "オプション"
+        price: "価格"
     errors:
       format: "%{message}"
       messages:
@@ -336,6 +349,7 @@ jp:
     store_info: "店舗情報"
     menu: "メニュー"
     photo: "写真"
+    upload_photo: "写真をアップロード"
     confirm_group: "作成する"
     create_menu: "メニュー作成"
     create_option: "メニュー項目追加"
@@ -347,3 +361,5 @@ jp:
     checkout: "レジに進む"
     look_others: "他の人が購入したもの"
     all_shop_list: "みんなのショッピングリスト"
+    add_pearl : "タピオカ入り"
+    milk_tea: "ミルクティー"

@@ -116,7 +116,7 @@ en:
       month: Month
       year: Year
   errors:
-    format: "%{attribute} %{message}"
+    format: "%{message}"
     messages:
       accepted: must be accepted
       blank: can't be blank
@@ -292,6 +292,7 @@ en:
     store_info: "Store Info"
     menu: "Menu"
     photo: "Photo"
+    upload_photo: "Upload Photo"
     confirm_group: "Confirm"
     create_menu: "Add Menu"
     create_option: "Add Option"
@@ -303,3 +304,5 @@ en:
     checkout: "Checkout"
     look_others: "What Others Buy"
     all_shop_list: "All Shopping List"
+    add_pearl : "Add Pearl"
+    milk_tea: "Milk Tea"
