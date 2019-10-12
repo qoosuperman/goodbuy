@@ -38,7 +38,6 @@
                           <% else%>
                             <%= group.title %>
                           <% end %>
-                          <%= link_to t("groups.follow_group_icon"), follow_group_path(group.id), class: "btn btn-warning btn-sm mb-1", method: 'patch', remote: true %>
                       </h2>
                       <div class="text-wrap">
                           <% if group.is_active == true %>
@@ -56,7 +55,11 @@
                       <div class="d-flex justify-content-start">
                         
                         <div class="status mr-1">
-                          <%= link_to t("groups.see_status"), group_path(group.id), class: "btn btn-status" %>
+                          <%= link_to t("groups.see_status"), group_path(group.id), class: "btn btn-status btn-sm" %>
+                        </div>
+
+                        <div class="status">
+                          <%= link_to t("groups.follow_group_icon"), follow_group_path(group.id), class: "btn btn-warning btn-sm", method: 'patch', remote: true %>
                         </div>
                       </div>
                       <hr>

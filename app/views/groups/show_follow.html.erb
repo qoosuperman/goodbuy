@@ -52,13 +52,13 @@
                       </div>
                       <p><%= group.description %></p>
                       
-                      <div class="d-flex justify-content-start">
+                      <div class="d-flex justify-content-start mb-2">
                         
                         <div class="status mr-1">
-                          <%= link_to t("groups.see_status"), group_path(group.id), class: "btn btn-status" %>
+                          <%= link_to t("groups.see_status"), group_path(group.id), class: "btn btn-status btn-sm" %>
                         </div>
-                         <div class="remove">
-                           <%= link_to t("groups.remove"), delete_follow_group_path(group.id), class: "btn btn-warning", method: "patch", data: {confirm: t("groups.confirm_remove")} %>
+                         <div class="status">
+                           <%= link_to t("groups.remove"), delete_follow_group_path(group.id), class: "btn btn-warning btn-sm", method: "patch", data: {confirm: t("groups.confirm_remove")} %>
                          </div>
                       </div>
                       </div>
