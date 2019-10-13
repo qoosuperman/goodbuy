@@ -44,7 +44,11 @@
   
     <div class="container mt-5">
       <div class="row">
+        <% if params[:action] == "new" %>
           <%= f.button :submit, value: t("groups.confirm_group"),class:"btn btn-delete btn-lg mx-auto btn-lg"  %>
+        <% elsif params[:action] == "edit" %>
+          <%= f.button :submit, value: t("groups.confirm_update"),class:"btn btn-delete btn-lg mx-auto btn-lg"  %>
+        <% end %>
       </div>
     </div>
   
@@ -103,7 +107,11 @@
     
       <div class="container mt-5">
         <div class="row">
+          <% if params[:action] == "new" %>
             <%= f.button :submit, value: t("groups.confirm_group"),class:"btn btn-delete btn-lg mx-auto btn-lg"  %>
+          <% elsif params[:action] == "edit" %>
+            <%= f.button :submit, value: t("groups.confirm_update"),class:"btn btn-delete btn-lg mx-auto btn-lg"  %>
+          <% end %>
         </div>
       </div>
     

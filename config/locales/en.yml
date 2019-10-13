@@ -295,6 +295,7 @@ en:
     photo: "Photo"
     upload_photo: "Upload Photo"
     confirm_group: "Confirm"
+    confirm_update: "Update"
     create_menu: "Add Menu"
     create_option: "Add Option"
     join_group: "Join Group"
