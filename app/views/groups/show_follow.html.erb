@@ -18,70 +18,74 @@
           <h1 class="h3 text-heading"> <%= t("groups.follow_group") %> </h1>
 
           <!-- DataTales Example -->
-          <div class="card shadow mb-4">
-            <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-dark"> <%= t("groups.record_list") %> </h6>
-            </div>
-            <div class="card-body">
-              <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                  <thead>
-                    <tr>
-                      <th><%= t("groups.link") %></th>
-                      <th><%= t("groups.edit") %></th>
-                      <th><%= t("groups.group_name") %></th>
-                      <th><%= t("groups.status") %></th>
-                      <th><%= t("groups.comment") %></th>
-                      <th><%= t("groups.remove") %></th>
-                    </tr>
-                  </thead>
-                  <tfoot>
-                    <tr>
-                      <th><%= t("groups.link") %></th>
-                      <th><%= t("groups.edit") %></th>
-                      <th><%= t("groups.group_name") %></th>
-                      <th><%= t("groups.status") %></th>
-                      <th><%= t("groups.comment") %></th>
-                      <th><%= t("groups.remove") %></th>
-                    </tr>
-                  </tfoot>
-                  <tbody></tbody>
-                  <% @groups.each do |group| %>
-                    <tr>
-                      <td> 
-                        <% if group.is_active == true %>
-                          <%= link_to t("groups.link"), link_group_path(group.id), class: "btn btn-secondary", remote:true %>
-
+         <div class="mac card-group">
+              <div class="row">
+                <% @groups.each do |group| %>
+                <div class="card">
+                  <div class="row p-2">
+                    <div class="card-img-left col-4">
+                      <% if group.shop_photo.attached? %>
+                        <%= image_tag @group.shop_photo, class: "default-pic" %>
+                      <% else %>
+                          <%= image_tag("logo.png", :alt => "logo", class:"default-pic") %>
+                      <% end %>
+                    </div>
+                  
+                  
+                    <div class="col-8 text-dark">
+                      <h2 class="card-title mt-2"><% if group.is_active == true %>
+                            <%= link_to group.title, link_group_path(group.id), class: "text-primary", :remote => true %>
+                          <% else%>
+                            <%= group.title %>
+                          <% end %>
+                      </h2>
+                      <div class="text-wrap">
+                          <% if group.is_active == true %>
+                          <span class="badge badge-primary">
+                            <%= t("groups.not_close") %>
+                          </span>
                         <% else%>
-                          <%= link_to t("groups.link"),link_group_path(group.id), class: "btn btn-secondary disabled" %>
+                          <span class="badge badge-secondary">
+                            <%= t("groups.closed") %>
+                          </span>
                         <% end %>
-                      </td>
-                      <td> <%= link_to t("groups.see_status"), group_path(group.id), class: "btn btn-status" %> </td>
-                      <td><%= group.title  %></td>
-                      <td> 
-                        <% if group.is_active == true %>
-                          <%= t("groups.not_close") %>
-                        <% else%>
-                          <%= t("groups.closed") %>
-                        <% end %>
-                      </td>
-                      <td> <%= group.description %> </td>
-                      <td> <%= link_to t("groups.remove"), delete_follow_group_path(group.id), class: "btn btn-warning", method: "patch", data: {confirm: t("groups.confirm_remove")} %> </td>
-                    </tr>
-                  <% end %>
-                  </tbody>
-                </table>
-              </div>
+                      </div>
+                      <p><%= group.description %></p>
+                      
+                      <div class="d-flex justify-content-start mb-2">
+                        
+                        <div class="status mr-1">
+                          <%= link_to t("groups.see_status"), group_path(group.id), class: "btn btn-status btn-sm" %>
+                        </div>
+                         <div class="status">
+                           <%= link_to t("groups.remove"), delete_follow_group_path(group.id), class: "btn btn-warning btn-sm", method: "patch", data: {confirm: t("groups.confirm_remove")} %>
+                         </div>
+                      </div>
+                      </div>
+                    </div>
+                  </div>
+                   </div>
+                <% end %>
             </div>
           </div>
+
+
+          
 
           <div class="phone-card">
             <% @groups.each do |group| %>
               <div class="card mt-3">
                 <div class="card-body">
+                 <div class="card-img-top">
+                    <% if group.shop_photo.attached? %>
+                      <%= image_tag @group.shop_photo, class: "default-pic" %>
+                    <% else %>
+                        <%= image_tag("logo.png", :alt => "logo", class:"default-pic") %>
+                    <% end %>
+                  </div>
                   <h5 class="card-title"> <%= group.title %> </h5>
                   <h6 class="card-subtitle mb-2 text-muted"> <%= group.description %> </h6>
-                  <p class="card-text"><%= t("groups.create_time") %> <%= group.created_at.to_s(:common) %> </p>
+                  <p class="card-text"><%= t("groups.start_time") %> <%= group.created_at.to_s(:common) %> </p>
                   <%= link_to t("groups.remove"), delete_follow_group_path(group.id), class: "btn btn-warning", method: "patch", data: {confirm: t("groups.confirm_remove")} %>
                   <% if group.is_active == true %>
                     <%= link_to t("groups.link"), link_group_path(group.id), class: "btn btn-secondary", remote:true %>

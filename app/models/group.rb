@@ -11,6 +11,8 @@ class Group < ApplicationRecord
   has_one_attached :qr_img
   validates :title, presence: true
 
+  default_scope -> { order('created_at DESC') }
+
   def total_price
     orders.reduce(0){ |acc, order|
       acc + order.total_price
