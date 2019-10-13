@@ -352,6 +352,7 @@ jp:
     photo: "写真"
     upload_photo: "写真をアップロード"
     confirm_group: "作成する"
+    confirm_update: "更新する"
     create_menu: "メニュー作成"
     create_option: "メニュー項目追加"
     join_group: "グループに参加"
