@@ -162,6 +162,7 @@ zh-TW:
       wrong_length:
         one: 字數錯誤 (必須是一個字)
         other: 字數錯誤 (必須是 %{count} 個字)
+      cant_delete_item: "已經有人選了這個產品/選項囉，無法刪除"
     template:
       body: 以下欄位發生問題：
       header:
