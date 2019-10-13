@@ -28,6 +28,15 @@ body {
   }
 }
 // mac navbar部分
+.pc-sidebar-link:hover > span{
+  color: #feb14a;
+}
+.change_language li{
+  list-style: none;
+}
+.pc-sidebar-language:hover{
+  color: #feb14a;
+}
 
 @media screen and (min-width: 768px) {
   .mac.sidebar {
