@@ -83,7 +83,7 @@
                 <div class="card-body">
                   <div class="card-img-top">
                     <% if group.shop_photo.attached? %>
-                      <%= image_tag @group.shop_photo, class: "default-pic" %>
+                      <%= image_tag group.shop_photo, class: "default-pic" %>
                     <% else %>
                         <%= image_tag("logo.png", :alt => "logo", class:"default-pic") %>
                     <% end %>
