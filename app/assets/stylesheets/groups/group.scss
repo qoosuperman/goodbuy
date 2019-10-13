@@ -2,6 +2,19 @@ body {
   background-image: image-url("background.jpg");
   background-size: cover;
 }
+.card-img-left {
+  display: flex;
+  justify-content: center;
+}
+.default-pic {
+  width: 100%;
+  margin: auto;
+  margin-left: 10px;
+}
+.text-wrap .badge {
+  font-size: 100%;
+  margin-bottom: 10px;
+}
 
 // wrapper部分
 @media screen and (min-width: 768px) {
@@ -20,11 +33,27 @@ body {
   .mac.sidebar {
     display: flex;
   }
+  .row {
+    width: 100%;
+  }
+
+  .card {
+    box-sizing: border-box;
+    margin: 4px;
+    width: 49%;
+    box-shadow: 5px 5px 5px #888;
+  }
+  .time span {
+    font-size: 14px;
+  }
 }
 
 @media screen and (max-width: 767px) {
   .mac {
     display: none !important;
+  }
+  .default-pic {
+    width: 150px;
   }
 }
 
