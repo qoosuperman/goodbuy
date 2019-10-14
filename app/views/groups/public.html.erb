@@ -19,32 +19,31 @@
 
           <!-- DataTales Example -->
           <div class="mac card-group">
-              <div class="row">
-                <% @groups.each do |group| %>
-                <div class="card">
-                  <div class="row p-2 align-items-center">
-                    <div class="card-img-left col-3">
-                      <% if group.shop_photo.attached? %>
-                        <%= image_tag group.shop_photo, class: "default-pic" %>
-                      <% else %>
-                          <%= image_tag("logo.png", :alt => "logo", class:"default-pic") %>
-                      <% end %>
-                    </div>
-                  
-                  
-                    <div class="col-6 text-dark pl-4">
-                      <h2 class="card-title mt-2">
-                        <%= link_to group.title, new_group_path(:group_id => group.id), class: "text-primary" %>
-                      </h2>
-                      <p class="public-description"><%= group.description %></p>
-                    </div>
-                    <div class="col-3 text-dark text-right">
-                      <%= link_to t("groups.create_group"), new_group_path(:group_id => group.id), class: "btn btn-reopen btn-lg" %>
-                    </div>
+            <div class="row">
+              <% @groups.each do |group| %>
+              <div class="card">
+                <div class="row p-2 align-items-center">
+                  <div class="card-img-left col-3">
+                    <% if group.shop_photo.attached? %>
+                      <%= image_tag group.shop_photo, class: "default-pic" %>
+                    <% else %>
+                        <%= image_tag("logo.png", :alt => "logo", class:"default-pic") %>
+                    <% end %>
                   </div>
-                   </div>
-                <% end %>
-             
+                
+                
+                  <div class="col-6 text-dark pl-4">
+                    <h2 class="card-title mt-2">
+                      <%= link_to group.title, new_group_path(:group_id => group.id), class: "text-primary" %>
+                    </h2>
+                    <p class="public-description"><%= group.description %></p>
+                  </div>
+                  <div class="col-3 text-dark text-right">
+                    <%= link_to t("groups.create_group"), new_group_path(:group_id => group.id), class: "btn btn-reopen btn-lg" %>
+                  </div>
+                </div>
+              </div>
+              <% end %>
             </div>
           </div>
 
@@ -63,7 +62,6 @@
                   </div>
                   <h5 class="card-title"> <%= group.title %> </h5>
                   <h6 class="card-subtitle mb-2 text-muted"> <%= group.description %> </h6>
-
                   <%= link_to t("groups.create_group"), new_group_path(:group_id => group.id), class: "btn btn-reopen" %>
                 </div>
               </div>

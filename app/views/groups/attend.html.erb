@@ -96,17 +96,26 @@
                         <%= image_tag("logo.png", :alt => "logo", class:"default-pic") %>
                     <% end %>
                   </div>
-                  <h5 class="card-title"> <%= group.title %> </h5>
-                  <h6 class="card-subtitle mb-2 text-muted"> <%= group.description %> </h6>
-                  <p class="card-text"><%= t("groups.group_owner") %>： <%= group.user.name %> </p>
-                  <p class="card-text"><%= t("groups.status") %>：                       
+                  <h3 class="card-title">
                     <% if group.is_active == true %>
-                        <%= t("groups.not_close") %>
+                      <%= link_to group.title, link_group_path(group.id), class: "text-primary", :remote => true %>
                     <% else%>
+                      <%= group.title %>
+                    <% end %>
+                  </h3>
+                  <%= link_to t("groups.follow_group_icon"), follow_group_path(group.id), class: "btn btn-sm btn-warning mb-3", method: 'patch', remote: true %>
+                  <div class="text-wrap">
+                    <% if group.is_active == true %>
+                      <span class="badge badge-primary">
+                        <%= t("groups.not_close") %>
+                      </span>
+                    <% else%>
+                      <span class="badge badge-secondary">
                         <%= t("groups.closed") %>
-                    <% end %> </p>
-
-                  <%= link_to t("groups.link"), link_group_path(group.id), class: "btn btn-secondary" %>
+                      </span>
+                    <% end %>
+                  </div>
+                  <h6 class="card-subtitle mb-2 text-muted"> <%= group.description %> </h6>
                   <%= link_to t("groups.see_status"), group_path(group.id), class: "btn btn-status" %>
                 </div>
               </div>
