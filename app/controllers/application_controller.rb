@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   around_action :switch_locale
   before_action :configure_permitted_parameters, if: :devise_controller?
   after_action :store_action
+  rescue_from ActiveRecord::InvalidForeignKey, with: :invalid_update
 
   def store_action
     return unless request.get? 
@@ -36,5 +37,10 @@ class ApplicationController < ActionController::Base
   # 登出回到登入頁並且保留語言
   def after_sign_out_path_for(resource_or_scope)
     new_user_session_path(:locales => params[:locales])
+  end
+
+  def invalid_update
+    redirect_to edit_group_path(id: params[:id])
+    flash[:notice] = I18n.t("errors.messages.cant_delete_item")
   end
 end

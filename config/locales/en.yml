@@ -148,6 +148,7 @@ en:
       wrong_length:
         one: is the wrong length (should be 1 character)
         other: is the wrong length (should be %{count} characters)
+      cant_delete_item: "Someone has already chose this product/option, it can't be deleted"
     template:
       body: "There were problems with the following fields:"
       header:
@@ -251,7 +252,7 @@ en:
     remove: "Remove"
     follow_group: "My Favorite"
     follow_group_icon: "★ My Favorite"
-    my_group: "My Groups"
+    my_group: "Opened Groups"
     records: "Records"
     attended_group: "Attended Groups"
     create_group: "Create Group"
@@ -294,6 +295,7 @@ en:
     photo: "Photo"
     upload_photo: "Upload Photo"
     confirm_group: "Confirm"
+    confirm_update: "Update"
     create_menu: "Add Menu"
     create_option: "Add Option"
     join_group: "Join Group"
@@ -306,3 +308,5 @@ en:
     all_shop_list: "All Shopping List"
     add_pearl : "Add Pearl"
     milk_tea: "Milk Tea"
+    still_no_group: "No groups yet? Click the button below to create now!"
+    can_click_public: "Or you can check the public menu onthe left to check if there's one you want"

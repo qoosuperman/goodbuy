@@ -19,12 +19,27 @@
           <!-- DataTales Example -->
           <div class="mac card-group">
               <div class="row">
+                <% if @groups.count == 0 %>
+                  <div class="card text-center mx-auto">
+                    <div class="row p-2 justify-content-center">
+                    <p>
+                    <%= t("groups.still_no_group") %>
+                    </p>
+                    <p>
+                    <%= t("groups.can_click_public") %>
+                    </p>
+                      <div class="col-4">
+                        <%= link_to t("groups.new_group"), new_group_path, class: "btn btn-success" %>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
                 <% @groups.each do |group| %>
                 <div class="card">
                   <div class="row p-2">
                     <div class="card-img-left col-4">
                       <% if group.shop_photo.attached? %>
-                        <%= image_tag @group.shop_photo, class: "default-pic" %>
+                        <%= image_tag group.shop_photo, class: "default-pic" %>
                       <% else %>
                           <%= image_tag("logo.png", :alt => "logo", class:"default-pic") %>
                       <% end %>
@@ -78,12 +93,27 @@
 
 
           <div class="phone-card">
+            <% if @groups.count == 0 %>
+              <div class="card text-center mx-auto">
+                <div class="row p-2 justify-content-center">
+                <p>
+                <%= t("groups.still_no_group") %>
+                </p>
+                <p>
+                <%= t("groups.can_click_public") %>
+                </p>
+                  <div class="col-4">
+                    <%= link_to t("groups.new_group"), new_group_path, class: "btn btn-success" %>
+                  </div>
+                </div>
+              </div>
+            <% end %>
             <% @groups.each do |group| %>
               <div class="card mt-3">
                 <div class="card-body">
                   <div class="card-img-top">
                     <% if group.shop_photo.attached? %>
-                      <%= image_tag @group.shop_photo, class: "default-pic" %>
+                      <%= image_tag group.shop_photo, class: "default-pic" %>
                     <% else %>
                         <%= image_tag("logo.png", :alt => "logo", class:"default-pic") %>
                     <% end %>

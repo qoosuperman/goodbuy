@@ -162,6 +162,7 @@ zh-TW:
       wrong_length:
         one: 字數錯誤 (必須是一個字)
         other: 字數錯誤 (必須是 %{count} 個字)
+      cant_delete_item: "已經有人選了這個產品/選項囉，無法刪除"
     template:
       body: 以下欄位發生問題：
       header:
@@ -315,11 +316,11 @@ zh-TW:
     remove: "移出我的最愛"
     follow_group: "我的最愛"
     follow_group_icon: "★ 我的最愛"
-    my_group: "我的團購"
+    my_group: "開團紀錄"
     records: "團購紀錄"
     attended_group: "跟團紀錄"
     create_group: "開團"
-    public_group: "既有團"
+    public_group: "公用菜單"
     new_group: "新增團購"
     others: "其他"
     self_info: "個人資訊"
@@ -358,6 +359,7 @@ zh-TW:
     photo: "照片"
     upload_photo: "上傳照片"
     confirm_group: "確定開團"
+    confirm_update: "確定更新"
     create_menu: "新增菜單"
     create_option: "新增選項"
     join_group: "我要跟團"
@@ -370,3 +372,5 @@ zh-TW:
     all_shop_list: "所有人的購買清單"
     add_pearl : "加珍珠"
     milk_tea: "奶茶"
+    still_no_group: "還沒開過團嗎？點擊下方新增團購按鈕馬上開團！"
+    can_click_public: "你也可以點擊左方列表中的公用菜單看看有沒有適合你的喔!"

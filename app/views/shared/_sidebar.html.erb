@@ -27,19 +27,19 @@
       <!-- Nav Item - Pages Collapse Menu -->
 
       <li class="nav-item active">
-        <%= link_to my_groups_path, class: "nav-link" do %>
+        <%= link_to my_groups_path, class: "nav-link pc-sidebar-link" do %>
           <span> <%= t("groups.my_group") %> </span>
         <% end %>
       </li>
 
       <li class="nav-item active">
-        <%= link_to attend_groups_path, class: "nav-link" do %>
+        <%= link_to attend_groups_path, class: "nav-link pc-sidebar-link" do %>
           <span> <%= t("groups.attended_group") %> </span>
         <% end %>
       </li>
 
       <li class="nav-item active">
-        <%= link_to show_follow_groups_path, class: "nav-link" do %>
+        <%= link_to show_follow_groups_path, class: "nav-link pc-sidebar-link" do %>
           <span> <%= t("groups.follow_group") %> </span>
         <% end %>
       </li>
@@ -55,14 +55,14 @@
 
       <!-- Nav Item - Charts -->
       <li class="nav-item active">
-        <%= link_to public_groups_path, class: "nav-link" do %>
+        <%= link_to public_groups_path, class: "nav-link pc-sidebar-link" do %>
           <span> <%= t("groups.public_group") %> </span>
         <% end %>
       </li>
 
       <!-- Nav Item - Tables -->
       <li class="nav-item active">
-        <%= link_to new_group_path, class: "nav-link" do %>
+        <%= link_to new_group_path, class: "nav-link pc-sidebar-link" do %>
           <span> <%= t("groups.new_group") %> </span>
         <% end %>
       </li>
@@ -80,7 +80,7 @@
       <!-- Nav Item - Charts -->
 
       <li class="nav-item active">
-        <%= link_to edit_user_registration_path, class: "nav-link" do %>
+        <%= link_to edit_user_registration_path, class: "nav-link pc-sidebar-link" do %>
           <span> <%= t("groups.self_info") %> </span>
         <% end %>
       </li>
@@ -88,7 +88,7 @@
 
       <!-- Nav Item - Tables -->
       <li class="nav-item active">
-        <%= link_to destroy_user_session_path, class: "nav-link" ,method: 'delete' do %>
+        <%= link_to destroy_user_session_path, class: "nav-link pc-sidebar-link" ,method: 'delete' do %>
           <span> <%= t("groups.logout") %> </span>
         <% end %>
       </li>
