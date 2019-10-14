@@ -43,11 +43,11 @@
     </div>
 
      <div class="lan-btn mt-3">
-      <ul class="change_language d-flex justify-content-center">
-        <li><%= link_to '繁體中文', class: "pc-sidebar-language", :locale => "zh-TW", class:'mr-3' %></li>
-        <li><%= link_to 'English', class: "pc-sidebar-language", :locale => "en", class:'mr-3' %></li>
-        <li><%= link_to '日本語', class: "pc-sidebar-language", :locale => "jp" %></li>
-      </ul>
-    </div>
+          <ul class="change_language d-flex justify-content-center">
+            <li><%= link_to '繁體中文', new_user_session_path(locale: "zh-TW"), class: "pc-sidebar-language mr-3", :locale => "zh-TW"%></li>
+            <li><%= link_to 'English', new_user_session_path(locale: "en"), class: "pc-sidebar-language mr-3", :locale => "en"%></li>
+            <li><%= link_to '日本語', new_user_session_path(locale: "jp"), class: "pc-sidebar-language", :locale => "jp" %></li>
+          </ul>
+        </div>
   </div>
 </div>
