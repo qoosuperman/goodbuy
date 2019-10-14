@@ -1,7 +1,7 @@
 <div class="box text-center">
   <div class="logobox">
     <%= image_tag("logo.png", :alt => "logo" ,class:'logo') %>
-    <p><%="快來使用 GoodBuy"%><br/><%="體驗輕鬆、便利的團購吧！"%></p>
+    <p class="p1"><%=t("groups.login_des1")%></p><p class="p2"><%=t("groups.login_des2")%></p>
   </div>
   <div class="content">
     <h2 class='signinh2 h3 mb-3'> <%= t("devise.signin") %> </h2>
@@ -43,11 +43,11 @@
     </div>
 
      <div class="lan-btn mt-3">
-          <ul class="change_language d-flex justify-content-center">
-            <li><%= link_to '繁體中文', '#', class: "pc-sidebar-language", :locale => "zh-TW", class:'mr-3' %></li>
-            <li><%= link_to 'English', '#', class: "pc-sidebar-language", :locale => "en", class:'mr-3' %></li>
-            <li><%= link_to '日本語', '#', class: "pc-sidebar-language", :locale => "jp" %></li>
-          </ul>
-        </div>
+      <ul class="change_language d-flex justify-content-center">
+        <li><%= link_to '繁體中文', class: "pc-sidebar-language", :locale => "zh-TW", class:'mr-3' %></li>
+        <li><%= link_to 'English', class: "pc-sidebar-language", :locale => "en", class:'mr-3' %></li>
+        <li><%= link_to '日本語', class: "pc-sidebar-language", :locale => "jp" %></li>
+      </ul>
+    </div>
   </div>
 </div>
