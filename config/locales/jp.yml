@@ -155,11 +155,7 @@ jp:
       too_long: は%{count}文字以内で入力してください
       too_short: は%{count}文字以上で入力してください
       wrong_length: は%{count}文字で入力してください
-<<<<<<< HEAD
       cant_delete_item: "誰かがこの製品/オプションをすでに選択しているため、削除できません"
-=======
-      cant_delete_item: "已誰かがこの製品/オプションをすでに選択しているため、削除できません"
->>>>>>> master
     template:
       body: 次の項目を確認してください
       header:
@@ -313,11 +309,7 @@ jp:
     remove: "お気に入りから削除"
     follow_group: "お気に入り"
     follow_group_icon: "★ お気に入り"
-<<<<<<< HEAD
     my_group: "作成したグループ"
-=======
-    my_group: "マイグループ記録"
->>>>>>> master
     records: "グループ記録"
     attended_group: "参加したグループ"
     create_group: "グループ作成"
@@ -373,13 +365,8 @@ jp:
     all_shop_list: "みんなのショッピングリスト"
     add_pearl: "タピオカ入り"
     milk_tea: "ミルクティー"
-<<<<<<< HEAD
     still_no_group: "グループはまだありません。下のボタンをクリックし、グループを作成しましょう！"
     can_click_public: "また、左側のサイドバーにある「既存メニュー」から、お好きなメニューを選択することもできます。"
     login_des1: "ようこそ！"
     login_des2: "便利かつ楽しい共同購入サイト GoodBuy へ"
     add_to_cart: "カートに入れました"
-=======
-    still_no_group: "還沒開過團嗎？點擊下方新增團購按鈕馬上開團！"
-    can_click_public: "你也可以點擊左方列表中的公用菜單看看有沒有適合你的喔!"
->>>>>>> master
