@@ -33,12 +33,17 @@
                   
                   
                     <div class="col-8 text-dark">
-                      <h2 class="card-title mt-2"><% if group.is_active == true %>
-                            <%= link_to group.title, link_group_path(group.id), class: "text-primary", :remote => true %>
-                          <% else%>
-                            <%= group.title %>
-                          <% end %>
-                      </h2>
+                      <div class="pc-card-title">
+                        <h2 class="card-title mt-2"><% if group.is_active == true %>
+                              <%= link_to group.title, link_group_path(group.id), class: "text-primary", :remote => true %>
+                            <% else%>
+                              <%= group.title %>
+                            <% end %>
+                        </h2>
+                        <div class="status ml-2">
+                          <%= link_to t("groups.follow_group_icon"), follow_group_path(group.id), class: "btn btn-sm btn-warning", method: 'patch', remote: true %>
+                        </div>
+                      </div>
                       <div class="text-wrap">
                           <% if group.is_active == true %>
                           <span class="badge badge-primary">
@@ -58,9 +63,6 @@
                           <%= link_to t("groups.see_status"), group_path(group.id), class: "btn btn-status btn-sm" %>
                         </div>
 
-                        <div class="status">
-                          <%= link_to t("groups.follow_group_icon"), follow_group_path(group.id), class: "btn btn-warning btn-sm", method: 'patch', remote: true %>
-                        </div>
                       </div>
                       <hr>
                       <div class="time my-2">

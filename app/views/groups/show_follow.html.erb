@@ -33,12 +33,17 @@
                   
                   
                     <div class="col-8 text-dark">
-                      <h2 class="card-title mt-2"><% if group.is_active == true %>
-                            <%= link_to group.title, link_group_path(group.id), class: "text-primary", :remote => true %>
-                          <% else%>
-                            <%= group.title %>
-                          <% end %>
-                      </h2>
+                      <div class="pc-card-title">
+                        <h2 class="card-title mt-2"><% if group.is_active == true %>
+                              <%= link_to group.title, link_group_path(group.id), class: "text-primary", :remote => true %>
+                            <% else%>
+                              <%= group.title %>
+                            <% end %>
+                        </h2>
+                        <div class="status ml-2">
+                          <%= link_to t("groups.remove"), delete_follow_group_path(group.id), class: "btn btn-warning btn-sm", method: "patch", data: {confirm: t("groups.confirm_remove")} %>
+                        </div>
+                      </div>
                       <div class="text-wrap">
                           <% if group.is_active == true %>
                           <span class="badge badge-primary">
@@ -57,9 +62,6 @@
                         <div class="status mr-1">
                           <%= link_to t("groups.see_status"), group_path(group.id), class: "btn btn-status btn-sm" %>
                         </div>
-                         <div class="status">
-                           <%= link_to t("groups.remove"), delete_follow_group_path(group.id), class: "btn btn-warning btn-sm", method: "patch", data: {confirm: t("groups.confirm_remove")} %>
-                         </div>
                       </div>
                       </div>
                     </div>
