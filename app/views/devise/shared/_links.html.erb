@@ -3,10 +3,11 @@
   <%= link_to t("devise.facebook_login"), omniauth_authorize_path(resource_name, 'facebook'), class:'btn btn-block btn-facebook social-btn-f' %>
 <% end %>
 
+<hr>
+
 <%- if controller_name != 'sessions' %>
   <%= link_to t("devise.login"), new_session_path(resource_name) %>
 <% end %>
-<hr>
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
   <%= link_to t("devise.signin"), new_registration_path(resource_name), class:'btn btn-block btn-secondary' %>
 <% end %>

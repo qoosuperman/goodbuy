@@ -1,28 +1,53 @@
 <div class="box text-center">
   <div class="logobox">
     <%= image_tag("logo.png", :alt => "logo" ,class:'logo') %>
+    <p><%="快來使用 GoodBuy"%><br/><%="體驗輕鬆、便利的團購吧！"%></p>
   </div>
-  <h2 class='signinh2 h3 mb-3'> <%= t("devise.signin") %> </h2>
-
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= render "devise/shared/error_messages", resource: resource %>
-
-    <div class="field mt-4">
-      <%= f.text_field :name, require: true, class:"form-control", placeholder:t("devise.name") %> <br/>
-      <%= f.text_field :nick_name, require: true, class:"form-control", placeholder:t("devise.nick_name") %><br/>
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", placeholder: t("devise.email") %><br/>
-      <%= f.password_field :password, autocomplete: "new-password", class:"form-control", placeholder: t("devise.password") %>
-      <% if @minimum_password_length %>
-      <em><%= t("devise.minimum_character", :character => @minimum_password_length) %> </em>
+  <div class="content">
+    <h2 class='signinh2 h3 mb-3'> <%= t("devise.signin") %> </h2>
+  
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+  
+      <div class="field mt-4">
+        <%= f.text_field :name, require: true, class:"form-control", placeholder:t("devise.name") %> <br/>
+        <%= f.text_field :nick_name, require: true, class:"form-control", placeholder:t("devise.nick_name") %><br/>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", placeholder: t("devise.email") %><br/>
+        <%= f.password_field :password, autocomplete: "new-password", class:"form-control", placeholder: t("devise.password") %>
+        <% if @minimum_password_length %>
+        <em><%= t("devise.minimum_character", :character => @minimum_password_length) %> </em>
+        <% end %>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control", placeholder:t("devise.password_confirm") %><br/>
+      </div>
+  
+      <div class="actions">
+        <%= f.submit t("devise.signin"), class:'btn btn-md btn-login btn-block' %>
+      </div>
+    <% end %>
+  
+    
+    <div class="link-btn">
+      <%- if devise_mapping.omniauthable? %>
+        <%= link_to t("devise.google_login"), omniauth_authorize_path(resource_name, 'google_oauth2'), class:'btn btn-block social-btn-g' %>
+        <%= link_to t("devise.facebook_login"), omniauth_authorize_path(resource_name, 'facebook'), class:'btn btn-block btn-facebook social-btn-f' %>
       <% end %>
-      <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control", placeholder:t("devise.password_confirm") %><br/>
+
+      <hr>
+
+      <%- if controller_name != 'sessions' %>
+        <%= link_to t("devise.login"), new_session_path(resource_name), class:'btn btn-block btn-secondary' %>
+      <% end %>
+      <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+        <%= link_to t("devise.signin"), new_registration_path(resource_name), class:'btn btn-block btn-secondary' %>
+      <% end %>
     </div>
 
-    <div class="actions">
-      <%= f.submit t("devise.signin"), class:'btn btn-md btn-info btn-block' %>
-    </div>
-  <% end %>
-
-  <%= render "devise/shared/links" %>
-  <%= render "shared/change_locale" %>
+     <div class="lan-btn mt-3">
+          <ul class="change_language d-flex justify-content-center">
+            <li><%= link_to '繁體中文', '#', class: "pc-sidebar-language", :locale => "zh-TW", class:'mr-3' %></li>
+            <li><%= link_to 'English', '#', class: "pc-sidebar-language", :locale => "en", class:'mr-3' %></li>
+            <li><%= link_to '日本語', '#', class: "pc-sidebar-language", :locale => "jp" %></li>
+          </ul>
+        </div>
+  </div>
 </div>
