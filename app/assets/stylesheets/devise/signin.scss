@@ -9,7 +9,7 @@ body {
   justify-content: center;
   padding: 100px;
   background-image: image-url("background.jpg");
-  background-size: cover;
+  background-size: 100% auto;
   min-height: 100vh;
 }
 
