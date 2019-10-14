@@ -12,7 +12,7 @@ class GroupsController < ApplicationController
   end
 
   def attend
-    @groups = Order.where(buyer_id: current_user.id).map{ |order| order.group }
+    @groups = Order.where(buyer_id: current_user.id).map{ |order| order.group }.sort_by(&:created_at).reverse!.sort_by{ |group| group.is_active ? 0 : 1 }
   end
 
   def public
