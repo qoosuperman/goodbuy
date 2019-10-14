@@ -77,9 +77,10 @@
                         <span class="mr-3">
                           <%= t("groups.start_time") %>：<%= group.created_at.to_s(:common) %>
                         </span>
+                        <br>
                         <span>
-                          <%= t("groups.end_time") %>：<% unless group.is_active %>
-                            <%= group.end_time.to_s(:common) if group.end_time %>
+                          <% unless group.is_active %>
+                          <%= t("groups.end_time") %>：<%= group.end_time.to_s(:common) if group.end_time %>
                           <% end %>
                         </span>
                       </div>
