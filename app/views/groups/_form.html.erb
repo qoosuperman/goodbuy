@@ -73,7 +73,7 @@
               </div>
             <% end %>
               <div>
-                <%= f.input :shop_photo, label: t("groups.upload_photo"), label_html: { class: "btn btn-sm btn-outline-primary custom-file-upload-phone" }, input_html: { class: "photo-upload-phone" } %>
+                <%= f.input :shop_photo, label: t("groups.upload_photo"), label_html: { class: "btn btn-sm btn-outline-primary custom-file-upload-phone", for: "phone-photo-upload" }, input_html: { class: "photo-upload-phone", id: "phone-photo-upload" } %>
                 <%= f.input :title, label: t("groups.group_name") %> 
                 <%= f.input :address, label: t("groups.address") %> 
                 <%= f.input :phone, label: t("groups.phone") %> 
