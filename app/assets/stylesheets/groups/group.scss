@@ -1,6 +1,6 @@
 body {
   background-image: image-url("background.jpg");
-  background-size: cover;
+  background-size: 100% auto;
 }
 .card-img-left {
   display: flex;
@@ -28,13 +28,13 @@ body {
   }
 }
 // mac navbar部分
-.pc-sidebar-link:hover > span{
+.pc-sidebar-link:hover > span {
   color: #feb14a;
 }
-.change_language li{
+.change_language li {
   list-style: none;
 }
-.pc-sidebar-language:hover{
+.pc-sidebar-language:hover {
   color: #feb14a;
 }
 
@@ -53,7 +53,12 @@ body {
     box-shadow: 5px 5px 5px #888;
   }
   .time span {
-    font-size: 14px;
+    font-size: 16px;
+    vertical-align: middle;
+  }
+  .fa {
+    font-size: 20px;
+    vertical-align: middle;
   }
 }
 

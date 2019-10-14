@@ -27,7 +27,7 @@
                       <% if group.shop_photo.attached? %>
                         <%= image_tag group.shop_photo, class: "default-pic" %>
                       <% else %>
-                          <%= image_tag("logo.png", :alt => "logo", class:"default-pic") %>
+                        <%= image_tag("logo.png", :alt => "logo", class:"default-pic") %>
                       <% end %>
                     </div>
                   
@@ -63,21 +63,19 @@
                         </div>
                       </div>
                       <hr>
-                      <div class="time my-2">
-                        <span class="mr-3">
-                          <%= t("groups.start_time") %>：<%= group.created_at.to_s(:common) %>
-                        </span>
-                        <span>
-                          <%= t("groups.end_time") %>：<% unless group.is_active %>
-                            <%= group.end_time.to_s(:common) if group.end_time %>
-                          <% end %>
-                        </span>
+                      <div class="time mb-2">
+                        <i class="fa fa-clock-o"></i>  
+                              <span class="mr-3">
+                                <%= group.created_at.to_s(:common) %> 
+                                <% unless group.is_active %>
+                                ~ <%= group.end_time.to_s(:common) if group.end_time %>
+                                <% end %>
+                              </span>
                       </div>
                     </div>
                   </div>
                    </div>
                 <% end %>
-             
             </div>
           </div>
 
@@ -96,13 +94,26 @@
                   </div>
                   <h5 class="card-title"> <%= group.title %> </h5>
                   <h6 class="card-subtitle mb-2 text-muted"> <%= group.description %> </h6>
-                  <p class="card-text"><%= t("groups.group_owner") %>： <%= group.user.name %> </p>
-                  <p class="card-text"><%= t("groups.status") %>：                       
-                    <% if group.is_active == true %>
-                        <%= t("groups.not_close") %>
-                    <% else%>
-                        <%= t("groups.closed") %>
-                    <% end %> </p>
+                  <div class="text-wrap">
+                          <% if group.is_active == true %>
+                          <span class="badge badge-primary">
+                            <%= t("groups.not_close") %>
+                          </span>
+                        <% else%>
+                          <span class="badge badge-secondary">
+                            <%= t("groups.closed") %>
+                          </span>
+                        <% end %>
+                      </div>
+                  <div class="time mb-2">
+                    <i class="fa fa-clock-o"></i>  
+                          <span class="mr-3">
+                            <%= group.created_at.to_s(:common) %> 
+                            <% unless group.is_active %>
+                            ~ <%= group.end_time.to_s(:common) if group.end_time %>
+                            <% end %>
+                          </span>
+                  </div>
 
                   <%= link_to t("groups.link"), link_group_path(group.id), class: "btn btn-secondary" %>
                   <%= link_to t("groups.see_status"), group_path(group.id), class: "btn btn-status" %>

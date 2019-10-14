@@ -140,13 +140,13 @@ a {
 .buy-alert {
   width: 300px;
   margin: auto;
-  -moz-animation: cssAnimation 0s ease-in 3s forwards;
+  -moz-animation: cssAnimation 0.5s ease-in 0.5s forwards;
   /* Firefox */
-  -webkit-animation: cssAnimation 0s ease-in 3s forwards;
+  -webkit-animation: cssAnimation 0.5s ease-in 0.5s forwards;
   /* Safari and Chrome */
-  -o-animation: cssAnimation 0s ease-in 3s forwards;
+  -o-animation: cssAnimation 0.5s ease-in 0.5s forwards;
   /* Opera */
-  animation: cssAnimation 0s ease-in 3s forwards;
+  animation: cssAnimation 0.5s ease-in 0.5s forwards;
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
