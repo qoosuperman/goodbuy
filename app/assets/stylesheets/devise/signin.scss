@@ -1,4 +1,4 @@
-li{
+li {
   list-style: none;
 }
 body {
@@ -7,8 +7,7 @@ body {
   -ms-flex-align: center;
   align-items: center;
   justify-content: center;
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding: 100px;
   background-image: image-url("background.jpg");
   background-size: cover;
   min-height: 100vh;
@@ -16,7 +15,6 @@ body {
 
 .box {
   background-color: #fff;
-  margin: 50px;
   width: 400px;
   padding: 40px;
   border-radius: 5px;
@@ -105,6 +103,6 @@ a {
   font-size: 16px;
 }
 
-.change_language{
+.change_language {
   padding: 0;
 }

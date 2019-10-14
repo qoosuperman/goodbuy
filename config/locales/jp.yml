@@ -309,7 +309,7 @@ jp:
     remove: "お気に入りから削除"
     follow_group: "お気に入り"
     follow_group_icon: "★ お気に入り"
-    my_group: "マイグループ記録"
+    my_group: "作成したグループ"
     records: "グループ記録"
     attended_group: "参加したグループ"
     create_group: "グループ作成"
