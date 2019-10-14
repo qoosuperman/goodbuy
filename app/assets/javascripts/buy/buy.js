@@ -114,6 +114,7 @@ $(function () {
     $('.alert-con').html(`<div class="alert alert-info alert-dismissible fade show fixed-top text-center buy-alert" role="alert">
     已加入購買清單!<br>
     <button class="close" data-dismiss="alert">&times;</button></div>`)
+    $('#checkout_paginate').click()
   });
 
   $("#buy2").on('click', function (e) {
