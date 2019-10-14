@@ -1,6 +1,8 @@
 ---
 zh-TW:
   activerecord:
+    models:
+      group: "團購"
     attributes:
       user:
         name: "名字"
@@ -172,9 +174,9 @@ zh-TW:
     select:
       prompt: 請選擇
     submit:
-      create: 新增%{model}
+      create: 確定開團
       submit: 儲存%{model}
-      update: 更新%{model}
+      update: 確定更新
   number:
     currency:
       format:
