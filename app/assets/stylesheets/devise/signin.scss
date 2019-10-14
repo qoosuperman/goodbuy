@@ -15,11 +15,45 @@ body {
 
 .box {
   background-color: #fff;
-  width: 400px;
+  // width: 400px;
   padding: 40px;
   border-radius: 5px;
-  box-shadow: 3px 3px 10px #999;
+  box-shadow: 3px 3px 10px #777;
 }
+
+@media screen and (min-width: 768px) {
+  .logobox {
+    width: 400px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .logo {
+    margin: 0 auto;
+  }
+
+  .logobox p {
+    margin-top: -40px;
+    width: 100%;
+    color: #924c2f;
+    font-weight: 500;
+    font-size: 20px;
+    padding: 20px;
+  }
+  .box {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+  }
+  .content {
+    width: 400px;
+    background-color: #f5f5f5;
+    padding: 50px;
+  }
+}
+
 @media screen and (max-width: 767px) {
   body {
     padding: 0;
@@ -33,7 +67,7 @@ body {
 }
 
 .signinh2 {
-  color: #4ba0b5;
+  color: #555;
 }
 
 .logo {
@@ -98,6 +132,17 @@ a {
   background-color: rgb(123, 128, 136);
   color: #fff;
 }
+
+.btn-login {
+  background-color: #f1b45e;
+  color: #fff;
+}
+
+.btn-login:hover {
+  background-color: #eda745;
+  color: #fff;
+}
+
 .label-text {
   font-weight: 600;
   font-size: 16px;
