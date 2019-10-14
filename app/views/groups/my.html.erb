@@ -20,8 +20,8 @@
           <div class="mac card-group">
               <div class="row">
                 <% if @groups.count == 0 %>
-                  <div class="card text-center mx-auto">
-                    <div class="row p-2 justify-content-center">
+                  <div class="newuser_guide card text-center mx-auto p-3">
+                    <div class="ml-1 row p-2 justify-content-center">
                     <p>
                     <%= t("groups.still_no_group") %>
                     </p>
@@ -47,13 +47,18 @@
                   
                   
                     <div class="col-8 text-dark">
-                      <h2 class="card-title mt-2"><% if group.is_active == true %>
+                      <div class="pc-card-title">
+                        <h2 class="card-title mt-2">
+                          <% if group.is_active == true %>
                             <%= link_to group.title, link_group_path(group.id), class: "text-primary", :remote => true %>
                           <% else%>
                             <%= group.title %>
                           <% end %>
-                      </h2>
-
+                        </h2>
+                        <div class="status ml-2">
+                          <%= link_to t("groups.follow_group_icon"), follow_group_path(group.id), class: "btn btn-sm btn-warning", method: 'patch', remote: true %>
+                        </div>
+                      </div>
                       <p><%= group.description %></p>
                       
                       <div class="d-flex justify-content-start">
@@ -68,9 +73,10 @@
                             <%= link_to t("groups.create_again"),new_group_path(:group_id => group.id), class: "btn btn-sm btn-reopen"%>
                           <% end %>
                         </div>
-                        <div class="status">
-                          <%= link_to t("groups.follow_group_icon"), follow_group_path(group.id), class: "btn btn-sm btn-warning", method: 'patch', remote: true %>
+                        <div class="status mr-1">
+                          <%= link_to t("groups.edit"), edit_group_path(group.id), class: "btn btn-sm btn-reopen" if group.is_active %>
                         </div>
+
                       </div>
                       <hr>
                       <div class="time my-2">
@@ -93,8 +99,8 @@
 
           <div class="phone-card">
             <% if @groups.count == 0 %>
-              <div class="card text-center mx-auto">
-                <div class="row p-2 justify-content-center">
+              <div class="newuser_guide card text-center mx-auto">
+                <div class="row p-2 justify-content-center p-3">
                 <p>
                 <%= t("groups.still_no_group") %>
                 </p>
@@ -117,7 +123,14 @@
                         <%= image_tag("logo.png", :alt => "logo", class:"default-pic") %>
                     <% end %>
                   </div>
-                  <h3 class="card-title"> <%= group.title %> </h3>
+                  <h3 class="card-title">
+                    <% if group.is_active == true %>
+                      <%= link_to group.title, link_group_path(group.id), class: "text-primary", :remote => true %>
+                    <% else%>
+                      <%= group.title %>
+                    <% end %>
+                  </h3>
+                  <%= link_to t("groups.follow_group_icon"), follow_group_path(group.id), class: "btn btn-sm btn-warning mb-3", method: 'patch', remote: true %>
                   <h6 class="card-subtitle mb-2 text-muted"> <%= group.description %> </h6>
                   <div class="time mb-2">
                     <i class="fa fa-clock-o"></i>  
@@ -132,9 +145,6 @@
                     <%= link_to t("groups.close_group"), close_group_path(group.id), class: "btn btn-close", method: "put", data: {confirm: t("groups.confirm_close")} %>
                   <% else%>
                     <%= link_to t("groups.create_again"),new_group_path(:group_id => group.id), class: "btn btn-reopen" %>
-                  <% end %>
-                  <% if group.is_active == true %>
-                    <%= link_to t("groups.link"), link_group_path(group.id), class: "btn btn-secondary" %>
                   <% end %>
                   <%= link_to t("groups.see_status"), group_path(group.id), class: "btn btn-status" %>
                 </div>

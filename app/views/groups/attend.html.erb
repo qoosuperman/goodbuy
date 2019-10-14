@@ -33,12 +33,17 @@
                   
                   
                     <div class="col-8 text-dark">
-                      <h2 class="card-title mt-2"><% if group.is_active == true %>
-                            <%= link_to group.title, link_group_path(group.id), class: "text-primary", :remote => true %>
-                          <% else%>
-                            <%= group.title %>
-                          <% end %>
-                      </h2>
+                      <div class="pc-card-title">
+                        <h2 class="card-title mt-2"><% if group.is_active == true %>
+                              <%= link_to group.title, link_group_path(group.id), class: "text-primary", :remote => true %>
+                            <% else%>
+                              <%= group.title %>
+                            <% end %>
+                        </h2>
+                        <div class="status ml-2">
+                          <%= link_to t("groups.follow_group_icon"), follow_group_path(group.id), class: "btn btn-sm btn-warning", method: 'patch', remote: true %>
+                        </div>
+                      </div>
                       <div class="text-wrap">
                           <% if group.is_active == true %>
                           <span class="badge badge-primary">
@@ -58,9 +63,6 @@
                           <%= link_to t("groups.see_status"), group_path(group.id), class: "btn btn-status btn-sm" %>
                         </div>
 
-                        <div class="status">
-                          <%= link_to t("groups.follow_group_icon"), follow_group_path(group.id), class: "btn btn-warning btn-sm", method: 'patch', remote: true %>
-                        </div>
                       </div>
                       <hr>
                       <div class="time mb-2">
@@ -92,19 +94,26 @@
                         <%= image_tag("logo.png", :alt => "logo", class:"default-pic") %>
                     <% end %>
                   </div>
-                  <h5 class="card-title"> <%= group.title %> </h5>
+                  <h3 class="card-title">
+                    <% if group.is_active == true %>
+                      <%= link_to group.title, link_group_path(group.id), class: "text-primary", :remote => true %>
+                    <% else%>
+                      <%= group.title %>
+                    <% end %>
+                  </h3>
+                  <%= link_to t("groups.follow_group_icon"), follow_group_path(group.id), class: "btn btn-sm btn-warning mb-3", method: 'patch', remote: true %>
                   <h6 class="card-subtitle mb-2 text-muted"> <%= group.description %> </h6>
                   <div class="text-wrap">
-                          <% if group.is_active == true %>
-                          <span class="badge badge-primary">
-                            <%= t("groups.not_close") %>
-                          </span>
-                        <% else%>
-                          <span class="badge badge-secondary">
-                            <%= t("groups.closed") %>
-                          </span>
-                        <% end %>
-                      </div>
+                    <% if group.is_active == true %>
+                      <span class="badge badge-primary">
+                        <%= t("groups.not_close") %>
+                      </span>
+                    <% else%>
+                      <span class="badge badge-secondary">
+                        <%= t("groups.closed") %>
+                      </span>
+                    <% end %>
+                  </div>
                   <div class="time mb-2">
                     <i class="fa fa-clock-o"></i>  
                           <span class="mr-3">
@@ -115,7 +124,6 @@
                           </span>
                   </div>
 
-                  <%= link_to t("groups.link"), link_group_path(group.id), class: "btn btn-secondary" %>
                   <%= link_to t("groups.see_status"), group_path(group.id), class: "btn btn-status" %>
                 </div>
               </div>

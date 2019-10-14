@@ -50,9 +50,6 @@
   
   <div class ="text-right m-3 text-center">
     <%= link_to t("groups.back_to_record"), my_groups_path, class: "btn btn-dark" %>
-    <% if @group.user_id == current_user.id %>
-      <%= link_to t("groups.edit_group"), edit_group_path(@group.id), class: "btn btn-success" %>
-    <% end %>
   </div>
   
   <table class= "table">

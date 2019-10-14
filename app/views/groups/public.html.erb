@@ -1,7 +1,7 @@
   <div id="wrapper">
     <%= render 'shared/sidebar' %>
 
-    <!-- Content Wrapper -->
+      <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
 
       <!-- Main Content -->
@@ -15,52 +15,68 @@
         <div class="container-fluid mt-5">
 
           <!-- Page Heading -->
-          <h1 class="h3 text-heading"> <%= t("groups.public_group") %> </h1>
+          <h1 class="h3 text-heading"><%= t("groups.public_group") %></h1>
 
           <!-- DataTales Example -->
-          <div class="card shadow mb-3">
-            <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-dark"> <%= t("groups.record_list") %> </h6>
-            </div>
-            <div class="card-body">
-              <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                  <thead>
-                    <tr>
-                      <th><%= t("groups.link") %></th>
-                      <th><%= t("groups.group_name") %></th>
-                      <th><%= t("groups.comment") %></th>
-                    </tr>
-                  </thead>
-                  <tfoot>
-                    <tr>
-                      <th><%= t("groups.link") %></th>
-                      <th><%= t("groups.group_name") %></th>
-                      <th><%= t("groups.comment") %></th>
-                    </tr>
-                  </tfoot>
-                  <tbody></tbody>
-                  <% @groups.each do |group| %>
-                    <tr>
-                      <td> <%= link_to t("groups.create_group"),new_group_path(:group_id => group.id), class: "btn btn-o" %> </td>
-                      <td> <%= group.title %> </td>
-                      <td> <%= group.description %>  </td>
-                    </tr>
-                  <% end %>
-                  </tbody>
-                </table>
+          <div class="mac card-group">
+            <div class="row">
+              <% @groups.each do |group| %>
+              <div class="card">
+                <div class="row p-2 align-items-center">
+                  <div class="card-img-left col-3">
+                    <% if group.shop_photo.attached? %>
+                      <%= image_tag group.shop_photo, class: "default-pic" %>
+                    <% else %>
+                        <%= image_tag("logo.png", :alt => "logo", class:"default-pic") %>
+                    <% end %>
+                  </div>
+                
+                
+                  <div class="col-6 text-dark pl-4">
+                    <h2 class="card-title mt-2">
+                      <%= link_to group.title, new_group_path(:group_id => group.id), class: "text-primary" %>
+                    </h2>
+                    <p class="public-description"><%= group.description %></p>
+                  </div>
+                  <div class="col-3 text-dark text-right">
+                    <%= link_to t("groups.create_group"), new_group_path(:group_id => group.id), class: "btn btn-reopen btn-lg" %>
+                  </div>
+                </div>
               </div>
+              <% end %>
             </div>
           </div>
 
+
+          
+          <div class="phone-card">
+            <% @groups.each do |group| %>
+              <div class="card mt-3">
+                <div class="card-body">
+                  <div class="card-img-top">
+                    <% if group.shop_photo.attached? %>
+                      <%= image_tag group.shop_photo, class: "default-pic" %>
+                    <% else %>
+                        <%= image_tag("logo.png", :alt => "logo", class:"default-pic") %>
+                    <% end %>
+                  </div>
+                  <h5 class="card-title"> <%= group.title %> </h5>
+                  <h6 class="card-subtitle mb-2 text-muted"> <%= group.description %> </h6>
+                  <%= link_to t("groups.create_group"), new_group_path(:group_id => group.id), class: "btn btn-reopen" %>
+                </div>
+              </div>
+            <% end %>
+          </div>
         </div>
         <!-- /.container-fluid -->
 
       </div>
       <!-- End of Main Content -->
+
       <%= render "footer" %>
     </div>
     <!-- End of Content Wrapper -->
   </div>
   <!-- End of Page Wrapper -->
+
 

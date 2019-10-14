@@ -12,10 +12,14 @@
 */
 
 @import "bootstrap";
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC:100,300,400,500,700,900&display=swap");
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
 body {
   background-image: image-url("background.jpg");
   background-size: 100% auto;
+}
+* {
+  font-family: 'Noto Sans TC', sans-serif;
 }

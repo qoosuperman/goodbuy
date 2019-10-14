@@ -44,10 +44,10 @@
   
     <div class="container mt-5">
       <div class="row">
-        <% if params[:action] == "new" %>
-          <%= f.button :submit, value: t("groups.confirm_group"),class:"btn btn-delete btn-lg mx-auto btn-lg"  %>
-        <% elsif params[:action] == "edit" %>
+        <% if (action == "edit") || (action == "update") %>
           <%= f.button :submit, value: t("groups.confirm_update"),class:"btn btn-delete btn-lg mx-auto btn-lg"  %>
+        <% elsif (action == "new") || (action == "create")  %>
+          <%= f.button :submit, value: t("groups.confirm_group"),class:"btn btn-delete btn-lg mx-auto btn-lg"  %>
         <% end %>
       </div>
     </div>
@@ -73,7 +73,7 @@
               </div>
             <% end %>
               <div>
-                <%= f.input :shop_photo, label: t("groups.upload_photo"), label_html: { class: "btn btn-sm btn-outline-primary custom-file-upload-phone" }, input_html: { class: "photo-upload-phone" } %>
+                <%= f.input :shop_photo, label: t("groups.upload_photo"), label_html: { class: "btn btn-sm btn-outline-primary custom-file-upload-phone", for: "phone-photo-upload" }, input_html: { class: "photo-upload-phone", id: "phone-photo-upload" } %>
                 <%= f.input :title, label: t("groups.group_name") %> 
                 <%= f.input :address, label: t("groups.address") %> 
                 <%= f.input :phone, label: t("groups.phone") %> 
@@ -107,10 +107,10 @@
     
       <div class="container mt-5">
         <div class="row">
-          <% if params[:action] == "new" %>
-            <%= f.button :submit, value: t("groups.confirm_group"),class:"btn btn-delete btn-lg mx-auto btn-lg"  %>
-          <% elsif params[:action] == "edit" %>
+          <% if (action == "edit") || (action == "update") %>
             <%= f.button :submit, value: t("groups.confirm_update"),class:"btn btn-delete btn-lg mx-auto btn-lg"  %>
+          <% else (action == "new") || (action == "create") %>
+            <%= f.button :submit, value: t("groups.confirm_group"),class:"btn btn-delete btn-lg mx-auto btn-lg"  %>
           <% end %>
         </div>
       </div>

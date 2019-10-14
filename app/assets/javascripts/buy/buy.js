@@ -114,6 +114,7 @@ $(function () {
     $('.alert-con').html(`<div class="alert alert-info alert-dismissible fade show fixed-top text-center buy-alert" role="alert">
     已加入購買清單!
     <button class="close" data-dismiss="alert">&times;</button></div>`)
+    $('#checkout_paginate').click()
   });
 
   $("#buy2").on('click', function (e) {
@@ -138,4 +139,16 @@ $(function () {
     var ans = confirm('確定刪掉嗎');
     if (ans === true) $parent.remove();
   });
+
+  // 一開始把選項藏起來，點了產品才出現，按下買吧買吧又出現
+  $('.options').hide();
+  $('#buy').on('click', function(){
+    $('.options').hide();
+  })
+  $('#buy2').on('click', function(){
+    $('.options').hide();
+  })
+  $('.products .product').on('click', function(){
+    $('.options').show();
+  })
 })

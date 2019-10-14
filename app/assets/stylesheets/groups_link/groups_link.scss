@@ -18,6 +18,10 @@ body {
   border-radius: 5px;
   box-shadow: 3px 3px 10px #999;
 }
+.link_page_box .row{
+  width: auto;
+}
+
 @media screen and (max-width: 767px) {
   .box {
     width: 300px;
