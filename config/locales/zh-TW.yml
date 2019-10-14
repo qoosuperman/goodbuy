@@ -251,7 +251,7 @@ zh-TW:
     edit_user: "編輯個人資料"
     leave_blank: "若不想改密碼可留白"
     current_password: "目前密碼"
-    need_password: "( 請輸入您現在的密碼 )"
+    need_password: "請輸入您現在的密碼"
     update: "更新"
     cancel: "取消此帳號"
     back: "回上一頁"
