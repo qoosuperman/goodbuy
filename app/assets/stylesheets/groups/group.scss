@@ -50,7 +50,7 @@ body {
     box-sizing: border-box;
     margin: 4px;
     width: 49%;
-    box-shadow: 5px 5px 5px #888;
+    box-shadow: 3px 3px 10px #333;
   }
   .time span {
     font-size: 16px;
@@ -170,11 +170,10 @@ body {
   }
 }
 
-
-.newuser_guide{
+.newuser_guide {
   max-width: 30rem;
 }
-.pc-card-title{
+.pc-card-title {
   display: flex;
   align-items: center;
 }
