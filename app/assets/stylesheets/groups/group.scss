@@ -177,3 +177,22 @@ body {
   display: flex;
   align-items: center;
 }
+
+td .fa {
+  font-size: 16px;
+}
+.ta-info {
+  margin-top: 30px;
+}
+
+.ta-title {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.ta-content {
+  color: #64806a;
+  font-weight: 600;
+  display: inline-block;
+  margin-left: 30px;
+}
