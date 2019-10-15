@@ -142,15 +142,9 @@
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle phone-nav-button", data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-globe"></i></a>
       <div class="dropdown-menu phone-left-menu">
-        <%= link_to nil, class: "dropdown-item", href: "/?locale=zh-TW" do %>
-          <span>繁體中文</span>
-        <% end %>
-        <%= link_to nil, class: "dropdown-item", href: "/?locale=en"  do %>
-          <span>English</span>
-        <% end %>
-        <%= link_to nil, class: "dropdown-item", href: "/?locale=jp"  do %>
-          <span>日本語</span>
-        <% end %>
+        <%= link_to '繁體中文', { url: nil , locale: "zh-TW"} , class: "dropdown-item" %>
+        <%= link_to 'English', { url: nil , locale: "en"} , class: "dropdown-item" %>
+        <%= link_to '日本語', { url: nil , locale: "jp"} , class: "dropdown-item" %>
       </div>
     </li>
   </div>
