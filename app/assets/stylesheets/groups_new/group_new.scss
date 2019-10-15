@@ -11,7 +11,6 @@
 .box {
   width: 900px;
   background-color: #fff;
-  margin: 50px;
   padding: 40px;
   border-radius: 5px;
   box-shadow: 10px 10px 10px #555;
@@ -117,13 +116,13 @@
   }
 }
 
-input.form-control-file{
-  display: none,
+input.form-control-file {
+  display: none;
 }
 
-.notice-space{
+.notice-space {
   text-align: center;
 }
-.public-description{
+.public-description {
   margin-bottom: 0;
 }

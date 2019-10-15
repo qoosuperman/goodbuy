@@ -16,7 +16,6 @@
 .box {
   width: 1000px;
   background-color: #fff;
-  margin: 50px;
   padding: 40px;
   border-radius: 5px;
   box-shadow: 10px 10px 10px #555;
@@ -86,28 +85,29 @@ a {
 
 .btn-buy,
 .btn-pay {
-  background-color: #bf4a3b;
+  background-color: #f1b45e;
   color: #fff;
 }
 
 .btn-buy:hover {
-  background-color: #a53323;
+  background-color: #eda745;
   color: #fff;
 }
 .btn-pay:hover {
-  background-color: #a53323;
+  background-color: #eda745;
   color: #fff;
 }
 
 .btn-delete {
-  background-color: #658264;
+  background-color: #bf4a3b;
   color: #fff;
 }
 
 .btn-delete:hover {
-  background-color: #4a6149;
+  background-color: #a53323;
   color: #fff;
 }
+
 .order-item {
   margin-bottom: 10px;
 }

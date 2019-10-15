@@ -29,7 +29,7 @@
                     <%= t("groups.can_click_public") %>
                     </p>
                       <div class="col-4">
-                        <%= link_to t("groups.new_group"), new_group_path, class: "btn btn-success" %>
+                        <%= link_to t("groups.new_group"), new_group_path, class: "btn btn-reopen" %>
                       </div>
                     </div>
                   </div>
@@ -79,7 +79,7 @@
 
                       </div>
                       <hr>
-                      <div class="time my-2">
+                      <div class="time mb-2">
                         <i class="fa fa-clock-o"></i>  
                         <span class="mr-3">
                           <%= group.created_at.to_s(:common) %> 
@@ -108,7 +108,7 @@
                 <%= t("groups.can_click_public") %>
                 </p>
                   <div class="col-4">
-                    <%= link_to t("groups.new_group"), new_group_path, class: "btn btn-success" %>
+                    <%= link_to t("groups.new_group"), new_group_path, class: "btn btn-reopen" %>
                   </div>
                 </div>
               </div>
