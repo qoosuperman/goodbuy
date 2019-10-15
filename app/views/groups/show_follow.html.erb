@@ -107,9 +107,21 @@
                     <% end %>
                   </div>
                   <h6 class="card-subtitle mb-2 text-muted"> <%= group.description %> </h6>
-                  <p class="card-text"><%= t("groups.start_time") %> <%= group.created_at.to_s(:common) %> </p>
-
+                  <% unless group.is_active == true %>
+                    <%= link_to t("groups.create_again"),new_group_path(:group_id => group.id), class: "btn btn-reopen" %>
+                  <% end %>
                   <%= link_to t("groups.see_status"), group_path(group.id), class: "btn btn-status" %>
+                  <div class="time mt-2">
+                    <i class="fa fa-clock-o"></i>  
+                    <span class="mr-3">
+                      <%= group.created_at.to_s(:common) %> 
+                    </span>
+                    <% unless group.is_active %>
+                      <div>
+                        ~ <%= group.end_time.to_s(:common) if group.end_time %>
+                      </div>
+                    <% end %>
+                  </div>
                 </div>
               </div>
             <% end %>
