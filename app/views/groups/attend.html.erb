@@ -70,14 +70,14 @@
 
                       </div>
                       <hr>
-                      <div class="time mb-2">
-                        <i class="fa fa-clock-o"></i>  
-                              <span class="mr-3">
-                                <%= group.created_at.to_s(:common) %> 
-                                <% unless group.is_active %>
-                                ~ <%= group.end_time.to_s(:common) if group.end_time %>
-                                <% end %>
-                              </span>
+                      <div class="time mb-2 pc-time_block">
+                        <i class="far fa-clock"></i>   
+                        <span class="mr-3">
+                          <%= group.created_at.to_s(:common) %> 
+                          <% unless group.is_active %>
+                          ~ <%= group.end_time.to_s(:common) if group.end_time %>
+                          <% end %>
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -131,14 +131,16 @@
                     <%= link_to t("groups.see_status"), group_path(group.id), class: "btn btn-status btn-sm" %>
                   </div>
 
-                  <div class="time mb-2">
-                    <i class="fa fa-clock-o"></i>  
-                      <span class="mr-3">
-                        <%= group.created_at.to_s(:common) %> 
-                        <% unless group.is_active %>
+                  <div class="time mt-2">
+                    <i class="far fa-clock"></i>   
+                    <span class="mr-3">
+                      <%= group.created_at.to_s(:common) %> 
+                    </span>
+                    <% unless group.is_active %>
+                      <div>
                         ~ <%= group.end_time.to_s(:common) if group.end_time %>
-                        <% end %>
-                      </span>
+                      </div>
+                    <% end %>
                   </div>
                   
                 </div>

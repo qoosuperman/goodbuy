@@ -1,6 +1,10 @@
 body {
-  background-image: image-url("background.jpg");
-  background-size: 100% auto;
+  background: image-url("background.jpg") no-repeat center center fixed;
+  // background-size: 100% auto;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 .card-img-left {
   display: flex;
@@ -212,4 +216,20 @@ td .fa {
 
 .text-content p {
   margin-bottom: 0;
+}
+
+.pc-time_block svg{
+vertical-align: middle;
+}
+
+// show 頁面
+
+.container.show-shopinfo_box {
+  margin-bottom: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+  .container.show-shopinfo_box {
+    padding: 0;
+  }
 }
