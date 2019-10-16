@@ -221,3 +221,15 @@ td .fa {
 .pc-time_block svg{
 vertical-align: middle;
 }
+
+// show 頁面
+
+.container.show-shopinfo_box {
+  margin-bottom: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+  .container.show-shopinfo_box {
+    padding: 0;
+  }
+}

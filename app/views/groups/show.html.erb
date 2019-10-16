@@ -9,7 +9,7 @@
     </div>
   <% end %>
 
-  <div class = "container text-left m-5">
+  <div class = "container text-left show-shopinfo_box">
       <table class="table-sm mx-auto ta-info">
         <tr>
           <td class="ta-title"><i class="fas fa-user-friends"></i> <%= t("groups.group_name") %> </td>
@@ -38,7 +38,7 @@
           <td class="ta-content"> <%= @group.description %> </td>
         </tr>
         <tr>
-          <td class="ta-title"><i class="fas fa-clock-o"></i> <%= t("groups.start_time") %></td>
+          <td class="ta-title"><i class="fas fa-clock"></i> <%= t("groups.start_time") %></td>
           <td class="ta-content"> <%= @group.created_at.to_s(:common) %> </td>
         </tr>
         <tr>
