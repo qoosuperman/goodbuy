@@ -121,8 +121,8 @@
                     <%= link_to t("groups.create_again"),new_group_path(:group_id => group.id), class: "btn btn-reopen btn-sm" %>
                   <% end %>
                   <%= link_to t("groups.see_status"), group_path(group.id), class: "btn btn-status btn-sm" %>
-                  <div class="time mt-2">
-                    <i class="fa fa-clock-o"></i>  
+                  <div class="time mt-2 pc-time_block">
+                    <i class="far fa-clock"></i>   
                     <span class="mr-3">
                       <%= group.created_at.to_s(:common) %> 
                     </span>
