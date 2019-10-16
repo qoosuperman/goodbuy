@@ -116,7 +116,7 @@
                   <div class="text-content text-dark mb-2">
                       <p><i class="fas fa-comments"></i> <%= group.description %></p>
                       <p><i class="fas fa-user-friends"></i> <%= t("groups.group_owner") %>： <%= group.user.nick_name %></p>
-                    </div>
+                  </div>
                   <% unless group.is_active == true %>
                     <%= link_to t("groups.create_again"),new_group_path(:group_id => group.id), class: "btn btn-reopen btn-sm" %>
                   <% end %>

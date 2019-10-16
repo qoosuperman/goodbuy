@@ -46,7 +46,7 @@
                       </div>
 
                     <div class="text-wrap-wrap d-flex justify-content-start">
-                      <div class="text-wrap mr-2">
+                      <div class="text-wrap mr-1">
                         <% if group.is_active == true %>
                           <span class="badge badge-primary">
                             <%= t("groups.not_close") %>
@@ -57,13 +57,11 @@
                           </span>
                         <% end %>
                       </div>
-                      <div class="text-wrap owner">
-                        <span class="badge badge-dark"><%= t("groups.group_owner") %>： <%= group.user.nick_name %></span>
-                      </div>
                     </div>
-
+                    <div class="text-content mb-3">
                       <p><i class="fas fa-comments"></i> <%= group.description %></p>
-                      
+                      <p><i class="fas fa-user-friends"></i> <%= t("groups.group_owner") %>： <%= group.user.nick_name %></p>
+                    </div>
                       <div class="d-flex justify-content-start">
                         
                         <div class="status mr-1">
@@ -122,12 +120,11 @@
                         </span>
                       <% end %>
                     </div>
-                    <div class="text-wrap owner">
-                      <span class="badge badge-dark"><%= t("groups.group_owner") %>： <%= group.user.nick_name %></span>
-                    </div>
                   </div>
-
-                  <h6 class="card-subtitle text-dark mt-0 mb-2"><i class="fas fa-comments"></i> <%= group.description %> </h6>
+                  <div class="text-content text-dark mb-2">
+                      <p><i class="fas fa-comments"></i> <%= group.description %></p>
+                      <p><i class="fas fa-user-friends"></i> <%= t("groups.group_owner") %>： <%= group.user.nick_name %></p>
+                  </div>
 
 
                   <div class="statusbtn mb-2">
