@@ -104,7 +104,7 @@
   </div>
   <div class="row mr-4">
     <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><%= t("groups.records") %></a>
+      <a class="nav-link dropdown-toggle phone-nav-button", data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><%= t("groups.records") %></a>
       <div class="dropdown-menu">
         <%= link_to my_groups_path, class: "dropdown-item" do %>
           <span> <%= t("groups.my_group") %>  </span>
@@ -118,7 +118,7 @@
       </div>
     </li>
     <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><%= t("groups.create_group") %></a>
+      <a class="nav-link dropdown-toggle phone-nav-button", data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><%= t("groups.create_group") %></a>
       <div class="dropdown-menu">
         <%= link_to public_groups_path, class: "dropdown-item" do %>
           <span><%= t("groups.public_group") %></span>
@@ -129,7 +129,7 @@
       </div>
     </li>
     <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><%= t("groups.others") %></a>
+      <a class="nav-link dropdown-toggle phone-nav-button", data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><%= t("groups.others") %></a>
       <div class="dropdown-menu">
         <%= link_to edit_user_registration_path, class: "dropdown-item" do %>
           <span><%= t("groups.self_info") %></span>
@@ -139,6 +139,15 @@
         <% end %>
       </div>
     </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle phone-nav-button", data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-globe"></i></a>
+      <div class="dropdown-menu phone-left-menu">
+        <%= link_to '繁體中文', { url: nil , locale: "zh-TW"} , class: "dropdown-item" %>
+        <%= link_to 'English', { url: nil , locale: "en"} , class: "dropdown-item" %>
+        <%= link_to '日本語', { url: nil , locale: "jp"} , class: "dropdown-item" %>
+      </div>
+    </li>
   </div>
 
 </ul>
+
