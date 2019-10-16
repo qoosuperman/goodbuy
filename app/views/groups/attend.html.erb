@@ -44,8 +44,10 @@
                           <%= link_to t("groups.follow_group_icon"), follow_group_path(group.id), class: "btn btn-sm btn-warning", method: 'patch', remote: true %>
                         </div>
                       </div>
-                      <div class="text-wrap">
-                          <% if group.is_active == true %>
+
+                    <div class="text-wrap-wrap d-flex justify-content-start">
+                      <div class="text-wrap mr-2">
+                        <% if group.is_active == true %>
                           <span class="badge badge-primary">
                             <%= t("groups.not_close") %>
                           </span>
@@ -55,6 +57,11 @@
                           </span>
                         <% end %>
                       </div>
+                      <div class="text-wrap owner">
+                        <span class="badge badge-dark"><%= t("groups.group_owner") %>： <%= group.user.nick_name %></span>
+                      </div>
+                    </div>
+
                       <p><%= group.description %></p>
                       
                       <div class="d-flex justify-content-start">
@@ -101,31 +108,43 @@
                       <%= group.title %>
                     <% end %>
                   </h3>
-                  <%= link_to t("groups.follow_group_icon"), follow_group_path(group.id), class: "btn btn-sm btn-warning mb-3", method: 'patch', remote: true %>
-                  <h6 class="card-subtitle mb-2 text-muted"> <%= group.description %> </h6>
-                  <div class="text-wrap">
-                    <% if group.is_active == true %>
-                      <span class="badge badge-primary">
-                        <%= t("groups.not_close") %>
-                      </span>
-                    <% else%>
-                      <span class="badge badge-secondary">
-                        <%= t("groups.closed") %>
-                      </span>
-                    <% end %>
+                  <%= link_to t("groups.follow_group_icon"), follow_group_path(group.id), class: "btn btn-sm btn-warning mb-2", method: 'patch', remote: true %>
+
+                  <div class="text-wrap-wrap d-flex justify-content-center">
+                    <div class="text-wrap mr-2">
+                      <% if group.is_active == true %>
+                        <span class="badge badge-primary">
+                          <%= t("groups.not_close") %>
+                        </span>
+                      <% else%>
+                        <span class="badge badge-secondary">
+                          <%= t("groups.closed") %>
+                        </span>
+                      <% end %>
+                    </div>
+  
+                    <div class="text-wrap owner">
+                      <span class="badge badge-dark"><%= t("groups.group_owner") %>： <%= group.user.nick_name %></span>
+                    </div>
                   </div>
-                  <%= link_to t("groups.see_status"), group_path(group.id), class: "btn btn-status" %>
-                  <div class="time mt-2">
+
+                  <h6 class="card-subtitle text-muted mt-2 mb-3"> <%= group.description %> </h6>
+
+
+                  <div class="statusbtn mb-2">
+                    <%= link_to t("groups.see_status"), group_path(group.id), class: "btn btn-status" %>
+                  </div>
+
+                  <div class="time mb-2">
                     <i class="fa fa-clock-o"></i>  
-                    <span class="mr-3">
-                      <%= group.created_at.to_s(:common) %> 
-                    </span>
-                    <% unless group.is_active %>
-                      <div>
+                      <span class="mr-3">
+                        <%= group.created_at.to_s(:common) %> 
+                        <% unless group.is_active %>
                         ~ <%= group.end_time.to_s(:common) if group.end_time %>
-                      </div>
-                    <% end %>
+                        <% end %>
+                      </span>
                   </div>
+                  
                 </div>
               </div>
             <% end %>

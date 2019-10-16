@@ -14,6 +14,7 @@ body {
 .text-wrap .badge {
   font-size: 100%;
   margin-bottom: 10px;
+  font-weight: 500;
 }
 
 // wrapper部分
@@ -84,7 +85,7 @@ body {
     display: none !important;
   }
 }
-.phone-nav-button{
+.phone-nav-button {
   padding: 0.5rem 0.3rem;
   font-size: 0.8rem;
 }
@@ -112,7 +113,7 @@ body {
   color: #ebd8c5;
   text-decoration: none;
 }
-.phone-left-menu{
+.phone-left-menu {
   transform: translate3d(-50px, 40px, 1px);
 }
 
