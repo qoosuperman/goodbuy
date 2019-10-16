@@ -62,7 +62,7 @@
                       </div>
                     </div>
 
-                      <p><%= group.description %></p>
+                      <p><i class="fas fa-comments"></i> <%= group.description %></p>
                       
                       <div class="d-flex justify-content-start">
                         
@@ -127,11 +127,11 @@
                     </div>
                   </div>
 
-                  <h6 class="card-subtitle text-muted mt-0 mb-2"> <%= group.description %> </h6>
+                  <h6 class="card-subtitle text-dark mt-0 mb-2"><i class="fas fa-comments"></i> <%= group.description %> </h6>
 
 
                   <div class="statusbtn mb-2">
-                    <%= link_to t("groups.see_status"), group_path(group.id), class: "btn btn-status" %>
+                    <%= link_to t("groups.see_status"), group_path(group.id), class: "btn btn-status btn-sm" %>
                   </div>
 
                   <div class="time mb-2">
