@@ -13,7 +13,7 @@
         <!-- End of Topbar -->
 
         <!-- Begin Page Content -->
-        <div class="container-fluid mt-5">
+        <div class="container mt-5">
           <!-- Page Heading -->
           <h1 class="h3 text-heading"> <%= t("groups.follow_group") %> </h1>
 
@@ -45,20 +45,25 @@
                         <%= link_to t("groups.remove"), delete_follow_group_path(group.id), class: "btn btn-warning btn-sm", method: "patch", data: {confirm: t("groups.confirm_remove")} %>
                       </div>
                     </div>
-                    <div class="text-wrap">
-                      <% if group.is_active == true %>
-                        <span class="badge badge-primary">
-                          <%= t("groups.not_close") %>
-                        </span>
-                      <% else%>
-                        <span class="badge badge-secondary">
-                          <%= t("groups.closed") %>
-                        </span>
-                      <% end %>
+                    <div class="text-wrap-wrap d-flex justify-content-start">
+                      <div class="text-wrap mr-1">
+                        <% if group.is_active == true %>
+                          <span class="badge badge-primary">
+                            <%= t("groups.not_close") %>
+                          </span>
+                        <% else%>
+                          <span class="badge badge-secondary">
+                            <%= t("groups.closed") %>
+                          </span>
+                        <% end %>
+                      </div>
                     </div>
-                    <p><%= group.description %></p>
+                    <div class="text-content mb-3">
+                      <p><i class="fas fa-comments"></i> <%= group.description %></p>
+                      <p><i class="fas fa-user-friends"></i> <%= t("groups.group_owner") %>： <%= group.user.nick_name %></p>
+                    </div>
                     
-                    <div class="d-flex justify-content-start mb-2">
+                    <div class="d-flex justify-content-start mb-3">
                       <div class="status mr-1">
                         <%= link_to t("groups.see_status"), group_path(group.id), class: "btn btn-status btn-sm" %>
                         <% if group.is_active == false %>
@@ -94,23 +99,28 @@
                       <%= group.title %>
                     <% end %>
                   </h3>
-                  <%= link_to t("groups.remove"), delete_follow_group_path(group.id), class: "btn btn-warning btn-sm mb-3", method: "patch", data: {confirm: t("groups.confirm_remove")} %>
-                  <div class="text-wrap">
-                    <% if group.is_active == true %>
-                      <span class="badge badge-primary">
-                        <%= t("groups.not_close") %>
-                      </span>
-                    <% else%>
-                      <span class="badge badge-secondary">
-                        <%= t("groups.closed") %>
-                      </span>
-                    <% end %>
+                  <%= link_to t("groups.remove"), delete_follow_group_path(group.id), class: "btn btn-warning btn-sm mb-2", method: "patch", data: {confirm: t("groups.confirm_remove")} %>
+                  <div class="text-wrap-wrap d-flex justify-content-center">
+                    <div class="text-wrap mr-2">
+                      <% if group.is_active == true %>
+                        <span class="badge badge-primary">
+                          <%= t("groups.not_close") %>
+                        </span>
+                      <% else%>
+                        <span class="badge badge-secondary">
+                          <%= t("groups.closed") %>
+                        </span>
+                      <% end %>
+                    </div>
                   </div>
-                  <h6 class="card-subtitle mb-2 text-muted"> <%= group.description %> </h6>
+                  <div class="text-content text-dark mb-2">
+                      <p><i class="fas fa-comments"></i> <%= group.description %></p>
+                      <p><i class="fas fa-user-friends"></i> <%= t("groups.group_owner") %>： <%= group.user.nick_name %></p>
+                  </div>
                   <% unless group.is_active == true %>
-                    <%= link_to t("groups.create_again"),new_group_path(:group_id => group.id), class: "btn btn-reopen" %>
+                    <%= link_to t("groups.create_again"),new_group_path(:group_id => group.id), class: "btn btn-reopen btn-sm" %>
                   <% end %>
-                  <%= link_to t("groups.see_status"), group_path(group.id), class: "btn btn-status" %>
+                  <%= link_to t("groups.see_status"), group_path(group.id), class: "btn btn-status btn-sm" %>
                   <div class="time mt-2">
                     <i class="fa fa-clock-o"></i>  
                     <span class="mr-3">

@@ -14,6 +14,7 @@ body {
 .text-wrap .badge {
   font-size: 100%;
   margin-bottom: 10px;
+  font-weight: 400;
 }
 
 // wrapper部分
@@ -48,8 +49,8 @@ body {
 
   .card {
     box-sizing: border-box;
-    margin: 4px;
-    width: 49%;
+    margin: 10px;
+    width: 48%;
     box-shadow: 3px 3px 10px #333;
   }
   .time span {
@@ -84,7 +85,7 @@ body {
     display: none !important;
   }
 }
-.phone-nav-button{
+.phone-nav-button {
   padding: 0.5rem 0.3rem;
   font-size: 0.8rem;
 }
@@ -112,7 +113,7 @@ body {
   color: #ebd8c5;
   text-decoration: none;
 }
-.phone-left-menu{
+.phone-left-menu {
   transform: translate3d(-50px, 40px, 1px);
 }
 
@@ -183,4 +184,32 @@ body {
 .pc-card-title {
   display: flex;
   align-items: center;
+}
+
+td .fa {
+  font-size: 16px;
+}
+.ta-info {
+  margin-top: 30px;
+}
+
+.ta-title {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.ta-content {
+  color: #64806a;
+  font-weight: 600;
+  display: inline-block;
+  margin-left: 30px;
+}
+
+.card hr {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.text-content p {
+  margin-bottom: 0;
 }

@@ -12,7 +12,7 @@
         <!-- End of Topbar -->
 
         <!-- Begin Page Content -->
-        <div class="container-fluid mt-5">
+        <div class="container mt-5">
           <!-- Page Heading -->
           <h1 class="h3 text-heading"> <%= t("groups.my_group") %> </h1>
 
@@ -59,7 +59,7 @@
                           <%= link_to t("groups.follow_group_icon"), follow_group_path(group.id), class: "btn btn-sm btn-warning", method: 'patch', remote: true %>
                         </div>
                       </div>
-                      <p><%= group.description %></p>
+                      <p><i class="fas fa-comments"></i> <%= group.description %></p>
                       
                       <div class="d-flex justify-content-start">
                         
@@ -131,13 +131,13 @@
                     <% end %>
                   </h3>
                   <%= link_to t("groups.follow_group_icon"), follow_group_path(group.id), class: "btn btn-sm btn-warning mb-3", method: 'patch', remote: true %>
-                  <h6 class="card-subtitle mb-2 text-muted"> <%= group.description %> </h6>
+                  <h6 class="card-subtitle mb-2"><i class="fas fa-comments"></i>  <%= group.description %> </h6>
                   <% if group.is_active == true %>
-                    <%= link_to t("groups.close_group"), close_group_path(group.id), class: "btn btn-close", method: "put", data: {confirm: t("groups.confirm_close")} %>
+                    <%= link_to t("groups.close_group"), close_group_path(group.id), class: "btn btn-close btn-sm", method: "put", data: {confirm: t("groups.confirm_close")} %>
                   <% else%>
-                    <%= link_to t("groups.create_again"),new_group_path(:group_id => group.id), class: "btn btn-reopen" %>
+                    <%= link_to t("groups.create_again"),new_group_path(:group_id => group.id), class: "btn btn-reopen btn-sm" %>
                   <% end %>
-                  <%= link_to t("groups.see_status"), group_path(group.id), class: "btn btn-status" %>
+                  <%= link_to t("groups.see_status"), group_path(group.id), class: "btn btn-status btn-sm" %>
                   <div class="time mt-2">
                     <i class="fa fa-clock-o"></i>  
                     <span class="mr-3">
