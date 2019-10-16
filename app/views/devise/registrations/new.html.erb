@@ -3,7 +3,7 @@
     <%= image_tag("logo.png", :alt => "logo" ,class:'logo') %>
     <p class="p1"><%=t("groups.login_des1")%></p><p class="p2"><%=t("groups.login_des2")%></p>
   </div>
-  <div class="content">
+  <div class="content rounded">
     <h2 class='signinh2 h3 mb-3'> <%= t("devise.signin") %> </h2>
   
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
