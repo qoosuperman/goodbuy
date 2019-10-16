@@ -1,6 +1,10 @@
 body {
-  background-image: image-url("background.jpg");
+  background: image-url("background.jpg") no-repeat center center fixed;
   background-size: 100% auto;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 .card-img-left {
   display: flex;

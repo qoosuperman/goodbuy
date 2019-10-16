@@ -18,5 +18,3 @@ class ApiController < ApplicationController
     end
   end
 end
-
-{"20190926WB4TFA7E" => 1}
