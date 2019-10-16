@@ -16,9 +16,11 @@
 
 
 body {
-  background-image: image-url("background.jpg");
-  background-size: 100% auto;
-  background-color: rgba(0, 0, 0, 1);
+  background: image-url("background.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 * {
   font-family: "Noto Sans TC", sans-serif;
