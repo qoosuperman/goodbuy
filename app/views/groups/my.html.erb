@@ -130,7 +130,15 @@
                       <%= group.title %>
                     <% end %>
                   </h3>
-                  <%= link_to t("groups.follow_group_icon"), follow_group_path(group.id), class: "btn btn-sm btn-warning mb-3", method: 'patch', remote: true %>
+                  <div class="fav">
+                      <% if group.follows.exists?(user_id: current_user.id) %>
+                        <%= link_to "★", follow_group_path(group.id), class: "btn btn-sm btn-white star-full", method: 'patch', remote: true %>
+                      <% else %>
+                        <%= link_to "★", follow_group_path(group.id), class: "btn btn-sm btn-white star-nil", method: 'patch', remote: true, id:'starNil' %>
+                      <% end %>
+                    </div>
+
+
                   <h6 class="card-subtitle mb-2"><i class="fas fa-comments"></i>  <%= group.description %> </h6>
                   <% if group.is_active == true %>
                     <%= link_to t("groups.close_group"), close_group_path(group.id), class: "btn btn-close btn-sm", method: "put", data: {confirm: t("groups.confirm_close")} %>

@@ -213,3 +213,35 @@ td .fa {
 .text-content p {
   margin-bottom: 0;
 }
+
+@media screen and (max-width: 767px) {
+  .fav .star-nil {
+    text-decoration: none;
+    font-size: 28px;
+    color: #fff;
+    -webkit-text-stroke: 2px #feb14a;
+    text-decoration: none;
+  }
+
+  .fav .star-full {
+    font-size: 28px;
+    color: #feb14a;
+    text-decoration: none;
+    -webkit-text-stroke: none;
+  }
+  .fav .star-full:hover,
+  .fav .star-nil:hover {
+    color: #feb14a;
+  }
+
+  .card-body {
+    position: relative;
+  }
+
+  .fav {
+    position: absolute;
+    right: 5px;
+    top: 0px;
+  }
+ 
+}

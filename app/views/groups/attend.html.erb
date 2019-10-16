@@ -99,14 +99,21 @@
                         <%= image_tag("logo.png", :alt => "logo", class:"default-pic") %>
                     <% end %>
                   </div>
-                  <h3 class="card-title">
-                    <% if group.is_active == true %>
-                      <%= link_to group.title, link_group_path(group.id), class: "text-primary", :remote => true %>
-                    <% else%>
-                      <%= group.title %>
-                    <% end %>
-                  </h3>
-                  <%= link_to t("groups.follow_group_icon"), follow_group_path(group.id), class: "btn btn-sm btn-warning mb-2", method: 'patch', remote: true %>
+                    <h3 class="card-title">
+                      <% if group.is_active == true %>
+                        <%= link_to group.title, link_group_path(group.id), class: "text-primary", :remote => true %>
+                      <% else%>
+                        <%= group.title %>
+                      <% end %>
+                    </h3>
+                    
+                    <div class="fav">
+                      <% if group.follows.exists?(user_id: current_user.id) %>
+                        <%= link_to "★", follow_group_path(group.id), class: "btn btn-sm btn-white star-full", method: 'patch', remote: true %>
+                      <% else %>
+                        <%= link_to "★", follow_group_path(group.id), class: "btn btn-sm btn-white star-nil", method: 'patch', remote: true, id:'starNil' %>
+                      <% end %>
+                    </div>
 
                   <div class="text-wrap-wrap d-flex justify-content-center">
                     <div class="text-wrap mr-2">
@@ -156,5 +163,3 @@
     <!-- End of Content Wrapper -->
   </div>
   <!-- End of Page Wrapper -->
-
-

@@ -46,7 +46,7 @@
       <%= javascript_include_tag  'groups_new'%>
     <% end %>
 
-    <% if (params[:controller] == 'groups') && (params[:action] == 'my') %>
+    <% if (params[:controller] == 'groups') && (params[:action] == 'my' || 'attend' || 'show_follow') %>
       <%= javascript_include_tag  'groups_my'%>
     <% end %>
     
