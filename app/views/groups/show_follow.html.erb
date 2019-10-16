@@ -87,7 +87,7 @@
                 <div class="card-body">
                  <div class="card-img-top">
                     <% if group.shop_photo.attached? %>
-                      <%= image_tag @group.shop_photo, class: "default-pic" %>
+                      <%= image_tag group.shop_photo, class: "default-pic" %>
                     <% else %>
                         <%= image_tag("logo.png", :alt => "logo", class:"default-pic") %>
                     <% end %>
@@ -121,7 +121,17 @@
                     <%= link_to t("groups.create_again"),new_group_path(:group_id => group.id), class: "btn btn-reopen btn-sm" %>
                   <% end %>
                   <%= link_to t("groups.see_status"), group_path(group.id), class: "btn btn-status btn-sm" %>
-                  
+                  <div class="time mt-2 pc-time_block">
+                    <i class="far fa-clock"></i>   
+                    <span class="mr-3">
+                      <%= group.created_at.to_s(:common) %> 
+                    </span>
+                    <% unless group.is_active %>
+                      <div>
+                        ~ <%= group.end_time.to_s(:common) if group.end_time %>
+                      </div>
+                    <% end %>
+                  </div>
                 </div>
               </div>
             <% end %>
