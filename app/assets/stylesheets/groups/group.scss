@@ -84,6 +84,10 @@ body {
     display: none !important;
   }
 }
+.phone-nav-button{
+  padding: 0.5rem 0.3rem;
+  font-size: 0.8rem;
+}
 
 @media screen and (max-width: 767px) {
   .phone {
@@ -107,6 +111,9 @@ body {
   padding: 5px;
   color: #ebd8c5;
   text-decoration: none;
+}
+.phone-left-menu{
+  transform: translate3d(-50px, 40px, 1px);
 }
 
 // 標題
