@@ -357,7 +357,7 @@ jp:
     create_option: "メニュー項目追加"
     join_group: "グループに参加"
     select: "品名を選択してください"
-    buy_buy: "買いたい"
+    buy_buy: "カートに入れる"
     check_order: "ショッピングカート"
     my_shop_list: "ショッピングリスト"
     checkout: "レジに進む"

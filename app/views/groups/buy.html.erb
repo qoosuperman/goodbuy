@@ -1,3 +1,5 @@
+<script src="https://kit.fontawesome.com/2ddcd7dcfc.js" crossorigin="anonymous"></script>
+
 <div class="wrap">
   <div class="box">  
     <div class="d-flex justify-content-start">
@@ -7,13 +9,32 @@
       </div>
     </div>
 
-    <div class="group-info d-flex align-items-center p-3 my-3">
-      <ul>
-        <li> <%= t("groups.phone") %> ：<%= @group.phone %></li>
-        <li><%= t("groups.address") %>：<%= @group.address %></li>
-        <li><%= t("groups.description") %>：<%= @group.description %></li>
-      </ul>
-    </div>
+    <div class = "container text-left mt-3 mb-4">
+      <table class="table-sm  ta-info">
+        <tr>
+          <td class="ta-title"><i class="fa fa-phone"></i> <%= t("groups.phone") %></td>
+          <td class="ta-content"> <%= @group.phone %> </td>
+        </tr>
+        <tr>
+          <td class="ta-title"><i class="fa fa-map-marker"></i> <%= t("groups.address") %></td>
+          <td class="ta-content"> <%= @group.address %> </td>
+        </tr>
+        
+        <tr>
+          <td class="ta-title"><i class="fas fa-comments"></i> <%= t("groups.description") %></td>
+          <td class="ta-content"> <%= @group.description %> </td>
+        </tr>
+      
+      </table>
+  </div>
+
+
+
+
+
+
+
+
 
     <div class="menu-pic d-flex align-items-center justify-content-center mb-5">
       <% if @group.shop_photo.attached? %>

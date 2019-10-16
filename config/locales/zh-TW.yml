@@ -339,7 +339,7 @@ zh-TW:
     end_time: "結束時間"
     comment: "備註"
     confirm_close: "確定要結單？不能重新開啟喔！"
-    group_owner: "團長"
+    group_owner: "團主"
     not_close: "未結單"
     closed: "已結單"
     group_info: "團購資料"
