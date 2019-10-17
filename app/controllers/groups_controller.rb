@@ -96,7 +96,6 @@ class GroupsController < ApplicationController
     else
       @ajax_result = follow.errors.full_messages.join(', ')
     end
-    redirect_back(fallback_location: root_path)
   end
 
   def show_follow
@@ -105,7 +104,10 @@ class GroupsController < ApplicationController
 
   def delete_follow
     current_user.followed_groups.delete(@group)
-    redirect_back(fallback_location: root_path)
+    @ajax_result =  t('controllers.groups.unfollow.result')
+    respond_to do |format|
+      format.js
+    end
   end
 
 
