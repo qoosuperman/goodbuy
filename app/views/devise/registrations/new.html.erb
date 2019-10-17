@@ -10,7 +10,7 @@
       <%= render "devise/shared/error_messages", resource: resource %>
   
       <div class="field mt-4">
-        <%= f.text_field :name, require: true, class:"form-control", placeholder:t("devise.name") %> <br/>
+        <%= f.text_field :name, autofocus: true, require: true, class:"form-control", placeholder:t("devise.name") %> <br/>
         <%= f.text_field :nick_name, require: true, class:"form-control", placeholder:t("devise.nick_name") %><br/>
         <%= f.email_field :email, autocomplete: "email", class:"form-control", placeholder: t("devise.email") %><br/>
         <%= f.password_field :password, autocomplete: "new-password", class:"form-control", placeholder: t("devise.password"), id:"tooltipLogin", data: {toggle: "tooltip", placement: "right", animation: true }, title: t("devise.minimum_character", :character => @minimum_password_length)%><br/>
