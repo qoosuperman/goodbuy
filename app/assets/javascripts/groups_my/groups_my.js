@@ -7,4 +7,9 @@ $(function(){
   }
 
   setTimeout(removeFlashMessages, flashSeconds * 1000);
+
+  $(".fav").click(()=>{
+    $( "#starNil" ).removeClass( "star-nil" );
+    $( "#starNil" ).addClass( "star-full" );
+  })
 })
