@@ -106,13 +106,22 @@
     display: none;
   }
 }
-
+// show 頁面電腦版
+@media screen and (min-width: 768px) {
+  .phone-show_table{
+    display: none;
+  }
+}
+// show 頁面手機版
 @media screen and (max-width: 767px) {
   .show-container {
     width: 300px;
   }
-  .mac-col {
+  .pc-show_table{
     display: none;
+  }
+  .phone-show_table li{
+    padding: 0.2rem;
   }
 }
 
