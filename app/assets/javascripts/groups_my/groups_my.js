@@ -1,5 +1,5 @@
 // flash notice 五秒後消失
-$(function(){
+$(function () {
   var flashSeconds = 5;
 
   function removeFlashMessages() {
@@ -8,8 +8,4 @@ $(function(){
 
   setTimeout(removeFlashMessages, flashSeconds * 1000);
 
-  $(".fav").click(()=>{
-    $( "#starNil" ).removeClass( "star-nil" );
-    $( "#starNil" ).addClass( "star-full" );
-  })
 })
