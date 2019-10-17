@@ -52,12 +52,12 @@
   
   
   
-  <table class= "table">
+  <table class= "table pc-show_table">
     <thead>
     <tr>
       <td><%= t("groups.buy_man") %></td>
       <td><%= t("groups.product_name") %></td>
-      <td class="mac-col"><%= t("groups.product_price") %></td>
+      <td><%= t("groups.product_price") %></td>
       <td><%= t("groups.option") %></td>
       <td><%= t("groups.price") %></td>
     </tr>
@@ -72,7 +72,7 @@
             <td>
               <%= order_item.product.name %>
             </td>
-            <td class="mac-col">
+            <td>
               <%= order_item.product.price %>
             </td>
             <td>
@@ -88,6 +88,32 @@
         <% end %>
       <% end %>
   </table>
+  <div class= "phone-show_table text-left">
+    <% @group.orders.each do |order| %>
+      <% order.order_items.each do |order_item| %>
+        <div class= "border-top pt-2">
+          <ul class="list-unstyled">
+            <li>
+              <%= t("groups.buy_man") %> : <%= order_item.order.buyer.name %>
+            </li>
+            <li>
+              <%= t("groups.product_name") %> : <%= order_item.product.name %>
+            </li>
+            <li>
+              <%= t("groups.option") %> :              
+              <% order_item.options.each do |option| %>
+                <%= option.name %>
+                (+<%= option.price %> <%= t("groups.dollars") %>)
+              <% end %>
+            </li>
+            <li>
+              <%= t("groups.price") %> : <%= order_item.total_price %>
+            </li>
+          </ul>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
 
   <div class ="text-right mt-5 text-center">
     <%= link_to t("groups.back_to_record"), my_groups_path, class: "btn btn-dark" %>

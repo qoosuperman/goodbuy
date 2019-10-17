@@ -18,7 +18,7 @@ RSpec.feature "CreateGroupWithPublics", type: :feature do
   end
 
   scenario "按開團會進入新增團購頁面" do
-    within('table.table-bordered') do
+    within('.mac.card-group') do
       click_link("開團")
     end
     expect(page).to have_content("來開團囉")
@@ -26,7 +26,7 @@ RSpec.feature "CreateGroupWithPublics", type: :feature do
   end
 
   scenario "按確定開團會寫進資料庫", js: true, slow: true do
-    within('table.table-bordered') do
+    within('.mac.card-group') do
       click_link("開團")
     end
     within('.form-pc') do

@@ -19,7 +19,7 @@ RSpec.feature "CreateGroupWithOldGroups", type: :feature do
   end
 
   scenario "按下再開團按鈕進到新增團購頁面" do
-    within("table.table-bordered") do
+    within(".mac.card-group") do
       click_link("再開團")
     end
     expect(page).to have_content("來開團囉")
@@ -27,7 +27,7 @@ RSpec.feature "CreateGroupWithOldGroups", type: :feature do
   end
 
   scenario "按確定開團會寫進資料庫", js: true, slow: true do
-    within('table.table-bordered') do
+    within('.mac.card-group') do
       click_link("再開團")
     end
     within('.form-pc') do

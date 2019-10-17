@@ -10,7 +10,7 @@ RSpec.feature "SignIns", type: :feature do
     fill_in "user[email]", with: user.email
     fill_password_and_log_in 
 
-    expect(page).to have_content "我的團購"
+    expect(page).to have_content "開團紀錄"
   end
   scenario "user signin success with no email" do
     fill_password_and_log_in 
