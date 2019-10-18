@@ -21,7 +21,7 @@
           <div class="mac card-group">
             <div class="row">
               <% @groups.each do |group| %>
-              <div class="card">
+              <div class="card dele" data-cid= "<%=group.id %>">
                 <div class="row p-2">
                   <div class="card-img-left col-4">
                     <% if group.shop_photo.attached? %>
@@ -83,7 +83,7 @@
 
           <div class="phone-card">
             <% @groups.each do |group| %>
-              <div class="card mt-3">
+              <div class="card mt-3 dele" data-cid= "<%=group.id %>">
                 <div class="card-body">
                  <div class="card-img-top">
                     <% if group.shop_photo.attached? %>
@@ -99,7 +99,9 @@
                       <%= group.title %>
                     <% end %>
                   </h3>
-                  <%= link_to t("groups.remove"), delete_follow_group_path(group.id), class: "btn btn-warning btn-sm mb-2", method: "patch", data: {confirm: t("groups.confirm_remove")} %>
+                  <div class="fav" data-pid= "<%=group.id %>">
+                    <%= follow_btn(group) %>
+                  </div>
                   <div class="text-wrap-wrap d-flex justify-content-center">
                     <div class="text-wrap mr-2">
                       <% if group.is_active == true %>

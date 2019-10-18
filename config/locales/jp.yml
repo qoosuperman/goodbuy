@@ -28,6 +28,8 @@ jp:
     groups:
       follow:
         result: お気に入りに追加しました
+      unfollow:
+        result: お気に入りから削除しました
 
   date:
     abbr_day_names:
