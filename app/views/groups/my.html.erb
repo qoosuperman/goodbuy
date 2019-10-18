@@ -55,8 +55,8 @@
                             <%= group.title %>
                           <% end %>
                         </h2>
-                        <div class="status ml-2">
-                          <%= link_to t("groups.follow_group_icon"), follow_group_path(group.id), class: "btn btn-sm btn-warning", method: 'patch', remote: true %>
+                        <div class="fav" data-pid= "<%=group.id %>">
+                          <%= follow_btn(group) %>
                         </div>
                       </div>
                       <p><i class="fas fa-comments"></i> <%= group.description %></p>
