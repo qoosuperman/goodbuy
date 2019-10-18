@@ -1,6 +1,6 @@
 class Group < ApplicationRecord
-  has_many :products, inverse_of: :group
-  has_many :options, inverse_of: :group
+  has_many :products, inverse_of: :group, :dependent => :destroy
+  has_many :options, inverse_of: :group, :dependent => :destroy
   has_many :orders
   has_many :follows
   has_many :users, through: :follows

@@ -90,6 +90,9 @@ class GroupsController < ApplicationController
     follow = current_user.follows.new(group_id: @group.id)
     if follow.save
       @ajax_result =  t('controllers.groups.follow.result')
+      respond_to do |format|
+        format.js
+      end
     else
       @ajax_result = follow.errors.full_messages.join(', ')
     end
@@ -101,7 +104,10 @@ class GroupsController < ApplicationController
 
   def delete_follow
     current_user.followed_groups.delete(@group)
-    redirect_to show_follow_groups_path
+    @ajax_result =  t('controllers.groups.unfollow.result')
+    respond_to do |format|
+      format.js
+    end
   end
 
 

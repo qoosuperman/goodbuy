@@ -16,6 +16,8 @@ en:
     groups:
       follow:
         result: Successfully added to My Favorites
+      unfollow:
+        result: Removed from My Favorites
   date:
     abbr_day_names:
       - Sun

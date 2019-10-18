@@ -1,0 +1,4 @@
+alert('<%= @ajax_result %>')
+$('.fav[data-pid="<%=@group.id%>"] .star-full').remove();
+$('.fav[data-pid="<%=@group.id%>"]').prepend("<%= j(follow_btn(@group))%>")
+$('.dele[data-cid= "<%=@group.id %>"]').remove();

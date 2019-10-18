@@ -1,1 +1,3 @@
-alert('<%= @ajax_result %>');
+alert('<%= @ajax_result %>')
+$('.fav[data-pid="<%=@group.id%>"] .star-nil').remove();
+$('.fav[data-pid="<%=@group.id%>"]').prepend("<%= j(follow_btn(@group))%>")
