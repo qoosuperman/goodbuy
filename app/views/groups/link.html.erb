@@ -1,11 +1,11 @@
 <div class = "box text-center p-5 link_page_box">
-  <h1 class='title mb-5'>你的團購連結</h1>
+  <h1 class='title mb-5'><%= t("groups.your_link") %></h1>
   
    <div class="row mt-5 mb-5">
     <%= link_to @link, buy_group_path, target: "_blank", class: "url_for_buy", id:'group-link' %>  
 
     <button class="clipboard-btn btn btn-primary btn-sm mx-auto mt-2" data-clipboard-action="copy" data-clipboard-target="#group-link">
-    複製網址</button>
+    <%= t("groups.copy_link") %></button>
   </div>
 
 
@@ -15,7 +15,7 @@
   
   
   
-  <%= link_to "回到我的團購", my_groups_path, class:"btn btn-dark mt-5" %> 
+  <%= link_to t("groups.back_to_record"), my_groups_path, class:"btn btn-dark mt-5" %> 
 </div>
 
 

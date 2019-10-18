@@ -339,7 +339,7 @@ jp:
     phone: "電話番号"
     address: "アドレス"
     total_price: "合計"
-    back_to_record: "マイグループに戻る"
+    back_to_record: "グループ記録に戻る"
     edit_group: "グループを編集"
     buy_man: "購入者"
     product_name: "品名"
@@ -372,3 +372,4 @@ jp:
     login_des1: "ようこそ！"
     login_des2: "便利かつ楽しい共同購入サイト GoodBuy へ"
     add_to_cart: "カートに入れました"
+    copy_link: "リンクをコピー"
