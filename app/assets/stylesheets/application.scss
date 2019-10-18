@@ -14,7 +14,6 @@
 @import "bootstrap";
 @import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC:100,300,400,500,700,900&display=swap");
 
-
 body {
   background: image-url("background.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -24,4 +23,8 @@ body {
 }
 * {
   font-family: "Noto Sans TC", sans-serif;
+}
+
+abbr[title="required"] {
+  display: none;
 }
