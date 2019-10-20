@@ -40,8 +40,6 @@ class User < ApplicationRecord
 
   def self.from_omniauth(auth)
     # Case 1: Find existing user by facebook uid
-    binding.pry
-    # auth.class
     
     user = User.find_by_fb_uid( auth.uid )
     if user
