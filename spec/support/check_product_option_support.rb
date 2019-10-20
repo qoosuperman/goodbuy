@@ -20,7 +20,6 @@ module CheckProductOptionSupport
 
   def check_view_field_correct
     visit edit_group_path(id: last_group.id)
-    byebug
     expect(page).to have_field('group[title]', with: "團團圓圓")
     click_on("菜單")
     expect(page).to have_field("group[products_attributes][0][name]", with: "紅茶")

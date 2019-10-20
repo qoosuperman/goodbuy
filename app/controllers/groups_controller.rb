@@ -8,7 +8,7 @@ class GroupsController < ApplicationController
   end
 
   def my
-    @groups = current_user.groups
+    @groups = current_user.groups.createtime_desc
   end
 
   def attend
