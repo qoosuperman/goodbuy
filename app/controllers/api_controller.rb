@@ -11,7 +11,7 @@ class ApiController < ApplicationController
     chk_value = attributes
     real_mac_value = Ecpay::Invoice::CreateMacValue.new(attributes).run
 
-    if real_mac_value = check_mac_value
+    if real_mac_value == check_mac_value
       render plain: "1|OK", status: 200 
     else
       render plain: "NG", status: 400 
