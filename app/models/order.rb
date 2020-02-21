@@ -12,7 +12,7 @@ class Order < ApplicationRecord
   def item_name
     order_items.map{ |order_item|
       order_item.item_name
-  }.join('#')
+    }.join('#')
   end
 
 end
