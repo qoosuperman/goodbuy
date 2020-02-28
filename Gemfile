@@ -30,6 +30,7 @@ gem 'omniauth-google-oauth2'
 gem "figaro"
 gem 'clipboard-rails'
 gem 'sidekiq', '~> 6.0', '>= 6.0.1'
+gem 'rubocop', require: false
 
 
 
