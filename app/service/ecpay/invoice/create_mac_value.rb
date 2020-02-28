@@ -47,10 +47,7 @@ module Ecpay
         end
 
         # 組成 query_string
-        hash = hash.map do |key, val|
-          "#{key}=#{val}"
-        end
-        hash.join('&')
+        hash.to_query
       end
 
     end
