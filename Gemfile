@@ -30,8 +30,6 @@ gem 'omniauth-google-oauth2'
 gem "figaro"
 gem 'clipboard-rails'
 gem 'sidekiq', '~> 6.0', '>= 6.0.1'
-gem 'rubocop', require: false
-
 
 
 # Use CoffeeScript for .coffee assets and views
@@ -64,6 +62,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'hirb-unicode', '~> 0.0.5'
   gem 'rspec-rails', '~> 4.0.0.beta2'
+  gem 'rubocop', require: false
 end
 
 group :development do
@@ -73,6 +72,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'annotate'
 end
 
 group :test do
