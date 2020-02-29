@@ -28,14 +28,14 @@ RSpec.describe Group, type: :model do
     it { should validate_presence_of(:title) }
   end
 
-  context 'factorybot data' do
-    it "做出 group 是有效的" do
+  describe 'valifate factorybot data' do
+    it 'factory group is validate' do
       expect(group1.valid?).to be true
     end
   end
 
-  context 'total_price function' do
-    it "可以計算總金額" do
+  describe '#total_price' do
+    it do
       group1.orders = [order1, order2]
       expect(group1.total_price).to be(order1.total_price + order2.total_price)
     end
